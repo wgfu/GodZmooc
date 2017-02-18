@@ -16,6 +16,14 @@ public class ClassInfo {
 	private int homeworkid;
 	private String type;//视频或者文章
 	private String classLevel;
+	private String userid;
+	@Column(name="userid", length=10)
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
 	@Column(name="classLevel", length=10)
 	public String getClassLevel() {
 		return classLevel;

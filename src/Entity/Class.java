@@ -12,7 +12,7 @@ public class Class {
 	private int id;
 	private int classid;
 	private String type;
-	private String userid;
+	
 	@Id
 	//采用数据库自增方式生成主键
 	//@GeneratedValue(strategy=GenerationType.AUTO)
@@ -37,11 +37,5 @@ public class Class {
 	public void setType(String type) {
 		this.type = type;
 	}
-	@Column(name="userid", length=10)
-	public String getUserid() {
-		return userid;
-	}
-	public void setUserid(String userid) {
-		this.userid = userid;
-	}
+	
 	}

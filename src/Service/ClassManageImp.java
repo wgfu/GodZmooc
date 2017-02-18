@@ -16,18 +16,11 @@ public class ClassManageImp implements IClassManage{
 	public void setIClassDao(IClassDao iClassDao) {
 		this.iClassDao = iClassDao;
 	}
+@Override
+public Class getClassByType(String type)
+{
+	return iClassDao.getClassByType(type);}
 
-	@Override
-	public Class getClassByUserid(String userid) {
-		// TODO Auto-generated method stub
-		return iClassDao.getClassByUserid(userid);
-	}
-
-	@Override
-	public Class getClassByClassid(int classid) {
-		// TODO Auto-generated method stub
-		return iClassDao.getClassByClassid(classid);
-	}
 
 	@Override
 	public void addClass(Class class1) {

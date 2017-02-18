@@ -6,154 +6,126 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- 引入 Bootstrap -->
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
       <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
- 
-      <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
-      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
-      <!--[if lt IE 9]>
-         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-      <![endif]-->
+        <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+       <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
 <title>主界面</title>
 </head>
 <body>
+ 
 <div class="container" style="width:100%">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Brand</a>
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="MainView.jsp">主页</a>
 				</div>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							 <a href="#">Link</a>
-						</li>
-						<li>
-							 <a href="#">Link</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									 <a href="#">Action</a>
-								</li>
-								<li>
-									 <a href="#">Another action</a>
-								</li>
-								<li>
-									 <a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">Separated link</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">One more separated link</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" />
-						</div> <button type="submit" class="btn btn-default">Submit</button>
-					</form>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+			
+				 
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							 <a href="#">Link</a>
+							 <a href="Login.jsp" id="login">登录</a>
+						</li>
+						<li>
+							 <a href="Login.jsp" id="regist">注册</a>
 						</li>
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+							 <a data-toggle="dropdown"  href="#" class="dropdown-toggle"  >个人设置<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									 <a href="#">Action</a>
-								</li>
-								<li>
-									 <a href="#">Another action</a>
-								</li>
-								<li>
-									 <a href="#">Something else here</a>
+									 <a href="UserInfo.jsp">个人信息</a>
 								</li>
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="#">Separated link</a>
+									 <a href="#">个人权限</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="StudyPlan.jsp">已收藏课程</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="ClassManage.jsp">已发布课程管理</a>
 								</li>
 							</ul>
 						</li>
 					</ul>
 				</div>
 			</nav>
-			<h3 class="text-center">
+			<h3 class="text-center" style="font-size:30px">
 				·GodZmooc·
+				<br>
+				<br>
 			</h3>
 		</div>
 	</div>
 	<div class="row clearfix">
 		<div class="col-md-2 column">
 			<div class="list-group">
-				 <a href="#" class="list-group-item active">Home</a>
+				 <a href="#" class="list-group-item active">课程资源</a>
 				<div class="list-group-item">
-					List header
+					<a href="#" >语文</a>
+					<span class="badge">14</span>
 				</div>
 				<div class="list-group-item">
-					<h4 class="list-group-item-heading">
-						List group item heading
-					</h4>
-					<p class="list-group-item-text">
-						...
-					</p>
+					
+						<a href="#" >数学</a>
+						<span class="badge">14</span>
+		
 				</div>
 				<div class="list-group-item">
-					 <span class="badge">14</span> Help
-				</div> <a class="list-group-item active"> <span class="badge">14</span> Help</a>
+						<a href="#" >英语</a>
+						<span class="badge">14</span>
+				</div> 
+				<div class="list-group-item">
+						<a href="#" >政治</a>
+						<span class="badge">14</span>
+				</div> 
+				<a class="list-group-item active" href="#" > 更多</a>
 			</div>
 		</div>
 		<div class="col-md-8 column">
 			<div class="carousel slide" id="carousel-477290">
-				<ol class="carousel-indicators">
-					<li data-slide-to="0" data-target="#carousel-477290">
-					</li>
-					<li data-slide-to="1" data-target="#carousel-477290" class="active">
-					</li>
-					<li data-slide-to="2" data-target="#carousel-477290">
-					</li>
-				</ol>
+			
 				<div class="carousel-inner">
 					<div class="item">
-						<img alt="" src="v3/default.jpg" />
+						<a href="#"><img alt="" src="Image/yuwen.png" /></a>
 						<div class="carousel-caption">
 							<h4>
-								First Thumbnail label
+								囊括小学，初中，高中，大学语文
 							</h4>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							语文是语言和文学、文化的简称，包括口头语言和书面语言；口头语言较随意，直接易懂，而书面语言讲究准确和语法；文学包括中外古今文学等。此解释概念较狭窄，因为语文中的文章不但有文艺文（文学、曲艺等），还有很多实用文（应用文）。通俗的说，语言就是说话艺术。
 							</p>
 						</div>
 					</div>
 					<div class="item active">
-						<img alt="" src="v3/default1.jpg" />
+						<a href="#"><img alt="" src="Image/yingyu.png" /></a>
 						<div class="carousel-caption">
 							<h4>
-								Second Thumbnail label
+							囊括小学，初中，高中，大学英语
 							</h4>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							英语（English），属于“印欧语系-日耳曼语族-西日耳曼语支”。根据以英语作为母语的人数计算，英语是最多国家使用的官方语言，英语也是世界上最广泛的第一语言，也是欧盟和许多国际组织和英联邦国家的官方语言，拥有世界第三位的母语使用者人数，仅次于汉语和西班牙语母语使用者人数。
 							</p>
 						</div>
 					</div>
 					<div class="item">
-						<img alt="" src="v3/default2.jpg" />
+					<a href="#">	<img alt="" src="Image/shuxue.png" /></a>
 						<div class="carousel-caption">
 							<h4>
-								Third Thumbnail label
+								囊括小学，初中，高中，大学数学
 							</h4>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+								数学（mathematics或maths），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。
+而在人类历史发展和社会生活中，数学也发挥着不可替代的作用，也是学习和研究现代科学技术必不可少的基本工具。
 							</p>
 						</div>
 					</div>
@@ -162,73 +134,108 @@
 		</div>
 		<div class="col-md-2 column">
 			<div class="list-group">
-				 <a href="#" class="list-group-item active">Home</a>
+				 <a href="#" class="list-group-item active">课程资源</a>
 				<div class="list-group-item">
-					List header
+					<a href="#" >物理</a>
+					<span class="badge">14</span>
 				</div>
 				<div class="list-group-item">
-					<h4 class="list-group-item-heading">
-						List group item heading
-					</h4>
-					<p class="list-group-item-text">
-						...
-					</p>
+					
+						<a href="#" >化学</a>
+						<span class="badge">14</span>
+		
 				</div>
 				<div class="list-group-item">
-					 <span class="badge">14</span> Help
-				</div> <a class="list-group-item active"> <span class="badge">14</span> Help</a>
+						<a href="#" >生物</a>
+						<span class="badge">14</span>
+				</div>
+				<div class="list-group-item">
+						<a href="#" >地理</a>
+						<span class="badge">14</span>
+				</div>
+				 <a class="list-group-item active" href="#" >  更多>></a>
 			</div>
 		</div>
 	</div>
+	<br>
+				<br>
 	<div class="row clearfix" >
 		<div class="col-md-1 column">
 		</div>
 		<div class="col-md-10 column">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="thumbnail">
-						<img alt="300x200" src="v3/default4.jpg" />
+						<a href="#"><img alt="300x100" src="Image/xiaoxue.png" /></a>
 						<div class="caption">
 							<h3>
-								Thumbnail label
+								小学课程
 							</h3>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+								小学语文, <br>
+								小学数学, <br>
+								小学英语等。<br>
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								 <a class="btn btn-primary" href="#">查看</a>
 							</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="thumbnail">
-						<img alt="300x200" src="v3/default5.jpg" />
+						<a href="#"><img alt="280x80" src="Image/zhongxue.png" /></a>
 						<div class="caption">
 							<h3>
-								Thumbnail label
+							中学课程
 							</h3>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+								中学语文, <br>
+								中学数学, <br>
+								中学英语等<br>
+						
+							
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								 <a class="btn btn-primary" href="#">查看</a>
 							</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="thumbnail">
-						<img alt="300x200" src="v3/default6.jpg" />
+						<a href="#"><img alt="300x80" src="Image/gaozhong.png" /></a>
 						<div class="caption">
 							<h3>
-								Thumbnail label
+								高中课程
 							</h3>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+								高中语文, <br>
+								高中数学, <br>
+								高中英语等。<br>
+								
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								 <a class="btn btn-primary" href="#">查看</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+					<a href="#">	<img alt="300x80" src="Image/daxue.png" /></a>
+						<div class="caption">
+							<h3>
+								大学课程
+							</h3>
+							<p>
+								大学语文, <br>
+								大学数学, <br>
+								大学英语等。<br>
+								
+							</p>
+							<p>
+								 <a class="btn btn-primary" href="#">查看</a>
 							</p>
 						</div>
 					</div>
@@ -237,7 +244,9 @@
 		</div>
 		<div class="col-md-1 column">
 		</div>
+		
 	</div>
 </div>
+
 </body>
 </html>

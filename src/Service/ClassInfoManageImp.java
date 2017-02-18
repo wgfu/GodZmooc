@@ -1,5 +1,7 @@
 package Service;
 
+import java.util.List;
+
 import Dao.IClassInfoDao;
 import Entity.ClassInfo;
 
@@ -14,7 +16,7 @@ public void setIClassInfoDao(IClassInfoDao iClassInfoDao) {
 }
 
 	@Override
-	public ClassInfo getClassInfo(int classid) {
+	public List<?> getClassInfo(int classid) {
 		// TODO Auto-generated method stub
 		return iClassInfoDao.getClassInfo(classid);
 	}
@@ -36,5 +38,14 @@ public void setIClassInfoDao(IClassInfoDao iClassInfoDao) {
 		// TODO Auto-generated method stub
 		iClassInfoDao.updateClassInfo(classInfo);
 	}
+	 public List<?> getClassInfoByClassLevel(String classLevel)
+	   {
+		return iClassInfoDao.getClassInfoByClassLevel(classLevel);
+	   }
+	   @Override
+	   public List<?>getClassInfoByUserid(String userid)
+	   {
+		   return iClassInfoDao.getClassInfoByUserid(userid);
+	   }
 
 }

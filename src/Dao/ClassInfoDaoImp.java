@@ -19,13 +19,13 @@ public class ClassInfoDaoImp implements IClassInfoDao{
 	}
 
 	@Override
-	public ClassInfo getClassInfo(int classid) {
+	public List<?> getClassInfo(int classid) {
 		// TODO Auto-generated method stub
-				ClassInfo classInfo=null;
+			
 				String sql="from ClassInfo c where c.classid=?";
 				 List<?> list=hibernateTemplate.find(sql, classid);
-				if(!list.isEmpty()){classInfo=(ClassInfo)list.get(0);}
-				return classInfo;
+				 if(!list.isEmpty()){return list;}
+					return null;
 	}
 
 	@Override
@@ -46,5 +46,23 @@ public class ClassInfoDaoImp implements IClassInfoDao{
 		// TODO Auto-generated method stub
 		hibernateTemplate.merge(classInfo);
 	}
-
+	@Override
+   public List<?> getClassInfoByClassLevel(String classLevel)
+   {
+	  
+		String sql="from ClassInfo c where c.classLevel=?";
+		 List<?> list=hibernateTemplate.find(sql, classLevel);
+		if(!list.isEmpty()){return list;}
+		return null;
+	   
+   }
+	@Override
+	
+   public List<?>getClassInfoByUserid(String userid)
+   {
+	   String sql="from ClassInfo c where c.userid=?";
+		 List<?> list=hibernateTemplate.find(sql, userid);
+		if(!list.isEmpty()){return list;}
+		return null;
+   }
 }
