@@ -35,7 +35,7 @@
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<value>Entity.User</value>
+				<!--<value>Entity.User</value>-->
 			</list>
 		</property>
 

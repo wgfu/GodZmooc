@@ -12,46 +12,16 @@
 <!-- 设置该应用使用的解码集 -->
 <constant name="struts.i18n.encoding" value="utf-8"/>
 
-	<package name="registAction" namespace="/" extends="struts-default">
-<action name="regist" class="com.fwg.action.RegistAction" >
+	<package name="loginAction" namespace="/" extends="struts-default">
+<action name="login" class="login" >
 <result name="success" type="redirect">/Welcome.jsp</result>
 			</action>
 	</package>
-	<package name="picuploadAction" namespace="/" extends="struts-default">
-<action name="picupload" class="com.fwg.action.PicUploadAction" >
-<!-- 限制图片的格式和图片的大小 -->
-<interceptor-ref name="fileUpload">
-<param name="allowedTypes">
-image/bmp,image/png,image/gif,image/jpeg,image/jpg
-</param>
-<param name="maximumSize">809600</param>
-</interceptor-ref>
-
-<!-- 默认的拦截器，必须要写 -->
-<interceptor-ref name="defaultStack" />
-
-<result name="success" type="redirect">/PictureUpload.jsp</result>
-<result name="input">/PictureUpload.jsp</result>
-
-		</action>
+	<package name="registAction" namespace="/" extends="struts-default">
+<action name="regist" class="regist" >
+<result name="success" type="redirect">/Welcome.jsp</result>
+			</action>
 	</package>
-	
-	<package name="musicuploadAction" namespace="/" extends="abstract_struts">
-<action name="musupload" class="com.fwg.action.MusicUploadAction" >
-<interceptor-ref name="myInterceptor" />
-<!-- 限制音乐的格式和音乐的大小 -->
-<interceptor-ref name="fileUpload">
-<param name="allowedTypes"> 
-audio/mpeg,audio/wav,audio/mp3
-</param>
-<param name="maximumSize">32384000</param>
-</interceptor-ref>
-<!-- 默认的拦截器，必须要写 -->
-<interceptor-ref name="defaultStack" />
-<result name="success" type="redirect">/index.jsp</result>
-<result name="input">/ShareMusic.jsp</result>
-</action>
-</package>
 
 
 </struts>

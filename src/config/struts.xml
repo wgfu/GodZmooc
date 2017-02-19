@@ -15,21 +15,7 @@
 	
 <!-- 公共包 -->
 
-<package name="abstract_struts" abstract="true" extends="struts-default"
-		namespace="/">
-		<interceptors>
-			<interceptor name="checkLogin" class="com.fwg.interceptor.CheckLogin" />
-			<interceptor-stack name="myInterceptor">
-					<interceptor-ref name="defaultStack" />
-				<interceptor-ref name="checkLogin" />
-		
-			</interceptor-stack>
-		</interceptors>
-	
-		<global-results>
-			<result name="checkLoginFail" >log.jsp</result>
-		</global-results>
-	 </package>
+
 
 	<!-- 包含的配置文件 -->
 	<include file="/config/struts-user.xml"></include>

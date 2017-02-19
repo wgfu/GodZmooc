@@ -8,18 +8,21 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
 	<!-- Spring管理Struts2的Action -->
-	
-<bean id="addsong" class="com.fwg.action.AddCountAction" scope="prototype"></bean>
-	<bean id="userManage" class="com.fwg.service.UserManageImp">
-		<property name="userDao" ref="userDao"></property>
-	</bean>
-	<bean id="userDao" class="com.fwg.dao.UserDaoImp">
-		<property name="hibernateTemplate" ref="hibernateTemplate" />
-	</bean>
-<bean id="mview" class="com.fwg.action.MviewAction" scope="prototype"></bean>
+	<!-- *************************CommonAction*********************** -->
+<bean id="login" class="Action.LoginAction" scope="prototype"></bean>
 
-	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">  
-     <property name="sessionFactory" ref="sessionFactory" />  
-   </bean>
+<bean id="regist" class="Action.RegistAction" scope="prototype"></bean>
+<!-- *********************************************************** -->
+<!-- *************************TestAction*********************** -->
+
+	<!-- *********************************************************** -->
+	<!-- *************************StudyAction*********************** -->
+	
+    <!-- *********************************************************** -->
+    <!-- *************************ResouceAction********************* -->
     
+    <!-- *********************************************************** -->
+    <!-- *************************UserAction*********************** -->
+    
+    <!-- *********************************************************** -->
 </beans>
