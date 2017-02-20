@@ -14,7 +14,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/mldn?useUnicode=true&amp;characterEncoding=utf-8" />
+		<property name="url" value="jdbc:mysql://localhost:3306/godzmooc?useUnicode=true&amp;characterEncoding=utf-8" />
 		<property name="username" value="root" />
 		<property name="password" value="123456" />
 	</bean>
@@ -28,14 +28,16 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
-				<prop key="default_schema">mldn</prop>
+				<prop key="default_schema">godzmooc</prop>
 
 			</props>
 				<!-- 配置实体类 -->
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<!--<value>Entity.User</value>-->
+				<value>Entity.User</value>
+				<value>Entity.Power</value>
+				<value>Entity.UserInfo</value>
 			</list>
 		</property>
 
