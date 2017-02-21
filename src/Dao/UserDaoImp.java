@@ -1,5 +1,43 @@
 package Dao;
 
-public class UserDaoImp {
+import java.util.List;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import Entity.User;
+
+public class UserDaoImp implements IUserDao{
+	private HibernateTemplate hibernateTemplate;
+
+	 public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {  
+		        this.hibernateTemplate = hibernateTemplate;  
+		    } 
+	@Override
+	public User getUser(String username) {
+		// TODO Auto-generated method stub
+		User user =null;
+		String sql="from user u where u.username=?";
+		 List<?> list=hibernateTemplate.find(sql, username);
+		if(!list.isEmpty()){user=(User)list.get(0);}
+		return user;
+	}
+
+	@Override
+	public void addUser(User user) {
+		// TODO Auto-generated method stub
+		hibernateTemplate.save(user);
+	}
+
+	@Override
+	public void deleteUser(User user) {
+		// TODO Auto-generated method stub
+		hibernateTemplate.delete(user);
+	}
+
+	@Override
+	public void updateUser(User user) {
+		// TODO Auto-generated method stub
+		hibernateTemplate.update(user);
+		
+	}
+	
 
 }
