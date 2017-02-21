@@ -6,7 +6,26 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
-
+<!-- Spring管理Struts2的Dao和Service -->
+<bean id="iUserManage" class="Service.UserManageImp">
+		<property name="iUserDao" ref="iUserDao"></property>
+	</bean>
+	<bean id="iUserDao" class="Dao.UserDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="iUserInfoManage" class="Service.UserInfoManageImp">
+		<property name="iUserInfoDao" ref="iUserInfoDao"></property>
+	</bean>
+	<bean id="iUserInfoDao" class="Dao.UserDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="iPowerManage" class="Service.UserManageImp">
+		<property name="iPowerDao" ref="iPowerDao"></property>
+	</bean>
+	<bean id="iPowerDao" class="Dao.PowerDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+<!-- *********************************************************** -->
 	<!-- Spring管理Struts2的Action -->
 	<!-- *************************CommonAction*********************** -->
 <bean id="login" class="Action.LoginAction" scope="prototype"></bean>
