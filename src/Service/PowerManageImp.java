@@ -8,6 +8,14 @@ import Entity.Power;
 public class PowerManageImp implements IPowerManage{
    @Resource
    private IPowerDao iPowerDao;
+	public IPowerDao getIPowerDao() {
+	return this.iPowerDao;
+}
+
+public void setIPowerDao(IPowerDao iPowerDao) {
+	this.iPowerDao = iPowerDao;
+}
+
 	@Override
 	public Power getPower(String actionName) {
 		// TODO Auto-generated method stub

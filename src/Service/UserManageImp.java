@@ -8,6 +8,14 @@ import Entity.User;
 public class UserManageImp implements IUserManage{
     @Resource
     private IUserDao iUserDao;
+	public IUserDao getIUserDao() {
+		return this.iUserDao;
+	}
+
+	public void setIUserDao(IUserDao iUserDao) {
+		this.iUserDao = iUserDao;
+	}
+
 	@Override
 	public User getUser(String username) {
 		// TODO Auto-generated method stub

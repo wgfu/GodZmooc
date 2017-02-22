@@ -16,15 +16,18 @@
 	<bean id="iUserInfoManage" class="Service.UserInfoManageImp">
 		<property name="iUserInfoDao" ref="iUserInfoDao"></property>
 	</bean>
-	<bean id="iUserInfoDao" class="Dao.UserDaoImp">
+	<bean id="iUserInfoDao" class="Dao.UserInfoDaoImp">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
-	<bean id="iPowerManage" class="Service.UserManageImp">
+	<bean id="iPowerManage" class="Service.PowerManageImp">
 		<property name="iPowerDao" ref="iPowerDao"></property>
 	</bean>
 	<bean id="iPowerDao" class="Dao.PowerDaoImp">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">  
+     <property name="sessionFactory" ref="sessionFactory" /> 
+     </bean> 
 <!-- *********************************************************** -->
 	<!-- Spring管理Struts2的Action -->
 	<!-- *************************CommonAction*********************** -->

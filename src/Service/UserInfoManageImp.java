@@ -8,6 +8,14 @@ import Entity.UserInfo;
 public class UserInfoManageImp implements IUserInfoManage{
 @Resource
 private IUserInfoDao iUserInfoDao;
+	public IUserInfoDao getIUserInfoDao() {
+	return this.iUserInfoDao;
+}
+
+public void setIUserInfoDao(IUserInfoDao iUserInfoDao) {
+	this.iUserInfoDao = iUserInfoDao;
+}
+
 	@Override
 	public UserInfo getUserInfo(String userid) {
 		// TODO Auto-generated method stub
