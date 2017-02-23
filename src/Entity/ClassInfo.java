@@ -15,6 +15,14 @@ public class ClassInfo {
 	private int testid;
 	private int homeworkid;
 	private String type;//视频或者文章
+	private String introduction;
+	@Column(name="introduction", length=1000)
+	public String getIntroduction() {
+		return introduction;
+	}
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
+	}
 	private int id;
 	@Column(name="classname", length=20)
 	public String getClassname() {
