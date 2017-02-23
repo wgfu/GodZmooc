@@ -39,6 +39,7 @@ public class UserInfoAction extends ActionSupport{
      {
     	 iUserInfoManage.addUserInfo(userInfo);
      }
+     ActionContext.getContext().getSession().remove("userInfo");
     ActionContext.getContext().getSession().put("userInfo",userInfo);
 				return "success";
 		

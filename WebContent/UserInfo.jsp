@@ -73,7 +73,7 @@ label{ font-family:"楷体";
 				<div class="form-group">
 					  <label for="userInfo.degree">学位</label>
 					    <select class="form-control" name="userInfo.degree">
-					    <option>${sessionScope.userInfo.education} </option>
+					    <option>${sessionScope.userInfo.degree} </option>
       <option>学士</option>
       <option>硕士</option>
       <option>博士</option>
