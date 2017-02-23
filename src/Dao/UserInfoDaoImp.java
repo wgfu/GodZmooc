@@ -38,7 +38,7 @@ public class UserInfoDaoImp implements IUserInfoDao{
 	@Override
 	public void updateUserInfo(UserInfo userInfo) {
 		// TODO Auto-generated method stub
-		hibernateTemplate.update(userInfo);
+		hibernateTemplate.refresh(userInfo);
 	}
 
 }

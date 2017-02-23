@@ -41,7 +41,7 @@ public class PowerDaoImp implements IPowerDao{
 	@Override
 	public void updatePower(Power power) {
 		// TODO Auto-generated method stub
-		hibernateTemplate.update(power);
+		hibernateTemplate.refresh(power);
 	}
 
 }
