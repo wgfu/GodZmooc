@@ -5,11 +5,13 @@ import javax.annotation.Resource;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+import Entity.User;
 import Entity.UserInfo;
 import Service.IUserInfoManage;
 
 public class UserInfoAction extends ActionSupport{
 	private UserInfo userInfo;
+	private User user;
 	public UserInfo getUserInfo() {
 		return userInfo;
 	}
@@ -26,9 +28,11 @@ public class UserInfoAction extends ActionSupport{
 	private IUserInfoManage iUserInfoManage;
 	public String execute()throws Exception
 	{
-    
+		user=(User) ActionContext.getContext().getSession().get("user");
+		 userInfo.setUserid(user.getUserid());
      if(ActionContext.getContext().getSession().get("userInfo")!=null)
      {
+    	 userInfo.setId(iUserInfoManage.getUserInfo(user.getUserid()).getId());
     	iUserInfoManage.updateUserInfo(userInfo);
      }
      else

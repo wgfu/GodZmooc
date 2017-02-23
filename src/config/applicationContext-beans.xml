@@ -32,8 +32,8 @@
 	<!-- Spring管理Struts2的Action -->
 	<!-- *************************CommonAction*********************** -->
 <bean id="login" class="Action.LoginAction" scope="prototype"></bean>
-
 <bean id="regist" class="Action.RegistAction" scope="prototype"></bean>
+<bean id="userInfo" class="Action.UserInfoAction" scope="prototype"></bean>
 <!-- *********************************************************** -->
 <!-- *************************TestAction*********************** -->
 

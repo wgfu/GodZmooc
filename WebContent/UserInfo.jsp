@@ -33,32 +33,32 @@ label{ font-family:"楷体";
 	</div>
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<form role="form" action="saveUserInfo">
+			<form role="form" action="userInfo">
 				<div class="form-group" >
-					 <label for="user.name">姓名</label><input type="text" class="form-control" id="user.name" name="user.name"
-					 placeholder="${sessionScope.user.name}"/>
+					 <label for="userInfo.name">姓名</label><input type="text" class="form-control" id="userInfo.name" name="userInfo.name"
+					 value="${sessionScope.userInfo.name}"/>
 				</div>
 				<div class="form-group" >
-					 <label for="user.birth">出生日期</label><input type="date" class="form-control" id="user.birth" 
-					 name=user.birth placeholder="${sessionScope.user.birth}"/>
+					 <label for="userInfo.birth">出生日期</label><input type="date" class="form-control" id="userInfo.birth" 
+					 name=userInfo.birth value="${sessionScope.userInfo.birth}"/>
 				</div>
 				<div class="form-group">
-					  <label for="user.email" >Email</label><input type="email" class="form-control" id="user.email" 
-					  name=user.email placeholder="${sessionScope.user.email}"/>
+					  <label for="userInfo.email" >Email</label><input type="email" class="form-control" id="userInfo.email" 
+					  name=userInfo.email value="${sessionScope.userInfo.email}"/>
 				</div>
 				<div class="form-group">
-					  <label for="user.tel" >联系电话</label><input type="tel" class="form-control" id="user.tel"
-					   name=user.tel placeholder="${sessionScope.user.tel}"/>
+					  <label for="userInfo.tel" >联系电话</label><input type="tel" class="form-control" id="userInfo.tel"
+					   name=userInfo.tel value="${sessionScope.userInfo.tel}"/>
 				</div>
 				<div class="form-group">
-					  <label for="user.school">所在学校</label><input type="text" class="form-control" id="user.school" 
-					  name="user.school"
-					  placeholder="${sessionScope.user.school}"/>
+					  <label for="userInfo.school">所在学校</label><input type="text" class="form-control" id="userInfo.school" 
+					  name="userInfo.school"
+					  value="${sessionScope.userInfo.school}"/>
 				</div>
 				<div class="form-group">
-					  <label for="user.education">教育程度</label>
-					  <select class="form-control" name="user.education">
-					  <option>${sessionScope.user.education}</option>
+					  <label for="userInfo.education">教育程度</label>
+					  <select class="form-control" name="userInfo.education">
+					  <option>${sessionScope.userInfo.education}</option>
       <option>小学</option>
         <option>初中</option>
       <option>中专</option>
@@ -71,9 +71,9 @@ label{ font-family:"楷体";
     </select>
 				</div>
 				<div class="form-group">
-					  <label for="user.degree">学位</label>
-					    <select class="form-control" name="user.degree">
-					    <option>${sessionScope.user.education} </option>
+					  <label for="userInfo.degree">学位</label>
+					    <select class="form-control" name="userInfo.degree">
+					    <option>${sessionScope.userInfo.education} </option>
       <option>学士</option>
       <option>硕士</option>
       <option>博士</option>

@@ -35,7 +35,7 @@ public class UserDaoImp implements IUserDao{
 	@Override
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
-		hibernateTemplate.refresh(user);
+		hibernateTemplate.merge(user);
 		
 	}
 	
