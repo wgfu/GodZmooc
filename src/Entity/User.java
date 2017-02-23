@@ -36,7 +36,7 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	@Column(name="password", length=30, nullable=false, unique=true)
+	@Column(name="password", length=30, nullable=false)
 	public String getPassword() {
 		return password;
 	}
@@ -51,7 +51,7 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	@Column(name="power", length=5, nullable=false, unique=true)
+	@Column(name="power", length=5, nullable=false)
 	public int getPower() {
 		return power;
 	}
@@ -59,7 +59,7 @@ public class User {
 	public void setPower(int power) {
 		this.power = power;
 	}
-	@Column(name="type", length=10, nullable=false, unique=true)
+	@Column(name="type", length=10, nullable=false)
 	public String getType() {
 		return type;
 	}

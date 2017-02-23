@@ -29,7 +29,7 @@ public String getActionName() {
 public void setActionName(String actionName) {
 	this.actionName = actionName;
 }
-@Column(name="level", length=5, nullable=false, unique=true)
+@Column(name="level", length=5, nullable=false)
 public int getLevel() {
 	return level;
 }

@@ -16,7 +16,7 @@ public class UserInfoDaoImp implements IUserInfoDao{
 	public UserInfo getUserInfo(String userid) {
 		// TODO Auto-generated method stub
 		UserInfo userInfo =null;
-		String sql="from userinfo u where u.userid=?";
+		String sql="from UserInfo u where u.userid=?";
 		 List<?> list=hibernateTemplate.find(sql, userid);
 		if(!list.isEmpty()){userInfo=(UserInfo)list.get(0);}
 		return userInfo;

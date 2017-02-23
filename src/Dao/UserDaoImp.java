@@ -14,7 +14,7 @@ public class UserDaoImp implements IUserDao{
 	public User getUser(String username) {
 		// TODO Auto-generated method stub
 		User user =null;
-		String sql="from user u where u.username=?";
+		String sql="from User u where u.username=?";
 		 List<?> list=hibernateTemplate.find(sql, username);
 		if(!list.isEmpty()){user=(User)list.get(0);}
 		return user;

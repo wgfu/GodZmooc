@@ -17,7 +17,7 @@ public class PowerDaoImp implements IPowerDao{
 	public Power getPower(String actionName) {
 		// TODO Auto-generated method stub
 		Power power=null;
-		String sql="from power p where p.actionName=?";
+		String sql="from Power p where p.actionName=?";
 		 List<?> list=hibernateTemplate.find(sql, actionName);
 		if(!list.isEmpty()){power=(Power)list.get(0);}
 		return power;

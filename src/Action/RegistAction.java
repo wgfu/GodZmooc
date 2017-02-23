@@ -1,14 +1,16 @@
 package Action;
 
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 
 import javax.annotation.Resource;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import Entity.User;
 import Service.IUserManage;
-import oracle.net.aso.MD5;
+
 
 public class RegistAction extends ActionSupport{
 /**
@@ -37,17 +39,26 @@ private IUserManage iUserManage;
 
 public String execute() throws Exception
 {
-	String password=user.getPassword();
+	
+	String password=URLEncoder.encode(user.getPassword(),"utf-8");
 	MessageDigest md5 = MessageDigest.getInstance("MD5");
 	 byte[] inputByteArray = password.getBytes();
 	 md5.update(inputByteArray);
-	user.setPassword(md5.digest().toString());
+	user.setPassword(new String(md5.digest()));
 	int rand=(int) (Math.random()*10000000);
 	String randstr=String.valueOf(rand);
 	 byte[] inputByteArray1 = randstr.getBytes();
 	 md5.update(inputByteArray1);
-	user.setUserid(md5.digest().toString());
+	user.setUserid(new String(md5.digest()));
+	if(user.getType().equalsIgnoreCase("teacher"))
+	{
+		user.setPower(50);
+	}
+	else{
+		user.setPower(20);
+	}
 	iUserManage.addUser(user);
+	 ActionContext.getContext().getSession().put("user",iUserManage.getUser(user.getUsername()));
 	return "success";
 	}
 }
