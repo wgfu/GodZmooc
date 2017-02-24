@@ -25,6 +25,42 @@
 	<bean id="iPowerDao" class="Dao.PowerDaoImp">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	<bean id="iClassManage" class="Service.ClassManageImp">
+		<property name="iClassDao" ref="iClassDao"></property>
+	</bean>
+	<bean id="iClassDao" class="Dao.ClassDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="iClassInfoManage" class="Service.ClassInfoManageImp">
+		<property name="iClassInfoDao" ref="iClassInfoDao"></property>
+	</bean>
+	<bean id="iClassInfoDao" class="Dao.ClassInfoDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="iStudyManage" class="Service.StudyManageImp">
+		<property name="iStudyDao" ref="iStudyDao"></property>
+	</bean>
+	<bean id="iStudyDao" class="Dao.StudyDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="iCommentManage" class="Service.CommentManageImp">
+		<property name="iCommentDao" ref="iCommentDao"></property>
+	</bean>
+	<bean id="iCommentDao" class="Dao.CommentDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="iReplyManage" class="Service.ReplyManageImp">
+		<property name="iReplyDao" ref="iReplyDao"></property>
+	</bean>
+	<bean id="iReplyDao" class="Dao.ReplyDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="iPartManage" class="Service.PartManageImp">
+		<property name="iPartDao" ref="iPartDao"></property>
+	</bean>
+	<bean id="iPartDao" class="Dao.PartDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">  
      <property name="sessionFactory" ref="sessionFactory" /> 
      </bean> 
@@ -33,7 +69,7 @@
 	<!-- *************************CommonAction*********************** -->
 <bean id="login" class="Action.LoginAction" scope="prototype"></bean>
 <bean id="regist" class="Action.RegistAction" scope="prototype"></bean>
-<bean id="userInfo" class="Action.UserInfoAction" scope="prototype"></bean>
+
 <!-- *********************************************************** -->
 <!-- *************************TestAction*********************** -->
 
@@ -45,6 +81,6 @@
     
     <!-- *********************************************************** -->
     <!-- *************************UserAction*********************** -->
-    
+    <bean id="userInfo" class="Action.UserInfoAction" scope="prototype"></bean>
     <!-- *********************************************************** -->
 </beans>

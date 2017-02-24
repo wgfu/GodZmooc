@@ -7,37 +7,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "classInfo")
-public class ClassInfo {
-	private String classname;
+@Table(name = "test")
+public class Test {
+	private int id;
+	private int testid;
 	private int classid;
 	private String url;
-	private int testid;
-	private int homeworkid;
-	private String type;//视频或者文章
-	private String classLevel;
-	@Column(name="classLevel", length=10)
-	public String getClassLevel() {
-		return classLevel;
-	}
-	public void setClassLevel(String classLevel) {
-		this.classLevel = classLevel;
-	}
+	private String answerurl;
+	private String testname;
+	private String testlevel;
+	private String type;
 	private String introduction;
-	@Column(name="introduction", length=1000)
+	@Column(name="introduction", length=16777215)
 	public String getIntroduction() {
 		return introduction;
 	}
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
 	}
-	private int id;
-	@Column(name="classname", length=20)
-	public String getClassname() {
-		return classname;
+	@Column(name="testid", length=15)
+	public int getTestid() {
+		return testid;
 	}
-	public void setClassname(String classname) {
-		this.classname = classname;
+	public void setTestid(int testid) {
+		this.testid = testid;
 	}
 	@Column(name="classid", length=15)
 	public int getClassid() {
@@ -53,28 +46,34 @@ public class ClassInfo {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	@Column(name="testid", length=15)
-	public Integer getTestid() {
-		return testid;
+	@Column(name="answerurl", length=30)
+	public String getAnswerurl() {
+		return answerurl;
 	}
-	public void setTestid(Integer testid) {
-		this.testid = testid;
+	public void setAnswerurl(String answerurl) {
+		this.answerurl = answerurl;
 	}
-	@Column(name="homeworkid", length=15)
-	public Integer getHomeworkid() {
-		return homeworkid;
+	@Column(name="testname", length=30)
+	public String getTestname() {
+		return testname;
 	}
-	public void setHomeworkid(Integer homeworkid) {
-		this.homeworkid = homeworkid;
+	public void setTestname(String testname) {
+		this.testname = testname;
 	}
-	@Column(name="type", length=10)
+	@Column(name="testlevel", length=20)
+	public String getTestlevel() {
+		return testlevel;
+	}
+	public void setTestlevel(String testlevel) {
+		this.testlevel = testlevel;
+	}
+	@Column(name="type", length=15)
 	public String getType() {
 		return type;
 	}
 	public void setType(String type) {
 		this.type = type;
 	}
-	
 	@Id
 	//采用数据库自增方式生成主键
 	//@GeneratedValue(strategy=GenerationType.AUTO)
@@ -85,4 +84,5 @@ public class ClassInfo {
 	public void setId(int id) {
 		this.id = id;
 	}
+
 }
