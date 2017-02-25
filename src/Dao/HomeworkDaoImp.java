@@ -4,12 +4,10 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
-import Entity.Comment;;
-
-public class CommentDaoImp implements ICommentPartDao{
-private HibernateTemplate hibernateTemplate;
-    
-	public HibernateTemplate getHibernateTemplate() {
+public class HomeworkDaoImp implements ITestAndHomeworkDao{
+	 private HibernateTemplate hibernateTemplate;
+	   
+		public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
 	}
 
@@ -21,17 +19,10 @@ private HibernateTemplate hibernateTemplate;
 	@Override
 	public <T> T getRuslt(Class<T> t) {
 		// TODO Auto-generated method stub
-		Comment comment=null;
-		String sql="from Comment c where c.partid=?";
+		String sql="from Homework h where h.classid=?";
 		 List<?> list=hibernateTemplate.find(sql, t);
-		if(!list.isEmpty())
-		{
-			return (T) list;
-		}
-		else
-		{
-			return (T) comment;
-		}
+		if(!list.isEmpty()){return (T) list;}
+		return null;
 	}
 
 	@Override
@@ -51,4 +42,5 @@ private HibernateTemplate hibernateTemplate;
 		// TODO Auto-generated method stub
 		hibernateTemplate.save(t);
 	}
+
 }

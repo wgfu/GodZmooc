@@ -4,34 +4,27 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
-import Entity.Comment;;
+import Entity.score;
 
-public class CommentDaoImp implements ICommentPartDao{
-private HibernateTemplate hibernateTemplate;
-    
+
+public class ScoreDaoImp implements ITestAndHomeworkDao{
+	private HibernateTemplate hibernateTemplate;
+	   
 	public HibernateTemplate getHibernateTemplate() {
-		return hibernateTemplate;
-	}
+	return hibernateTemplate;
+}
 
-	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
-		this.hibernateTemplate = hibernateTemplate;
-	}
-
+public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+	this.hibernateTemplate = hibernateTemplate;
+}
 	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T getRuslt(Class<T> t) {
-		// TODO Auto-generated method stub
-		Comment comment=null;
-		String sql="from Comment c where c.partid=?";
+		score score=null;
+		String sql="from score s where s.testid=?";
 		 List<?> list=hibernateTemplate.find(sql, t);
-		if(!list.isEmpty())
-		{
-			return (T) list;
-		}
-		else
-		{
-			return (T) comment;
-		}
+		if(!list.isEmpty()){score=(score)list.get(0);}
+		return  (T) score;
 	}
 
 	@Override
@@ -51,4 +44,5 @@ private HibernateTemplate hibernateTemplate;
 		// TODO Auto-generated method stub
 		hibernateTemplate.save(t);
 	}
+
 }

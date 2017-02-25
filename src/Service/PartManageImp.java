@@ -2,16 +2,19 @@ package Service;
 
 import javax.annotation.Resource;
 
-import Dao.ITestAndHomeworkDao;
+import Dao.ICommentPartDao;
 
-public class PartManageImp implements ITestAndHomeworkManage{
+
+
+
+public class PartManageImp implements ICommentPartManage{
    @Resource
-   private ITestAndHomeworkDao iPartDao;
-	public ITestAndHomeworkDao getIPartDao() {
+   private ICommentPartDao iPartDao;
+	public ICommentPartDao getIPartDao() {
 	return iPartDao;
 }
 
-public void setIPartDao(ITestAndHomeworkDao iPartDao) {
+public void setIPartDao(ICommentPartDao iPartDao) {
 	this.iPartDao = iPartDao;
 }
 

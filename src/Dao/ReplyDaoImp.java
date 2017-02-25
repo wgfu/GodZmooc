@@ -6,7 +6,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import Entity.Reply;
 
-public class ReplyDaoImp implements ITestAndHomeworkDao{
+public class ReplyDaoImp implements ICommentPartDao{
 	 private HibernateTemplate hibernateTemplate;
 	    
 		public HibernateTemplate getHibernateTemplate() {
@@ -22,7 +22,7 @@ public class ReplyDaoImp implements ITestAndHomeworkDao{
 		public <T> T getRuslt(Class<T> t) {
 			// TODO Auto-generated method stub
 			Reply reply=null;
-			String sql="from Part p where p.partname=?";
+			String sql="from Reply p where p.replyid=?";
 			 List<?> list=hibernateTemplate.find(sql, t);
 			if(!list.isEmpty()){
 				return (T) reply;

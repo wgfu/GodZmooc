@@ -8,7 +8,7 @@ import Entity.Part;
 
 
 
-public class PartDaoImp implements ITestAndHomeworkDao{
+public class PartDaoImp implements ICommentPartDao{
     private HibernateTemplate hibernateTemplate;
     
 	public HibernateTemplate getHibernateTemplate() {

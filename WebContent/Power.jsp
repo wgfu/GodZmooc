@@ -17,7 +17,7 @@
 <title>查看权限</title>
 </head>
 <body>
-<div class="container">
+<div class="container" style="width:100%">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<h3 class="text-center text-info">

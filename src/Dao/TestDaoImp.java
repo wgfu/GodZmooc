@@ -2,42 +2,35 @@ package Dao;
 
 import java.util.List;
 
+
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
-import Entity.Comment;;
-
-public class CommentDaoImp implements ICommentPartDao{
-private HibernateTemplate hibernateTemplate;
-    
+public class TestDaoImp implements ITestAndHomeworkDao{
+   private HibernateTemplate hibernateTemplate;
+   
 	public HibernateTemplate getHibernateTemplate() {
-		return hibernateTemplate;
-	}
+	return hibernateTemplate;
+}
 
-	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
-		this.hibernateTemplate = hibernateTemplate;
-	}
+public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+	this.hibernateTemplate = hibernateTemplate;
+}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T getRuslt(Class<T> t) {
 		// TODO Auto-generated method stub
-		Comment comment=null;
-		String sql="from Comment c where c.partid=?";
+		String sql="from Test t where t.classid=?";
 		 List<?> list=hibernateTemplate.find(sql, t);
-		if(!list.isEmpty())
-		{
-			return (T) list;
-		}
-		else
-		{
-			return (T) comment;
-		}
+		if(!list.isEmpty()){return (T) list;}
+		return null;
 	}
 
 	@Override
 	public <T> void updateT(Class<T> t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.merge(t);
+		
 	}
 
 	@Override
@@ -51,4 +44,5 @@ private HibernateTemplate hibernateTemplate;
 		// TODO Auto-generated method stub
 		hibernateTemplate.save(t);
 	}
+
 }
