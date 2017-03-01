@@ -57,12 +57,12 @@ label{ font-family:"楷体";
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="StudyPlan.jsp">已收藏课程</a>
+									 <a href="studyManage">已收藏课程</a>
 								</li>
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="ClassManage.jsp">已发布课程管理</a>
+									 <a href="classManage">已发布课程管理</a>
 								</li>
 							</ul>
 						</li>		

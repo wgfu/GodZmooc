@@ -14,7 +14,8 @@
 <title>课程资源</title>
 </head>
 <body>
-<div class="container" style="width:100%">
+
+<div class="container" style="width:100%" >
 <div class="row clearfix">
 <div class="col-md-12 column">
 
@@ -55,12 +56,12 @@
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="StudyPlan.jsp">已收藏课程</a>
+									 <a href="studyManage">已收藏课程</a>
 								</li>
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="ClassManage.jsp">已发布课程管理</a>
+									 <a href="classManage">已发布课程管理</a>
 								</li>
 							</ul>
 						</li>		
@@ -134,13 +135,13 @@
 					</p>
 				</div>
 				</s:iterator>
-				 <a class="list-group-item active"> <span class="badge">14</span> Help</a>
+				 
 			</div>
 		</div>
 	</div>
 </div>
 
-<div style="width:100%; position:absoluted; left:0; bottom:0;">
+<div style="width:100%; position:fixed; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>
 					 <a href="#">主页</a>

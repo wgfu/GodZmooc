@@ -87,7 +87,7 @@ public void setIClassManage(IClassManage iClassManage) {
 					return SUCCESS;
 		}
 		}
-			if(classLevel!=""&&classLevel!=null)
+			if(classLevel!=""&&classLevel!=null&&!resourceType.isEmpty())
 			{
 				classInfo.setClassLevel(classLevel);
 				}		

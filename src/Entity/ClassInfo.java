@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "classInfo")
 public class ClassInfo {
 	private String classname;
-	private int classid;
+	private Integer classid;
 	private String url;
 	private Integer testid;
 	private Integer homeworkid;
@@ -66,10 +66,10 @@ public class ClassInfo {
 		this.classname = classname;
 	}
 	@Column(name="classid", length=15)
-	public int getClassid() {
+	public Integer getClassid() {
 		return classid;
 	}
-	public void setClassid(int classid) {
+	public void setClassid(Integer classid) {
 		this.classid = classid;
 	}
 	@Column(name="url", length=30)

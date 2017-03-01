@@ -51,12 +51,12 @@
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="StudyPlan.jsp">已收藏课程</a>
+									 <a href="studyManage">已收藏课程</a>
 								</li>
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="ClassManage.jsp">已发布课程管理</a>
+									 <a href="classManage">已发布课程管理</a>
 								</li>
 							</ul>
 						</li>		
@@ -103,15 +103,16 @@ border-top:solid 0px #333333;">
 					</tr>
 				</thead>
 				<tbody>
+				<s:iterator value="#session.classInfo" >
 					<tr >
 						<td>
-							4
+							${classname}
 						</td>
 						<td>
-							4
+							${type}
 						</td>
 						<td>
-							TB - Monthly
+						${classLevel}
 						</td>
 						<td>
 							04/04/2012
@@ -126,8 +127,10 @@ border-top:solid 0px #333333;">
 							开始作业
 						</td>
 					</tr>
+					</s:iterator>
 				</tbody>
 			</table>
+				${sessionScope.NoclassInfo}
 		</div>
 	</div>
 </div>
@@ -136,7 +139,7 @@ border-top:solid 0px #333333;">
 <p><a class="btn btn-primary btn-large" href="AddClass.jsp">添加课程 &raquo;</a></p>
 
 </div>
-<div style="width:100%; position:absoluted; left:0; bottom:0;">
+<div style="width:100%; position:fixed; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>
 					 <a href="#">主页</a>

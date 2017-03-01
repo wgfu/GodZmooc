@@ -34,5 +34,11 @@
 <result name="success" type="redirect">/AllClassResource.jsp</result>
 			</action>
 	</package>
+	
+	<package name="classManageAction" namespace="/" extends="struts-default">
+<action name="classManage" class="classManage" >
+<result name="success" type="redirect">/ClassManage.jsp</result>
+			</action>
+	</package>
 
 </struts>
