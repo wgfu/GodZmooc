@@ -1,5 +1,7 @@
 package Action;
 
+import java.text.SimpleDateFormat;
+
 import javax.annotation.Resource;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -10,6 +12,10 @@ import Entity.UserInfo;
 import Service.IUserInfoManage;
 
 public class UserInfoAction extends ActionSupport{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private UserInfo userInfo;
 	private User user;
 	public UserInfo getUserInfo() {

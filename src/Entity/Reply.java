@@ -1,5 +1,7 @@
 package Entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +14,7 @@ public class Reply {
 	private int id;
 	private int replyid;
 	private String userid;
-	private String time;
+	private Date time;
 	private String text;
 	@Column(name="replyid", length=20)
 	public int getReplyid() {
@@ -28,11 +30,11 @@ public class Reply {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	@Column(name="time", length=30)
-	public String getTime() {
+	@Column(name="time")
+	public Date getTime() {
 		return time;
 	}
-	public void setTime(String time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 	public String getText() {

@@ -1,5 +1,7 @@
 package Entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +20,7 @@ public class UserInfo {
 	private String education;
 	private String tel;
 	private String name;
-	private String birth;
+	private Date birth;
 	@Id
 	//采用数据库自增方式生成主键
 	//@GeneratedValue(strategy=GenerationType.AUTO)
@@ -79,10 +81,10 @@ public class UserInfo {
 		this.name = name;
 	}
 	@Column(name="birth", length=20)
-	public String getBirth() {
+	public Date getBirth() {
 		return birth;
 	}
-	public void setBirth(String birth) {
+	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
 

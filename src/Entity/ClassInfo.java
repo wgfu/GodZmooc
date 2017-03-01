@@ -1,5 +1,7 @@
 package Entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +19,14 @@ public class ClassInfo {
 	private String type;//视频或者文章
 	private String classLevel;
 	private String userid;
+	private Date time;
+	@Column(name="time")
+	public Date getTime() {
+		return time;
+	}
+	public void setTime(Date time) {
+		this.time = time;
+	}
 	@Column(name="userid", length=10)
 	public String getUserid() {
 		return userid;

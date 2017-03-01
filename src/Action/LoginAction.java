@@ -2,12 +2,13 @@ package Action;
 
 import java.security.MessageDigest;
 
+
 import javax.annotation.Resource;
 
-import com.opensymphony.xwork2.Action;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.sun.prism.Image;
+
 
 import Entity.User;
 import Entity.UserInfo;
