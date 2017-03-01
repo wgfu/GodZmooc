@@ -12,15 +12,15 @@ import javax.persistence.Table;
 @Table(name = "reply")
 public class Reply {
 	private int id;
-	private int replyid;
+	private Integer replyid;
 	private String userid;
 	private Date time;
 	private String text;
 	@Column(name="replyid", length=20)
-	public int getReplyid() {
+	public Integer getReplyid() {
 		return replyid;
 	}
-	public void setReplyid(int replyid) {
+	public void setReplyid(Integer replyid) {
 		this.replyid = replyid;
 	}
 	@Column(name="userid", length=20)

@@ -71,27 +71,76 @@
 				</div>
 			</nav>
 			<div class="list-group">
-				 <a href="#" class="list-group-item active">Home</a>
-				<div class="list-group-item">
-					List header
+				 <div class="list-group-item">
+				 <form role="form" action="findResource" method="post">	
+		<label for="name" >课程类型：</label>
+		<select class="selectpicker" name="type">
+			<option value="">请选择课程类型</option>
+			<option value="语文" >语文</option>
+			<option value="数学" >数学</option>
+			<option value="英语" >英语</option>
+			<option value="化学" >化学</option>
+			<option value="物理" >物理</option>
+			<option value="生物" >生物</option>
+			<option value="地理" >地理</option>
+			<option value="历史"  >历史</option>
+			<option value="政治" >政治</option>
+			<option value="音乐" >音乐</option>
+			<option value="计算机" >计算机</option>
+			
+		</select>
+		&nbsp&nbsp&nbsp&nbsp
+		  <label for="name" >课程水平：</label>
+		  <select class="selectpicker" name="classLevel">
+			<option value="">请选择课程水平</option>
+			<option value="小学" >小学</option>
+			<option value="初中" >初中</option>
+			<option value="高中">高中</option>
+			<option value="大学">大学</option>
+			<option value="硕士">硕士</option>
+			<option value="博士">博士</option>
+		</select>
+&nbsp&nbsp&nbsp&nbsp
+		 <label for="name">课程资源类型：</label>
+		  <select class="selectpicker" name="resourceType" >
+			<option value="">请选择课程资源类型</option>
+			<option value="文字教学">文字教学</option>
+			<option value="视频教学">视频教学</option>
+			
+		</select>
+		&nbsp&nbsp&nbsp&nbsp
+		<button type="submit" class="btn btn-default">搜索</button>
+</form>		
+</div>
+				<div class="list-group-item active">
+					<h4>搜索结果</h4>
 				</div>
+				${sessionScope.NoResource}
+				<s:iterator value="#session.classInfoList" >
 				<div class="list-group-item">
-					<h4 class="list-group-item-heading">
-						List group item heading
-					</h4>
+					<h2>
+						${classname}
+					</h2>
+					
+					<h5>
+					${classLevel}
+					&nbsp&nbsp&nbsp&nbsp
+					${type}
+					&nbsp&nbsp&nbsp&nbsp
+					${time}
+					</h5>
 					<p class="list-group-item-text">
-						...
+						${introduction}
 					</p>
 				</div>
-				<div class="list-group-item">
-					 <span class="badge">14</span> Help
-				</div> <a class="list-group-item active"> <span class="badge">14</span> Help</a>
+				</s:iterator>
+				 <a class="list-group-item active"> <span class="badge">14</span> Help</a>
 			</div>
 		</div>
 	</div>
 </div>
-${sessionScope.NoResource}
-<div style="width:100%; position:fixed; left:0; bottom:0;">
+
+<div style="width:100%; position:absoluted; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>
 					 <a href="#">主页</a>

@@ -10,5 +10,6 @@ public interface IClassInfoManage {
 	public void deleteClassInfo(ClassInfo classInfo);
 	public void updateClassInfo(ClassInfo classInfo);
 	public List<?> getClassInfoByClassLevel(String classLevel);
-	 public List<?>getClassInfoByUserid(String userid);
+	public List<?> getClassInfoDefault(ClassInfo classInfo);
+	public List<?>getClassInfoByUserid(String userid);
 }

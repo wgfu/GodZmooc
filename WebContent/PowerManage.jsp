@@ -113,7 +113,7 @@
 		</div>
 	</div>
 </div>
-<div style="width:80%; position:fixed; left:0; bottom:100px">
+<div style="width:80%; position:absoluted; left:0; bottom:100px">
 					<form class="form-horizontal" action="addPower" method="post">
 						<div class="row">
 						  <label for="firstname" class="col-sm-2 control-label" style="font-size:15px">添加权限:</label>

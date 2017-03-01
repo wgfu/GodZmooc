@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Power {
 private int id;
 private String actionName;
-private int level;
+private Integer level;
 @Id
 //采用数据库自增方式生成主键
 //@GeneratedValue(strategy=GenerationType.AUTO)
@@ -30,10 +30,10 @@ public void setActionName(String actionName) {
 	this.actionName = actionName;
 }
 @Column(name="level", length=5, nullable=false)
-public int getLevel() {
+public Integer getLevel() {
 	return level;
 }
-public void setLevel(int level) {
+public void setLevel(Integer level) {
 	this.level = level;
 }
 

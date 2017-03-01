@@ -11,7 +11,7 @@
       <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
        <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>学习安排</title>
+<title>课程管理</title>
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation" >
@@ -67,76 +67,48 @@
 				</div>
 			</nav>
 <div class="container" >
-
-	<div class="row clearfix">
-		<div class="col-md-12 column">
+	<div class="row clearfix" >
+		<div class="col-md-12 column" >
+			
 			<h3 class="text-error text-center">
-				·个人学习安排·
+				·添加课程·
 			</h3>
-			<table class="table"  Style="border-left:solid 0px #333333;
-border-bottom:solid 1px #00FFFF;
-border-right:solid 0px #333333;
-border-top:solid 0px #333333;" >
-				<thead>
-					<tr class="info">
-						<th>
-							开始作业
-						</th>
-						<th>
-							课程教师名
-						</th>
-						<th>
-							课程水平
-						</th>
-						<th>
-							开始时间
-						</th>
-						
-						<th>
-							作业
-						</th>
-						<th>
-							考试
-						</th>
-						<th>
-							开始学习
-						</th>
-						<th>
-							修改
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr >
-						<td>
-							4
-						</td>
-						<td>
-							4
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							04/04/2012
-						</td>
-						<td>
-							Call in to confirm
-						</td>
-						<td>
-							开始考试
-						</td>
-						<td>
-							开始作业
-						</td>
-						<td>
-							开始学习
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<form role="form">
+  <div class="form-group">
+    <label for="name">课程名称</label>
+    <input type="text" class="form-control" id="name" placeholder="请课程输入名称">
+  </div>
+   <div class="form-group">
+    <label for="name">课程类型</label>
+    <input type="text" class="form-control" id="name" placeholder="请输入名称">
+  </div>
+   <div class="form-group">
+    <label for="name">课程资源类型</label>
+    <input type="text" class="form-control" id="name" placeholder="请输入名称">
+  </div>
+   <div class="form-group">
+    <label for="name">课程水平</label>
+    <input type="text" class="form-control" id="name" placeholder="请输入名称">
+  </div>
+  <div class="form-group">
+    <label for="inputfile">文件输入</label>
+    <input type="file" id="inputfile">
+    <p class="help-block">这里是块级帮助文本的实例。</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox">请打勾
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">提交</button>
+</form>
 		</div>
 	</div>
+</div>
+<div align="center" style="position:fixed; left:47%; bottom:100px;">
+
+<p><a class="btn btn-primary btn-large" href="AddClass.jsp">添加课程 &raquo;</a></p>
+
 </div>
 <div style="width:100%; position:absoluted; left:0; bottom:0;">
 			<ul class="breadcrumb">

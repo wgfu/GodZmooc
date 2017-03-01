@@ -12,17 +12,17 @@ import javax.persistence.Table;
 @Table(name = "score")
 public class score {
 	private int id;
-	private int testid;
+	private Integer testid;
 	private String userid;
 	
-	private int classid;
+	private Integer classid;
 	private double score;
 	private Date time;
 	@Column(name="testid", length=15)
-	public int getTestid() {
+	public Integer getTestid() {
 		return testid;
 	}
-	public void setTestid(int testid) {
+	public void setTestid(Integer testid) {
 		this.testid = testid;
 	}
 	@Column(name="userid", length=30)
@@ -33,10 +33,10 @@ public class score {
 		this.userid = userid;
 	}
 	@Column(name="classid", length=15)
-	public int getClassid() {
+	public Integer getClassid() {
 		return classid;
 	}
-	public void setClassid(int classid) {
+	public void setClassid(Integer classid) {
 		this.classid = classid;
 	}
 	@Column(name="score", length=4)

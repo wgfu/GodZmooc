@@ -47,5 +47,8 @@ public void setIClassInfoDao(IClassInfoDao iClassInfoDao) {
 	   {
 		   return iClassInfoDao.getClassInfoByUserid(userid);
 	   }
-
+	   public List<?> getClassInfoDefault(ClassInfo classInfo)
+	   {
+		   return iClassInfoDao.getClassInfoDefault(classInfo);
+	   }
 }

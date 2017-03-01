@@ -65,4 +65,13 @@ public class ClassInfoDaoImp implements IClassInfoDao{
 		if(!list.isEmpty()){return list;}
 		return null;
    }
+	 public List<?> getClassInfoDefault(ClassInfo classInfo)
+	 {
+		 List<?> list=hibernateTemplate.findByExample(classInfo);
+		 if(list!=null&&list.size()>0)
+		 {
+			 return list;
+		 }
+		 return null;
+	 }
 }

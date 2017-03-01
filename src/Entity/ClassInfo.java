@@ -14,12 +14,20 @@ public class ClassInfo {
 	private String classname;
 	private int classid;
 	private String url;
-	private int testid;
-	private int homeworkid;
+	private Integer testid;
+	private Integer homeworkid;
 	private String type;//视频或者文章
 	private String classLevel;
 	private String userid;
 	private Date time;
+	private Integer commentid;
+	@Column(name="commentid", length=15)
+	public Integer getCommentid() {
+		return commentid;
+	}
+	public void setCommentid(Integer commentid) {
+		this.commentid = commentid;
+	}
 	@Column(name="time")
 	public Date getTime() {
 		return time;

@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "class")
 public class Class {
 	private int id;
-	private int classid;
+	private Integer classid;
 	private String type;
 	
 	@Id
@@ -24,10 +24,10 @@ public class Class {
 		this.id = id;
 	}
 	@Column(name="classid", length=15)
-	public int getClassid() {
+	public Integer getClassid() {
 		return classid;
 	}
-	public void setClassid(int classid) {
+	public void setClassid(Integer classid) {
 		this.classid = classid;
 	}
 	@Column(name="type", length=15)

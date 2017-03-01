@@ -10,8 +10,8 @@ import javax.persistence.Table;
 @Table(name = "homework")
 public class Homework {
 	private int id;
-	private int homeworkid;
-	private int classid;
+	private Integer homeworkid;
+	private Integer classid;
 	private String url;
 	private String answerurl;
 	private String homeworkname;
@@ -19,17 +19,17 @@ public class Homework {
 	private String type;
 	private String introduction;
 	@Column(name="homework", length=15)
-	public int getHomeworkid() {
+	public Integer getHomeworkid() {
 		return homeworkid;
 	}
-	public void setHomeworkid(int homeworkid) {
+	public void setHomeworkid(Integer homeworkid) {
 		this.homeworkid = homeworkid;
 	}
 	@Column(name="classid", length=15)
-	public int getClassid() {
+	public Integer getClassid() {
 		return classid;
 	}
-	public void setClassid(int classid) {
+	public void setClassid(Integer classid) {
 		this.classid = classid;
 	}
 	@Column(name="url", length=30)

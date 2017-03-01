@@ -131,7 +131,12 @@ border-top:solid 0px #333333;">
 		</div>
 	</div>
 </div>
-<div style="width:100%; position:fixed; left:0; bottom:0;">
+<div align="center" style="position:fixed; left:47%; bottom:100px;">
+
+<p><a class="btn btn-primary btn-large" href="AddClass.jsp">添加课程 &raquo;</a></p>
+
+</div>
+<div style="width:100%; position:absoluted; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>
 					 <a href="#">主页</a>

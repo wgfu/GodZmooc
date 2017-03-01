@@ -16,16 +16,16 @@ import javax.persistence.Table;
 @Table(name = "comment")
 public class Comment {
 	private int id;
-	private int commentid;
+	private Integer commentid;
 	private String userid;
 	private String text;
 	private Date time;
-	private int replyid;
+	private Integer replyid;
 	@Column(name="comment", length=15)
-	public int getCommentid() {
+	public Integer getCommentid() {
 		return commentid;
 	}
-	public void setCommentid(int commentid) {
+	public void setCommentid(Integer commentid) {
 		this.commentid = commentid;
 	}
 	@Column(name="userid", length=20)
@@ -50,11 +50,11 @@ public class Comment {
 		this.time = time;
 	}
 	@Column(name="replyid", length=20)
-	public int getReplyid() {
+	public Integer getReplyid() {
 		return replyid;
 	}
 	
-	public void setReplyid(int replyid) {
+	public void setReplyid(Integer replyid) {
 		this.replyid = replyid;
 	}
 	@Id

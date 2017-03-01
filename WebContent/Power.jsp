@@ -109,7 +109,7 @@
 		</div>
 	</div>
 </div>
-<div style="width:100%; position:fixed; left:0; bottom:0;">
+<div style="width:100%; position:absoluted; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>
 					 <a href="#">主页</a>

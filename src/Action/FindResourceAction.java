@@ -21,6 +21,14 @@ public class FindResourceAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private String classLevel;
 	private String type;
+	private String resourceType;
+	public String getResourceType()
+	{
+		return this.resourceType;
+	}
+ public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+	}
 	@Resource
 	private IClassInfoManage iClassInfoManage;
 @Resource
@@ -62,74 +70,44 @@ public void setIClassManage(IClassManage iClassManage) {
 		ActionContext.getContext().getSession().remove("classInfoList");
 		ActionContext.getContext().getSession().remove("classLevel");
 		ActionContext.getContext().getSession().remove("type");
+		ActionContext.getContext().getSession().remove("resourceType");
+		ActionContext.getContext().getSession().remove("NoResource");
 		int classid=0;
+		ClassInfo classInfo=new ClassInfo();
+		
 		if(!type.isEmpty()&&type!=""&&type!=null)
 		{
 			if(iClassManage.getClassByType(type)!=null){
-			 classid=iClassManage.getClassByType(type).getClassid();
-			}
-			else{
-				ActionContext.getContext().getSession().put("NoResource","无相关课程资源");
-				return SUCCESS;
-			}
-			
-			List<?> list=iClassInfoManage.getClassInfo(classid);
-			if(!classLevel.isEmpty()&&classLevel!=""&&classLevel!=null)
-			{
-				ArrayList<Object> list1=new ArrayList<>();
-				for(int i=0;i<list.size();i++)
-				{
-					ClassInfo classInfo=(ClassInfo) list.get(i);
-					if(classInfo.getClassLevel().equals(classLevel))
-					{
-						list1.add(classInfo);
-					}
-				}
-				if(list1.size()>0)
-				{
-				ActionContext.getContext().getSession().put("classInfoList",list1);
-				return SUCCESS;
-				}
+				 classid=iClassManage.getClassByType(type).getClassid();
+				 classInfo.setClassid(classid);
 				
-				else{
-					ActionContext.getContext().getSession().put("NoResource","无相关课程资源");
-					return SUCCESS;
-				}
-			}
-			else
-			{
-				if(list.size()>0){
-				ActionContext.getContext().getSession().put("classInfoList",list);
-				ActionContext.getContext().getSession().put("type",getType());
-				return SUCCESS;
 				}
 				else{
 					ActionContext.getContext().getSession().put("NoResource","无相关课程资源");
 					return SUCCESS;
-				}
-			}
 		}
-		else if(!classLevel.isEmpty()&&classLevel!=""&&classLevel!=null)
-		{
-			List<?> list=iClassInfoManage.getClassInfoByClassLevel(classLevel);
-			if(list.size()>0)
+		}
+			if(classLevel!=""&&classLevel!=null)
+			{
+				classInfo.setClassLevel(classLevel);
+				}		
+			if(resourceType!=null&&!resourceType.isEmpty()&&resourceType!="")
+			{
+				classInfo.setType(resourceType);
+			}
+			
+			List<?> list =iClassInfoManage.getClassInfoDefault(classInfo);
+		    
+			if(list!=null&&!list.isEmpty()&&list.size()>0)
 			{
 				ActionContext.getContext().getSession().put("classInfoList",list);
-				ActionContext.getContext().getSession().put("classLevel",getClassLevel());
+			
 			return SUCCESS;
 			}
 			else{
 				ActionContext.getContext().getSession().put("NoResource","无相关课程资源");
 				return SUCCESS;
 			}
-			
-		}
-			
-		else {
-			return SUCCESS;
-		}
-		
-		
 		
 	}
 

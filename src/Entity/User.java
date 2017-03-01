@@ -15,7 +15,7 @@ public class User {
 	private String password;
 	private String username;
 	
-	private int power;
+	private Integer power;
 	private String type;
 	
 	@Column(name="userid", length=20, nullable=false, unique=true)
@@ -52,11 +52,11 @@ public class User {
 		this.username = username;
 	}
 	@Column(name="power", length=5, nullable=false)
-	public int getPower() {
+	public Integer getPower() {
 		return power;
 	}
 
-	public void setPower(int power) {
+	public void setPower(Integer power) {
 		this.power = power;
 	}
 	@Column(name="type", length=10, nullable=false)

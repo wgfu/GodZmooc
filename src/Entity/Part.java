@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "part")
 public class Part {
 	private int id;
-	private int partid;
+	private Integer partid;
 	private String partname;
 	@Id
 	//采用数据库自增方式生成主键
@@ -23,10 +23,10 @@ public class Part {
 		this.id = id;
 	}
 	@Column(name="partid", length=15)
-	public int getPartid() {
+	public Integer getPartid() {
 		return partid;
 	}
-	public void setPartid(int partid) {
+	public void setPartid(Integer partid) {
 		this.partid = partid;
 	}
 	@Column(name="partname", length=20)
