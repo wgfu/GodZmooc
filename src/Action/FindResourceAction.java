@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -59,9 +60,19 @@ public void setIClassManage(IClassManage iClassManage) {
 	public String execute() throws Exception
 	{
 		ActionContext.getContext().getSession().remove("classInfoList");
+		ActionContext.getContext().getSession().remove("classLevel");
+		ActionContext.getContext().getSession().remove("type");
+		int classid=0;
 		if(!type.isEmpty()&&type!=""&&type!=null)
 		{
-			int classid=iClassManage.getClassByType(type).getClassid();
+			if(iClassManage.getClassByType(type)!=null){
+			 classid=iClassManage.getClassByType(type).getClassid();
+			}
+			else{
+				ActionContext.getContext().getSession().put("NoResource","无相关课程资源");
+				return SUCCESS;
+			}
+			
 			List<?> list=iClassInfoManage.getClassInfo(classid);
 			if(!classLevel.isEmpty()&&classLevel!=""&&classLevel!=null)
 			{
@@ -79,6 +90,7 @@ public void setIClassManage(IClassManage iClassManage) {
 				ActionContext.getContext().getSession().put("classInfoList",list1);
 				return SUCCESS;
 				}
+				
 				else{
 					ActionContext.getContext().getSession().put("NoResource","无相关课程资源");
 					return SUCCESS;
@@ -88,6 +100,7 @@ public void setIClassManage(IClassManage iClassManage) {
 			{
 				if(list.size()>0){
 				ActionContext.getContext().getSession().put("classInfoList",list);
+				ActionContext.getContext().getSession().put("type",getType());
 				return SUCCESS;
 				}
 				else{
@@ -102,6 +115,7 @@ public void setIClassManage(IClassManage iClassManage) {
 			if(list.size()>0)
 			{
 				ActionContext.getContext().getSession().put("classInfoList",list);
+				ActionContext.getContext().getSession().put("classLevel",getClassLevel());
 			return SUCCESS;
 			}
 			else{
@@ -110,9 +124,11 @@ public void setIClassManage(IClassManage iClassManage) {
 			}
 			
 		}
+			
 		else {
 			return SUCCESS;
 		}
+		
 		
 		
 	}

@@ -27,14 +27,23 @@ label{ font-family:"楷体";
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
 			
 				 
-					<ul class="nav navbar-nav navbar-right">
-						<li>
+				<ul class="nav navbar-nav navbar-right">
+					<s:if test="#session.user==null">
+      <li>
 							 <a href="Login.jsp" id="login">登录</a>
 						</li>
 						<li>
 							 <a href="Login.jsp" id="regist">注册</a>
 						</li>
-						<li class="dropdown">
+        </s:if>
+        <s:else>
+       <li>
+							 <a>尊敬的用户：${sessionScope.user.username}&nbsp已登录</a>
+						</li>
+						<li>
+							 <a href="outlogin">退出登录</a>
+						</li>
+				<li class="dropdown">
 							 <a data-toggle="dropdown"  href="#" class="dropdown-toggle"  >个人设置<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
@@ -56,7 +65,10 @@ label{ font-family:"楷体";
 									 <a href="ClassManage.jsp">已发布课程管理</a>
 								</li>
 							</ul>
-						</li>
+						</li>		
+        </s:else>
+      
+						
 					</ul>
 				</div>
 			</nav>

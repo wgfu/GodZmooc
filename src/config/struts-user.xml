@@ -22,9 +22,16 @@
 <result name="success" type="redirect">/Welcome.jsp</result>
 			</action>
 	</package>
+	
 <package name="userInfoAction" namespace="/" extends="struts-default">
 <action name="userInfo" class="userInfo" >
 <result name="success" type="redirect">/UserInfo.jsp</result>
+			</action>
+	</package>
+	
+	<package name="findResourceAction" namespace="/" extends="struts-default">
+<action name="findResource" class="findResource" >
+<result name="success" type="redirect">/AllClassResource.jsp</result>
 			</action>
 	</package>
 

@@ -27,13 +27,22 @@
 			
 				 
 					<ul class="nav navbar-nav navbar-right">
-						<li>
+					<s:if test="#session.user==null">
+      <li>
 							 <a href="Login.jsp" id="login">登录</a>
 						</li>
 						<li>
 							 <a href="Login.jsp" id="regist">注册</a>
 						</li>
-						<li class="dropdown">
+        </s:if>
+        <s:else>
+       <li>
+							 <a>尊敬的用户：${sessionScope.user.username}&nbsp已登录</a>
+						</li>
+						<li>
+							 <a href="outlogin">退出登录</a>
+						</li>
+				<li class="dropdown">
 							 <a data-toggle="dropdown"  href="#" class="dropdown-toggle"  >个人设置<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
@@ -55,7 +64,10 @@
 									 <a href="ClassManage.jsp">已发布课程管理</a>
 								</li>
 							</ul>
-						</li>
+						</li>		
+        </s:else>
+      
+						
 					</ul>
 				</div>
 			</nav>
@@ -69,26 +81,26 @@
 	<div class="row clearfix">
 		<div class="col-md-2 column">
 			<div class="list-group">
-				 <a href="#" class="list-group-item active">课程资源</a>
+				 <a  class="list-group-item active">课程资源</a>
 				<div class="list-group-item">
-					<a href="#" >语文</a>
+					<a href="findResource?type=语文" >语文</a>
 					<span class="badge">14</span>
 				</div>
 				<div class="list-group-item">
 					
-						<a href="#" >数学</a>
+						<a href="findResource?type=数学">数学</a>
 						<span class="badge">14</span>
 		
 				</div>
 				<div class="list-group-item">
-						<a href="#" >英语</a>
+						<a href="findResource?type=英语" >英语</a>
 						<span class="badge">14</span>
 				</div> 
 				<div class="list-group-item">
-						<a href="#" >政治</a>
+						<a href="findResource?type=政治" >政治</a>
 						<span class="badge">14</span>
 				</div> 
-				<a class="list-group-item active" href="#" > 更多</a>
+				<a class="list-group-item active" href="#" > 更多>></a>
 			</div>
 		</div>
 		<div class="col-md-8 column">
@@ -96,7 +108,7 @@
 			
 				<div class="carousel-inner">
 					<div class="item">
-						<a href="#"><img alt="" src="Image/yuwen.png" /></a>
+						<a href="findResource?type=语文"><img alt="" src="Image/yuwen.png" /></a>
 						<div class="carousel-caption">
 							<h4>
 								囊括小学，初中，高中，大学语文
@@ -107,7 +119,7 @@
 						</div>
 					</div>
 					<div class="item active">
-						<a href="#"><img alt="" src="Image/yingyu.png" /></a>
+						<a href="findResource?type=英语"><img alt="" src="Image/yingyu.png" /></a>
 						<div class="carousel-caption">
 							<h4>
 							囊括小学，初中，高中，大学英语
@@ -118,7 +130,7 @@
 						</div>
 					</div>
 					<div class="item">
-					<a href="#">	<img alt="" src="Image/shuxue.png" /></a>
+					<a href="findResource?type=数学">	<img alt="" src="Image/shuxue.png" /></a>
 						<div class="carousel-caption">
 							<h4>
 								囊括小学，初中，高中，大学数学
@@ -134,23 +146,23 @@
 		</div>
 		<div class="col-md-2 column">
 			<div class="list-group">
-				 <a href="#" class="list-group-item active">课程资源</a>
+				 <a  class="list-group-item active">课程资源</a>
 				<div class="list-group-item">
-					<a href="#" >物理</a>
+					<a href="findResource?type=物理" >物理</a>
 					<span class="badge">14</span>
 				</div>
 				<div class="list-group-item">
 					
-						<a href="#" >化学</a>
+						<a href="findResource?type=化学">化学</a>
 						<span class="badge">14</span>
 		
 				</div>
 				<div class="list-group-item">
-						<a href="#" >生物</a>
+						<a href="findResource?type=生物" >生物</a>
 						<span class="badge">14</span>
 				</div>
 				<div class="list-group-item">
-						<a href="#" >地理</a>
+						<a href="findResource?type=地理" >地理</a>
 						<span class="badge">14</span>
 				</div>
 				 <a class="list-group-item active" href="#" >  更多>></a>

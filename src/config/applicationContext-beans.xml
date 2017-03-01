@@ -78,7 +78,7 @@
 	
     <!-- *********************************************************** -->
     <!-- *************************ResouceAction********************* -->
-    
+    <bean id="findResource" class="Action.FindResourceAction" scope="prototype"></bean>
     <!-- *********************************************************** -->
     <!-- *************************UserAction*********************** -->
     <bean id="userInfo" class="Action.UserInfoAction" scope="prototype"></bean>
