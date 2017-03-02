@@ -21,6 +21,14 @@ public class ClassInfo {
 	private String userid;
 	private Date time;
 	private Integer commentid;
+	private Integer classInfoid;
+	@Column(name="classInfoid", length=15)
+	public Integer getClassInfoid() {
+		return classInfoid;
+	}
+	public void setClassInfoid(Integer classInfoid) {
+		this.classInfoid = classInfoid;
+	}
 	@Column(name="commentid", length=15)
 	public Integer getCommentid() {
 		return commentid;

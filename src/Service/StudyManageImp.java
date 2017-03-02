@@ -1,5 +1,7 @@
 package Service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import Dao.IStudyDao;
@@ -17,7 +19,7 @@ public void setIStudyDao(IStudyDao iStudyDao) {
 }
 
 	@Override
-	public Study getStudy(String userid) {
+	public List<?> getStudy(String userid) {
 		// TODO Auto-generated method stub
 		return iStudyDao.getStudy(userid);
 	}

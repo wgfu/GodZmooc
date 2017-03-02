@@ -19,13 +19,13 @@ public class StudyDaoImp implements IStudyDao{
 		}
 
 	@Override
-	public Study getStudy(String userid) {
+	public List<?> getStudy(String userid) {
 		// TODO Auto-generated method stub
-		Study study=null;
+		
 		String sql="from Study s where s.userid=?";
 		 List<?> list=hibernateTemplate.find(sql, userid);
-		if(!list.isEmpty()){study=(Study)list.get(0);}
-		return study;
+		if(!list.isEmpty()){return list;}
+		return null;
 	}
 
 	@Override

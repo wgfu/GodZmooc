@@ -80,10 +80,7 @@ border-top:solid 0px #333333;" >
 				<thead>
 					<tr class="info">
 						<th>
-							开始作业
-						</th>
-						<th>
-							课程教师名
+							课程名
 						</th>
 						<th>
 							课程水平
@@ -93,10 +90,10 @@ border-top:solid 0px #333333;" >
 						</th>
 						
 						<th>
-							作业
+							作业信息
 						</th>
 						<th>
-							考试
+							考试信息
 						</th>
 						<th>
 							开始学习
@@ -106,19 +103,21 @@ border-top:solid 0px #333333;" >
 						</th>
 					</tr>
 				</thead>
+				
 				<tbody>
+				<s:iterator value="#session.studyInfoList" >
 					<tr >
 						<td>
-							4
+							${classname}
 						</td>
 						<td>
-							4
+							${classLevel}
 						</td>
 						<td>
-							TB - Monthly
+							${time}
 						</td>
 						<td>
-							04/04/2012
+						${classname}
 						</td>
 						<td>
 							Call in to confirm
@@ -133,8 +132,12 @@ border-top:solid 0px #333333;" >
 							开始学习
 						</td>
 					</tr>
+					</s:iterator>
+					
 				</tbody>
+			
 			</table>
+				${none}
 		</div>
 	</div>
 </div>

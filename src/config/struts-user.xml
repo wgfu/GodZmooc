@@ -35,6 +35,12 @@
 			</action>
 	</package>
 	
+	<package name="studyManageAction" namespace="/" extends="struts-default">
+<action name="studyManage" class="studyManage" >
+<result name="success" type="redirect">/StudyPlan.jsp</result>
+			</action>
+	</package>
+	
 	<package name="classManageAction" namespace="/" extends="struts-default">
 <action name="classManage" class="classManage" >
 <result name="success" type="redirect">/ClassManage.jsp</result>

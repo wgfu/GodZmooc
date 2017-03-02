@@ -13,10 +13,17 @@ import javax.persistence.Table;
 public class Study {
 	private int id;
     private String userid;
-    private int classid;
     private Date starttime;
     private int testid;
     private int homeworkid;
+    private Integer classInfoid;
+	@Column(name="classInfoid", length=15)
+	public Integer getClassInfoid() {
+		return classInfoid;
+	}
+	public void setClassInfoid(Integer classInfoid) {
+		this.classInfoid = classInfoid;
+	}
     @Id
 	//采用数据库自增方式生成主键
 	//@GeneratedValue(strategy=GenerationType.AUTO)
@@ -34,13 +41,8 @@ public class Study {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	@Column(name="classid", length=15)
-	public int getClassid() {
-		return classid;
-	}
-	public void setClassid(int classid) {
-		this.classid = classid;
-	}
+
+	
 	@Column(name="starttime")
 	public Date getStarttime() {
 		return starttime;
