@@ -73,43 +73,65 @@
 			<h3 class="text-error text-center">
 				·添加课程·
 			</h3>
-			<form role="form">
+			<form role="form" action="addClass" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="name">课程名称</label>
-    <input type="text" class="form-control" id="name" placeholder="请课程输入名称">
+    <input type="text" class="form-control" id="name" placeholder="请课程输入名称" name="classInfo.classname"> 
   </div>
    <div class="form-group">
-    <label for="name">课程类型</label>
-    <input type="text" class="form-control" id="name" placeholder="请输入名称">
+    	<label for="form-control" >课程类型：</label>
+		<select class="form-control" name="type">
+			<option value="">请选择课程类型</option>
+			<option value="语文" >语文</option>
+			<option value="数学" >数学</option>
+			<option value="英语" >英语</option>
+			<option value="化学" >化学</option>
+			<option value="物理" >物理</option>
+			<option value="生物" >生物</option>
+			<option value="地理" >地理</option>
+			<option value="历史"  >历史</option>
+			<option value="政治" >政治</option>
+			<option value="音乐" >音乐</option>
+			<option value="计算机" >计算机</option>
+			
+		</select>
   </div>
    <div class="form-group">
-    <label for="name">课程资源类型</label>
-    <input type="text" class="form-control" id="name" placeholder="请输入名称">
+    <label for="classInfo.type">课程资源类型</label>
+    <select name="classInfo.type" class="form-control" >
+    <option value="">请选择课程资源类型</option>
+               <option value="文字教学">文字教学</option>
+                  <option value="视频教学">视频教学</option>
+</select>
   </div>
    <div class="form-group">
-    <label for="name">课程水平</label>
-    <input type="text" class="form-control" id="name" placeholder="请输入名称">
+    <label for="classInfo.classLevel" >课程水平：</label>
+		  <select class="form-control" name="classInfo.classLevel">
+			<option value="">请选择课程水平</option>
+			<option value="小学" >小学</option>
+			<option value="初中" >初中</option>
+			<option value="高中">高中</option>
+			<option value="大学">大学</option>
+			<option value="硕士">硕士</option>
+			<option value="博士">博士</option>
+		</select>
   </div>
   <div class="form-group">
-    <label for="inputfile">文件输入</label>
-    <input type="file" id="inputfile">
-    <p class="help-block">这里是块级帮助文本的实例。</p>
+    <label for="file">上传教程文件</label>
+    <input type="file" id="file" name="file">
+    <p class="help-block">上传WORD教学文档或视频教学文件！！！</p>
   </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox">请打勾
-    </label>
+  
+  <div class="form-group">
+    <label for="classInfo.introduction">请输入一段简单课程介绍</label>
+    <textarea class="form-control" rows="3" name="classInfo.introduction"></textarea>
   </div>
-  <button type="submit" class="btn btn-default">提交</button>
+  <button type="submit" class="btn btn-primary btn-large">添加课程</button>
 </form>
 		</div>
 	</div>
 </div>
-<div align="center" style="position:absoluted; left:47%; bottom:0;">
 
-<p><a class="btn btn-primary btn-large" href="AddClass.jsp">添加课程 &raquo;</a></p>
-
-</div>
 <div style="width:100%; position:fixed; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>

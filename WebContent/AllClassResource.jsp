@@ -122,7 +122,9 @@
 					<h2>
 						${classname}
 					</h2>
-					
+					<table>
+					<tr>
+					<td>
 					<h5>
 					${classLevel}
 					&nbsp&nbsp&nbsp&nbsp
@@ -130,6 +132,13 @@
 					&nbsp&nbsp&nbsp&nbsp
 					${time}
 					</h5>
+					</td>
+					<td>
+					&nbsp&nbsp&nbsp&nbsp
+					<a class="btn btn-primary btn-large" href="classMessage?classInfoid="+"${classInfoid}">查看课程详细内容 »</a>
+					</td>
+					</tr>
+					</table>
 					<p class="list-group-item-text">
 						${introduction}
 					</p>

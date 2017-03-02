@@ -42,7 +42,5 @@ public void setIClassInfoManage(IClassInfoManage iClassInfoManage)
 						ActionContext.getContext().getSession().put("NoclassInfo","无已发布课程");
 						return SUCCESS;
 			}
-	      
-		
 	}
 }

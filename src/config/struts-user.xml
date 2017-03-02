@@ -14,12 +14,19 @@
 
 	<package name="loginAction" namespace="/" extends="struts-default">
 <action name="login" class="login" >
-<result name="success" type="redirect">/UserInfo.jsp</result>
+<result name="success" type="redirect">/MainView.jsp</result>
 			</action>
 	</package>
+	
+	<package name="addClassaaAction" namespace="/" extends="struts-default">
+<action name="addClass" class="addClass" >
+<result name="success" type="redirect">/ClassManage.jsp</result>
+			</action>
+	</package>
+	
 	<package name="registAction" namespace="/" extends="struts-default">
 <action name="regist" class="regist" >
-<result name="success" type="redirect">/Welcome.jsp</result>
+<result name="success" type="redirect">/MainView.jsp</result>
 			</action>
 	</package>
 	
