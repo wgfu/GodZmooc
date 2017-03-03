@@ -75,7 +75,7 @@ public void setIClassManage(IClassManage iClassManage) {
 		int classid=0;
 		ClassInfo classInfo=new ClassInfo();
 		
-		if(!type.isEmpty()&&type!=""&&type!=null)
+		if(type!=null&&!type.isEmpty()&&type!="")
 		{
 			if(iClassManage.getClassByType(type)!=null){
 				 classid=iClassManage.getClassByType(type).getClassid();

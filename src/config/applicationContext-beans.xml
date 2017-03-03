@@ -81,6 +81,7 @@
     <bean id="findResource" class="Action.FindResourceAction" scope="prototype"></bean>
      <bean id="classManage" class="Action.ClassManageAction" scope="prototype"></bean>
      <bean id="addClass" class="Action.AddClassAction" scope="prototype"></bean>
+     <bean id="classMessage" class="Action.ClassMessageAction" scope="prototype"></bean>
     <!-- *********************************************************** -->
     <!-- *************************UserAction*********************** -->
     <bean id="userInfo" class="Action.UserInfoAction" scope="prototype"></bean>

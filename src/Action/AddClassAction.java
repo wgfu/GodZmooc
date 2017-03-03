@@ -101,14 +101,17 @@ public class AddClassAction extends ActionSupport{
 		   	if(classInfo.getType().equals("ÎÄ×Ö½ÌÑ§"))
 			{
 		   	 String realpath=ServletActionContext.getServletContext().getRealPath("/Message/");
-		   	  url=realpath+"/"+user.getUserid().toString()+cString+suffix;
-		   	  classInfo.setUrl(url);
+		   	 System.out.println(realpath);
+		   	 classInfo.setUrl("Message/"+cString+suffix);
+		   	  url=realpath+"/"+cString+suffix;
+		   	 
 			}
 			else
 			{
 				 String realpath=ServletActionContext.getServletContext().getRealPath("/Video/");
-				 url=realpath+"/"+user.getUserid().toString()+cString+suffix;
-			   	  classInfo.setUrl(url);
+				 classInfo.setUrl("Video/"+cString+suffix);
+				 url=realpath+"/"+cString+suffix;
+			
 			}
 		           File target = new File(url);
 		           if (target.exists()) {
@@ -123,7 +126,7 @@ public class AddClassAction extends ActionSupport{
 		           }
 		           is.close();
 		           os.close();
-		
+		iClassInfoManage.addClassInfo(classInfo);
 		return SUCCESS;
 	}
 

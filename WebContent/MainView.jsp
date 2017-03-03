@@ -178,7 +178,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="thumbnail">
-						<a href="#"><img alt="300x100" src="Image/xiaoxue.png" /></a>
+						<a href="findResource?classLevel=小学"><img alt="300x100" src="Image/xiaoxue.png" /></a>
 						<div class="caption">
 							<h3>
 								小学课程
@@ -189,14 +189,14 @@
 								小学英语等。<br>
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">查看</a>
+								 <a class="btn btn-primary" href="findResource?classLevel=小学">查看</a>
 							</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="thumbnail">
-						<a href="#"><img alt="280x80" src="Image/zhongxue.png" /></a>
+						<a href="findResource?classLevel=中学"><img alt="280x80" src="Image/zhongxue.png" /></a>
 						<div class="caption">
 							<h3>
 							中学课程
@@ -209,14 +209,14 @@
 							
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">查看</a>
+								 <a class="btn btn-primary" href="findResource?classLevel=中学">查看</a>
 							</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="thumbnail">
-						<a href="#"><img alt="300x80" src="Image/gaozhong.png" /></a>
+						<a href="findResource?classLevel=高中"><img alt="300x80" src="Image/gaozhong.png" /></a>
 						<div class="caption">
 							<h3>
 								高中课程
@@ -228,14 +228,14 @@
 								
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">查看</a>
+								 <a class="btn btn-primary" href="findResource?classLevel=高中">查看</a>
 							</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="thumbnail">
-					<a href="#">	<img alt="300x80" src="Image/daxue.png" /></a>
+					<a href="findResource?classLevel=大学">	<img alt="300x80" src="Image/daxue.png" /></a>
 						<div class="caption">
 							<h3>
 								大学课程
@@ -247,7 +247,7 @@
 								
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">查看</a>
+								 <a class="btn btn-primary" href="findResource?classLevel=大学">查看</a>
 							</p>
 						</div>
 					</div>

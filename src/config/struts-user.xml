@@ -20,7 +20,7 @@
 	
 	<package name="addClassaaAction" namespace="/" extends="struts-default">
 <action name="addClass" class="addClass" >
-<result name="success" type="redirect">/ClassManage.jsp</result>
+<result name="success" type="redirect">classManage</result>
 			</action>
 	</package>
 	
@@ -45,6 +45,12 @@
 	<package name="studyManageAction" namespace="/" extends="struts-default">
 <action name="studyManage" class="studyManage" >
 <result name="success" type="redirect">/StudyPlan.jsp</result>
+			</action>
+	</package>
+	
+	<package name="classMessageAction" namespace="/" extends="struts-default">
+<action name="classMessage" class="classMessage" >
+<result name="success" type="redirect">/ClassMessage.jsp</result>
 			</action>
 	</package>
 	

@@ -80,7 +80,7 @@ public class ClassInfo {
 	public void setClassid(Integer classid) {
 		this.classid = classid;
 	}
-	@Column(name="url", length=30)
+	@Column(name="url", length=50)
 	public String getUrl() {
 		return url;
 	}
