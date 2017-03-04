@@ -103,22 +103,32 @@ border-top:solid 0px #333333;">
 					</tr>
 				</thead>
 				<tbody>
-				<s:iterator value="#session.classInfo" >
+				<s:iterator value="#session.classInfo" var="c">
 					<tr >
 						<td>
-							${classname}
+							${c.classname}
 						</td>
 						<td>
-							${type}
+							${c.type}
 						</td>
 						<td>
-						${classLevel}
+						${c.classLevel}
 						</td>
 						<td>
-							04/04/2012
+							<s:if test="#c.homeworkid==null">
+							<p><a class="btn btn-primary btn-large" href="AddHomework.jsp">添加作业 &raquo;</a></p>
+							</s:if>
+							<s:else>
+							<p><a class="btn btn-primary btn-large" href="changeHomework?homeworkid="+"${c.homeworkid}">查看/修改作业 &raquo;</a></p>
+							</s:else>
 						</td>
 						<td>
-							开始考试
+						<s:if test="#c.testid==null">
+							<p><a class="btn btn-primary btn-large" href="AddTest.jsp">添加考试 &raquo;</a></p>
+							</s:if>
+							<s:else>
+							<p><a class="btn btn-primary btn-large" href="changeTest?testid="+"${c.testid}">查看/修改考试 &raquo;</a></p>
+							</s:else>
 						</td>
 						<td>
 							开始作业
@@ -130,7 +140,9 @@ border-top:solid 0px #333333;">
 					</s:iterator>
 				</tbody>
 			</table>
+				
 				${sessionScope.NoclassInfo}
+				
 		</div>
 	</div>
 </div>

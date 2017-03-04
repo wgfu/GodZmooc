@@ -72,9 +72,52 @@
 				</div>
 			</nav>
 			</div>
+			<div class="span12">
+			<h1 class="text-center text-info">
+			<big>${sessionScope.classMessage.classname}</big>	
+			</h1>
+
+			<h6 class="text-center text">
+			作者：${sessionScope.author.name}
+			</h6>
+			<h6 class="text-center text">
+			发布时间：${sessionScope.classMessage.time}
+			</h6>
+		</div>
+		<div align="center">
+		<button type="submit" class="btn btn-primary btn-large">收藏该课程</button>
+		</div>
+		<s:if test="#session.classMessage.type=='文字教学'">
 		
+			<div style="width:85%;position:absolute;left:180px;top:250px;height:63%; overflow:auto;" >
+				${sessionScope.message}	
+				</div>
+				
+				</s:if>
+				<s:else>
+				<br>
+				<br>
+				<br>
+				<div  style="position:absolute;border:1px solid black;width:1055px;height:600px;left:24%;" >
+				<video width="1050" height="600" controls="controls">
+  <source src="${sessionScope.classMessage.usl}" type="video/mp4" />
+  <source src="${sessionScope.classMessage.usl}" type="video/ogg" />
+  <source src="${sessionScope.classMessage.usl}" type="video/webm" />
+  <object data="${sessionScope.classMessage.usl}" width="1050" height="600">
+    <embed src="${sessionScope.classMessage.usl}" width="1050" height="600" />
+  </object>
+</video>
+			</div>
+				</s:else>
+				
+				<div style="width:100%; position:fixed; left:43%; bottom:56px;">
+	<a href="findHomework?homeworkid="+"${sessionScope.classMessage.homeworkid}" class="btn btn-primary btn-large">查看作业</a>
+	&#12288&#12288&#12288
+<a href="findTest?testid="+"${sessionScope.classMessage.testid}" class="btn btn-primary btn-large">查看考试</a>
+</div>
 	</div>
 </div>
+
 <div style="width:100%; position:fixed; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>

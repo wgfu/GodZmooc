@@ -1,8 +1,13 @@
 package Action;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
 import javax.annotation.Resource;
 
-import com.opensymphony.xwork2.Action;
+import org.textmining.text.extraction.WordExtractor;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -49,6 +54,25 @@ public void setIUserInfoManage(IUserInfoManage iUserInfoManage) {
       UserInfo userInfo=iUserInfoManage.getUserInfo(classInfo.getUserid());
       ActionContext.getContext().getSession().put("classMessage",classInfo);
       ActionContext.getContext().getSession().put("author",userInfo);
+      if(classInfo.getType().equals("ÎÄ×Ö½ÌÑ§"))
+      {
+    	  String message="";
+    	  try{
+    	  File file=new File("E:/SM/GodZmooc/WebContent/Message/-1839564963.html");
+    	  InputStream inputStream=new FileInputStream(file);
+    	 byte b[]=new byte[1024000];
+    	  inputStream.read(b);
+    	  message = new String(b);
+    	  inputStream.close();
+    	  
+    	  }
+    	  catch (Exception e)
+    	  {
+    		  System.out.println(e);
+    	  }
+    	  ActionContext.getContext().getSession().put("message", message);
+    	  
+      }
 		return SUCCESS;
 		
 	}

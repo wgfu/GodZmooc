@@ -96,12 +96,14 @@ public class AddClassAction extends ActionSupport{
 		int i=(int) System.currentTimeMillis();
 			String cString=i+"";
 		   	  String suffix =getFileFileName().substring(getFileFileName().lastIndexOf("."));
+		   	  
 		   	  String url="";
 		  
 		   	if(classInfo.getType().equals("ÎÄ×Ö½ÌÑ§"))
 			{
 		   	 String realpath=ServletActionContext.getServletContext().getRealPath("/Message/");
-		   	 System.out.println(realpath);
+		   suffix =".html";
+		   	 
 		   	 classInfo.setUrl("Message/"+cString+suffix);
 		   	  url=realpath+"/"+cString+suffix;
 		   	 
@@ -119,7 +121,7 @@ public class AddClassAction extends ActionSupport{
 		           }
 		           InputStream is = new FileInputStream(file);
 		           OutputStream os = new FileOutputStream(target);
-		           byte[] buffer = new byte[1024000];
+		           byte[] buffer = new byte[1024000000];
 		           int length = 0;
 		           while ((length = is.read(buffer)) > 0) {
 		           	  os.write(buffer, 0, length);

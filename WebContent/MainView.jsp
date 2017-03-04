@@ -71,11 +71,11 @@
 					</ul>
 				</div>
 			</nav>
-			<h3 class="text-center" style="font-size:30px">
+			<h1 class="text-center" style="font-size:45px">
 				·GodZmooc·
 				<br>
 				<br>
-			</h3>
+			</h1>
 		</div>
 	</div>
 	<div class="row clearfix">
