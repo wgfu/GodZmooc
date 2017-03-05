@@ -19,7 +19,7 @@ public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
 }
 	@SuppressWarnings("unchecked")
 	@Override
-	public <T> T getRuslt(Class<T> t) {
+	public <T> T getRuslt(T t) {
 		score score=null;
 		String sql="from score s where s.testid=?";
 		 List<?> list=hibernateTemplate.find(sql, t);
@@ -28,19 +28,19 @@ public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
 	}
 
 	@Override
-	public <T> void updateT(Class<T> t) {
+	public <T> void updateT(T t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.merge(t);
 	}
 
 	@Override
-	public <T> void deleteT(Class<T> t) {
+	public <T> void deleteT(T t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.delete(t);
 	}
 
 	@Override
-	public <T> void addT(Class<T> t) {
+	public <T> void addT(T t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.save(t);
 	}

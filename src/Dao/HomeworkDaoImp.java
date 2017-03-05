@@ -17,7 +17,7 @@ public class HomeworkDaoImp implements ITestAndHomeworkDao{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <T> T getRuslt(Class<T> t) {
+	public <T> T getRuslt(T t) {
 		// TODO Auto-generated method stub
 		String sql="from Homework h where h.classid=?";
 		 List<?> list=hibernateTemplate.find(sql, t);
@@ -26,20 +26,21 @@ public class HomeworkDaoImp implements ITestAndHomeworkDao{
 	}
 
 	@Override
-	public <T> void updateT(Class<T> t) {
+	public <T> void updateT(T t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.merge(t);
 	}
 
 	@Override
-	public <T> void deleteT(Class<T> t) {
+	public <T> void deleteT(T t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.delete(t);
 	}
 
 	@Override
-	public <T> void addT(Class<T> t) {
+	public <T> void addT(T t) {
 		// TODO Auto-generated method stub
+		
 		hibernateTemplate.save(t);
 	}
 

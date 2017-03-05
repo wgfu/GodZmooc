@@ -18,7 +18,7 @@ public class Homework {
 	private String homeworklevel;
 	private String type;
 	private String introduction;
-	@Column(name="homework", length=15)
+	@Column(name="homeworkid", length=15)
 	public Integer getHomeworkid() {
 		return homeworkid;
 	}
