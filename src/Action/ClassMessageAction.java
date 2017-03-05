@@ -58,7 +58,7 @@ public void setIUserInfoManage(IUserInfoManage iUserInfoManage) {
       {
     	  String message="";
     	  try{
-    	  File file=new File("E:/SM/GodZmooc/WebContent/Message/-1839564963.html");
+    	  File file=new File(classInfo.getUrl());
     	  InputStream inputStream=new FileInputStream(file);
     	 byte b[]=new byte[1024000];
     	  inputStream.read(b);
