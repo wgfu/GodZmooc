@@ -61,6 +61,24 @@
 	<bean id="iPartDao" class="Dao.PartDaoImp">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	<bean id="iHomeworkDao" class="Dao.HomeworkDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+		<bean id="iHomeworkManage" class="Service.HomeworkManageImp">
+		<property name="iHomeworkDao" ref="iHomeworkDao" />
+	</bean>
+	<bean id="iTestManage" class="Service.TestManageImp">
+		<property name="iTestDao" ref="iTestDao" />
+	</bean>
+	<bean id="iTestDao" class="Dao.TestDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="iScoreManage" class="Service.ScoreManageImp">
+		<property name="iScoreDao" ref="iScoreDao" />
+	</bean>
+	<bean id="iScoreDao" class="Dao.ScoreDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">  
      <property name="sessionFactory" ref="sessionFactory" /> 
      </bean> 
