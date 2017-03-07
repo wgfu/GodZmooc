@@ -95,10 +95,11 @@
   
   
   <div class="form-group">
-    <label for="classInfo.introduction">请输入一段简单作业介绍</label>
+    <label for="homework.introduction">请输入一段简单作业介绍</label>
     <textarea class="form-control" rows="3" name="homework.introduction"></textarea>
   </div>
   <button type="submit" class="btn btn-primary btn-large">添加作业</button>
+  <input type="hidden" name="classInfoid" value="${param.classInfoid}">
 </form>
 		</div>
 	</div>

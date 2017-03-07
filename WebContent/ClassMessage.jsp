@@ -89,8 +89,8 @@
 		</div>
 		<s:if test="#session.classMessage.type=='文字教学'">
 		
-			<div style="width:85%;position:absolute;left:180px;top:250px;height:63%; overflow:auto;" >
-				${sessionScope.message}	
+			<div style="width:85%;position:absolute;left:180px;top:235px;height:63% " >
+				<iframe src="${sessionScope.classMessage.url}" width="100%" height="100%"> </iframe>
 				</div>
 				
 				</s:if>
@@ -111,9 +111,9 @@
 				</s:else>
 				
 				<div style="width:100%; position:fixed; left:43%; bottom:56px;">
-	<a href="findHomework?homeworkid="+"${sessionScope.classMessage.homeworkid}" class="btn btn-primary btn-large">查看作业</a>
+	<a href="findHomework?homeworkid=${sessionScope.classMessage.homeworkid}" class="btn btn-primary btn-large">查看作业</a>
 	&#12288&#12288&#12288
-<a href="findTest?testid="+"${sessionScope.classMessage.testid}" class="btn btn-primary btn-large">查看考试</a>
+<a href="findTest?testid=${sessionScope.classMessage.testid}" class="btn btn-primary btn-large">查看考试</a>
 </div>
 	</div>
 </div>

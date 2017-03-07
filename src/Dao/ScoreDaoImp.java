@@ -21,9 +21,10 @@ public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
 	@Override
 	public <T> T getRuslt(T t) {
 		score score=null;
-		String sql="from score s where s.testid=?";
-		 List<?> list=hibernateTemplate.find(sql, t);
-		if(!list.isEmpty()){score=(score)list.get(0);}
+		 List<?> list=hibernateTemplate.findByExample(t);
+		if(!list.isEmpty()){
+			score=(Entity.score) list.get(0);
+			return (T) score;}
 		return  (T) score;
 	}
 

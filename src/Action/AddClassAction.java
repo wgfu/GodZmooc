@@ -20,12 +20,20 @@ import Entity.ClassInfo;
 import Entity.User;
 import Service.IClassInfoManage;
 import Service.IClassManage;
+import Service.WordConvertToHtmlTool;
 
 public class AddClassAction extends ActionSupport{
 	/**
 	 * 
 	 */
-	
+	@Resource
+	private WordConvertToHtmlTool wordConvertToHtmlTool;
+	public WordConvertToHtmlTool getWordConvertToHtmlTool() {
+		return wordConvertToHtmlTool;
+	}
+	public void setWordConvertToHtmlTool(WordConvertToHtmlTool wordConvertToHtmlTool) {
+		this.wordConvertToHtmlTool = wordConvertToHtmlTool;
+	}
 	private static final long serialVersionUID = 1L;
 	private ClassInfo classInfo;
 	private File file;
@@ -103,33 +111,25 @@ public class AddClassAction extends ActionSupport{
 			{
 		   	 String realpath=ServletActionContext.getServletContext().getRealPath("/Message/");
 		   suffix =".html";
-		   	 
-		   	 classInfo.setUrl("Message/"+cString+suffix);
-		   	  url=realpath+"/"+cString+suffix;
-		   	 
+		  	 
+			   	 classInfo.setUrl("Message/"+cString+suffix);
+			   	 url=realpath;
 			}
 			else
 			{
 				 String realpath=ServletActionContext.getServletContext().getRealPath("/Video/");
+				 url=realpath;
+				
 				 classInfo.setUrl("Video/"+cString+suffix);
-				 url=realpath+"/"+cString+suffix;
-			
 			}
-		           File target = new File(url);
-		           if (target.exists()) {
-		               target.delete();
-		           }
-		           InputStream is = new FileInputStream(file);
-		           OutputStream os = new FileOutputStream(target);
-		           byte[] buffer = new byte[1024000000];
-		           int length = 0;
-		           while ((length = is.read(buffer)) > 0) {
-		           	  os.write(buffer, 0, length);
-		           }
-		           is.close();
-		           os.close();
+if(wordConvertToHtmlTool.WordConvertToHtml(file, url,cString+suffix))
+{
 		iClassInfoManage.addClassInfo(classInfo);
 		return SUCCESS;
+}
+else{
+	return "fail";
+}
 	}
 
 }

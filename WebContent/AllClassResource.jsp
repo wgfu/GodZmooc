@@ -135,7 +135,7 @@
 					</td>
 					<td>
 					&nbsp&nbsp&nbsp&nbsp
-					<a class="btn btn-primary btn-large" href="classMessage?classInfoid="+"${classInfoid}">查看课程详细内容 »</a>
+					<a class="btn btn-primary btn-large" href="classMessage?classInfoid=${classInfoid}">查看课程详细内容 »</a>
 					</td>
 					</tr>
 					</table>

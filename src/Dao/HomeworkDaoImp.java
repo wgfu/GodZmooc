@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
+import Entity.Homework;
+
 public class HomeworkDaoImp implements ITestAndHomeworkDao{
 	 private HibernateTemplate hibernateTemplate;
 	   
@@ -19,10 +21,13 @@ public class HomeworkDaoImp implements ITestAndHomeworkDao{
 	@Override
 	public <T> T getRuslt(T t) {
 		// TODO Auto-generated method stub
-		String sql="from Homework h where h.classid=?";
-		 List<?> list=hibernateTemplate.find(sql, t);
-		if(!list.isEmpty()){return (T) list;}
-		return null;
+	Homework homework=null;
+		 List<?> list=hibernateTemplate.findByExample(t);
+		if(!list.isEmpty()){
+			homework=(Homework) list.get(0);
+			return (T) homework;
+			}
+		return (T) homework;
 	}
 
 	@Override

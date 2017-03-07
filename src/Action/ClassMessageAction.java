@@ -49,9 +49,12 @@ public void setIUserInfoManage(IUserInfoManage iUserInfoManage) {
 	public String execute()throws Exception
 	{
 		ClassInfo classInfo=new ClassInfo();
-		classInfo.setClassInfoid(classInfoid);
+		classInfo.setClassInfoid(getClassInfoid());
       classInfo=(ClassInfo) iClassInfoManage.getClassInfoDefault(classInfo).get(0);
+     
       UserInfo userInfo=iUserInfoManage.getUserInfo(classInfo.getUserid());
+      ActionContext.getContext().getSession().remove("classMessage");
+      ActionContext.getContext().getSession().remove("author");
       ActionContext.getContext().getSession().put("classMessage",classInfo);
       ActionContext.getContext().getSession().put("author",userInfo);
       if(classInfo.getType().equals("ÎÄ×Ö½ÌÑ§"))
@@ -59,6 +62,7 @@ public void setIUserInfoManage(IUserInfoManage iUserInfoManage) {
     	  String message="";
     	  try{
     	  File file=new File(classInfo.getUrl());
+    	
     	  InputStream inputStream=new FileInputStream(file);
     	 byte b[]=new byte[1024000];
     	  inputStream.read(b);
@@ -68,6 +72,7 @@ public void setIUserInfoManage(IUserInfoManage iUserInfoManage) {
     	  }
     	  catch (Exception e)
     	  {
+    	
     		  System.out.println(e);
     	  }
     	  ActionContext.getContext().getSession().put("message", message);

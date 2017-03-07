@@ -68,15 +68,17 @@
 			</nav>
 <div class="container" >
 	<div class="row clearfix" >
-		<div class="col-md-12 column" >
-			
-			<h3 class="text-error text-center">
+	<h3 class="text-error text-center">
 				·课程管理·
 			</h3>
+		<div class="col-md-12 column" style="overflow: auto;height:650px">
+			
+			
 			<table class="table" Style="border-left:solid 0px #333333;
 border-bottom:solid 1px #00FFFF;
 border-right:solid 0px #333333;
-border-top:solid 0px #333333;">
+border-top:solid 0px #333333;"
+>
 				<thead>
 					<tr class="info">
 						<th>
@@ -116,7 +118,7 @@ border-top:solid 0px #333333;">
 						</td>
 						<td>
 							<s:if test="#c.homeworkid==null">
-							<p><a class="btn btn-primary btn-large" href="AddHomework.jsp">添加作业 &raquo;</a></p>
+							<p><a class="btn btn-primary btn-large" href="AddHomework.jsp?classInfoid=${c.classInfoid}">添加作业 &raquo;</a></p>
 							</s:if>
 							<s:else>
 							<p><a class="btn btn-primary btn-large" href="changeHomework?homeworkid="+"${c.homeworkid}">查看/修改作业 &raquo;</a></p>
@@ -124,7 +126,7 @@ border-top:solid 0px #333333;">
 						</td>
 						<td>
 						<s:if test="#c.testid==null">
-							<p><a class="btn btn-primary btn-large" href="AddTest.jsp">添加考试 &raquo;</a></p>
+							<p><a class="btn btn-primary btn-large" href="AddTest.jsp?classInfoid=${c.classInfoid}">添加考试 &raquo;</a></p>
 							</s:if>
 							<s:else>
 							<p><a class="btn btn-primary btn-large" href="changeTest?testid="+"${c.testid}">查看/修改考试 &raquo;</a></p>

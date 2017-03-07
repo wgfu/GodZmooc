@@ -3,7 +3,12 @@ package Dao;
 import java.util.List;
 
 
+
 import org.springframework.orm.hibernate3.HibernateTemplate;
+
+import Entity.Test;
+
+
 
 public class TestDaoImp implements ITestAndHomeworkDao{
    private HibernateTemplate hibernateTemplate;
@@ -20,10 +25,13 @@ public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
 	@Override
 	public <T> T getRuslt(T t) {
 		// TODO Auto-generated method stub
-		String sql="from Test t where t.classid=?";
-		 List<?> list=hibernateTemplate.find(sql, t);
-		if(!list.isEmpty()){return (T) list;}
-		return null;
+		Test test=null;
+		 List<?> list=hibernateTemplate.findByExample(t);
+		if(!list.isEmpty()){
+			test=(Test) list.get(0);
+			return (T) test;
+		}
+		return (T) test;
 	}
 
 	@Override

@@ -69,10 +69,11 @@
 <div class="container" >
 
 	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<h3 class="text-error text-center">
+	<h3 class="text-error text-center">
 				·个人学习安排·
 			</h3>
+		<div class="col-md-12 column" style="overflow: auto;height:650px">
+			
 			<table class="table"  Style="border-left:solid 0px #333333;
 border-bottom:solid 1px #00FFFF;
 border-right:solid 0px #333333;

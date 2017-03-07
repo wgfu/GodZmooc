@@ -59,5 +59,17 @@
 <result name="success" type="redirect">/ClassManage.jsp</result>
 			</action>
 	</package>
+	
+	<package name="addHomeworkAction" namespace="/" extends="struts-default">
+<action name="addHomework" class="addHomework" method="addHomeworkAction">
+<result name="success" type="redirect">/ClassMessage.jsp</result>
+			</action>
+	</package>
+	
+	<package name="findHomeworkAction" namespace="/" extends="struts-default">
+<action name="findHomework" class="findHomework" method="findHomeworkAction">
+<result name="success" type="redirect">/HomeworkView.jsp</result>
+			</action>
+	</package>
 
 </struts>

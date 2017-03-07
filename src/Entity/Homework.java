@@ -32,14 +32,14 @@ public class Homework {
 	public void setClassid(Integer classid) {
 		this.classid = classid;
 	}
-	@Column(name="url", length=30)
+	@Column(name="url", length=200)
 	public String getUrl() {
 		return url;
 	}
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	@Column(name="anwerurl", length=30)
+	@Column(name="answerurl", length=200)
 	public String getAnswerurl() {
 		return answerurl;
 	}
