@@ -93,6 +93,8 @@
 <!-- *********************************************************** -->
 <!-- *************************TestAndHomeworkAction*********************** -->
  <bean id="addHomework" class="Action.TestAndHomeworkAction" scope="prototype"></bean>
+ <bean id="addTest" class="Action.TestAndHomeworkAction" scope="prototype"></bean>
+  <bean id="findTest" class="Action.TestAndHomeworkAction" scope="prototype"></bean>
   <bean id="findHomework" class="Action.TestAndHomeworkAction" scope="prototype"></bean>
 	<!-- *********************************************************** -->
 	<!-- *************************StudyAction*********************** -->

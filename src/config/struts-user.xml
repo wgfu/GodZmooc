@@ -68,7 +68,19 @@
 	
 	<package name="addHomeworkAction" namespace="/" extends="struts-default">
 <action name="addHomework" class="addHomework" method="addHomeworkAction">
-<result name="success" type="redirect">/ClassMessage.jsp</result>
+<result name="success" type="redirect">classManage</result>
+			</action>
+	</package>
+	
+	<package name="addTestAction" namespace="/" extends="struts-default">
+<action name="addTest" class="addTest" method="addTestAction">
+<result name="success" type="redirect">classManage</result>
+			</action>
+	</package>
+	
+	<package name="findTestAction" namespace="/" extends="struts-default">
+<action name="findTest" class="findTest" method="findTestAction">
+<result name="success" type="redirect">/TestView.jsp</result>
 			</action>
 	</package>
 	
