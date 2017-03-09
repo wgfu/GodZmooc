@@ -11,10 +11,15 @@
       <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
        <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>学习安排</title>
+    
+<title>主界面</title>
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation" >
+ 
+<div class="container" style="width:100%">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="MainView.jsp">主页</a>
 				</div>
@@ -66,80 +71,35 @@
 					</ul>
 				</div>
 			</nav>
-<div class="container" >
-
-	<div class="row clearfix">
-	<h3 class="text-error text-center">
-				·个人学习安排·
-			</h3>
-		<div class="col-md-12 column" style="overflow: auto;height:650px">
+			</div>
+			<div class="span12">
+			<h1 class="text-center text-info">
+			<big>${sessionScope.classMessage.classname}</big>	
+			</h1>
+			<div  style="position:absolute;width:60%;left:20%;overflow:auto;height:80px" >
 			
-			<table class="table"  Style="border-left:solid 0px #333333;
-border-bottom:solid 1px #00FFFF;
-border-right:solid 0px #333333;
-border-top:solid 0px #333333;" >
-				<thead>
-					<tr class="info">
-						<th>
-							课程名
-						</th>
-						<th>
-							课程水平
-						</th>
-						<th>
-							开始时间
-						</th>
-						
-						<th>
-							作业信息
-						</th>
-						<th>
-							考试信息
-						</th>
-						<th>
-							开始学习
-						</th>
-						<th>
-							修改
-						</th>
-					</tr>
-				</thead>
-				
-				<tbody>
-				<s:iterator value="#session.studyInfoList" >
-					<tr >
-						<td>
-							${classname}
-						</td>
-						<td>
-							${classLevel}
-						</td>
-						<td>
-							${time}
-						</td>
-						<td>
-						${classname}
-						</td>
-						<td>
-							Call in to confirm
-						</td>
-						<td>
-							开始考试
-						</td>
-						<td>
-							开始作业
-						</td>
-					
-					</tr>
-					</s:iterator>
-					
-				</tbody>
-			
-			</table>
-				${none}
+	<p class="list-group-item-text">
+		<h3 align="center">作业简介：</h3>
+					&nbsp&nbsp&nbsp${sessionScope.homeWorkMessage.introduction}
+					</p>
+					</div>
 		</div>
+		
+		
+		
+			<div style="width:85%;position:absolute;left:160px;top:220px;height:64% " >
+				<iframe src="${sessionScope.homeWorkMessage.url}" width="100%" height="100%"> </iframe>
+				</div>
+				
+			
+				
+				<div style="width:100%; position:fixed; left:47%; bottom:56px;">
+	
+<a href="${sessionScope.homeWorkMessage.answerurl}" class="btn btn-primary btn-large">查看作业答案</a>
+</div>
 	</div>
 </div>
+
 <div style="width:100%; position:fixed; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>

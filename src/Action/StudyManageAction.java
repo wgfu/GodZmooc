@@ -1,6 +1,7 @@
 package Action;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -14,12 +15,22 @@ import Entity.Study;
 import Entity.User;
 import Service.IClassInfoManage;
 import Service.IStudyManage;
+import oracle.net.aso.s;
 
 public class StudyManageAction extends ActionSupport{
 
 	/**
 	 * 
 	 */
+	private Integer classInfoid;
+	
+	public Integer getClassInfoid() {
+		return classInfoid;
+	}
+
+	public void setClassInfoid(Integer classInfoid) {
+		this.classInfoid = classInfoid;
+	}
 	@Resource
 	private IClassInfoManage iClassInfoManage;
 		public IClassInfoManage getIClassInfoManage() {
@@ -66,5 +77,33 @@ public class StudyManageAction extends ActionSupport{
 		ActionContext.getContext().getSession().put("none","ÔÝÎÞÊÕ²Ø¿Î³Ì£¡£¡£¡");
 		return SUCCESS;
 	}
-
+    
+	public String addStudayPlanAction()throws Exception
+	{
+		User user=(User) ActionContext.getContext().getSession().get("user");
+		Study study=new Study();
+		study.setClassInfoid(getClassInfoid());
+		study.setUserid(user.getUserid());
+		ClassInfo classInfo=new ClassInfo();
+		classInfo.setClassInfoid(getClassInfoid());
+		List<?> list= iClassInfoManage.getClassInfoDefault(classInfo);
+		if(list!=null&&list.size()>0&&!list.isEmpty())
+		{
+			classInfo=(ClassInfo) list.get(0);
+		}
+		if(classInfo.getHomeworkid()!=null)
+		{
+			study.setHomeworkid(classInfo.getHomeworkid());
+		}
+		if(classInfo.getTestid()!=null)
+		{
+			study.setTestid(classInfo.getTestid());
+		}
+		Date date=new Date();
+		
+		java.sql.Date date_sql=new java.sql.Date(date.getTime());
+		study.setStarttime(date_sql);
+		iStudyManage.addStudy(study);
+		return SUCCESS;
+	}
 }

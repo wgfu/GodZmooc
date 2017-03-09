@@ -57,7 +57,7 @@ public class Study {
 	public void setTestid(int testid) {
 		this.testid = testid;
 	}
-	@Column(name="homework", length=15)
+	@Column(name="homeworkid", length=15)
 	public int getHomeworkid() {
 		return homeworkid;
 	}

@@ -48,6 +48,12 @@
 			</action>
 	</package>
 	
+		<package name="addStudayPlanAction" namespace="/" extends="struts-default">
+<action name="addStudayPlan" class="addStudayPlan" method="addStudayPlanAction">
+<result name="success" type="redirect">studyManage</result>
+			</action>
+	</package>
+
 	<package name="classMessageAction" namespace="/" extends="struts-default">
 <action name="classMessage" class="classMessage" >
 <result name="success" type="redirect">/ClassMessage.jsp</result>

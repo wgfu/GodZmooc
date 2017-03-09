@@ -85,7 +85,7 @@
 			</h6>
 		</div>
 		<div align="center">
-		<button type="submit" class="btn btn-primary btn-large">收藏该课程</button>
+		<a href="addStudayPlan?classInfoid=${sessionScope.classMessage.classInfoid}" class="btn btn-primary btn-large">收藏该课程</a>
 		</div>
 		<s:if test="#session.classMessage.type=='文字教学'">
 		
@@ -100,11 +100,11 @@
 				<br>
 				<div  style="position:absolute;border:1px solid black;width:1055px;height:600px;left:24%;" >
 				<video width="1050" height="600" controls="controls">
-  <source src="${sessionScope.classMessage.usl}" type="video/mp4" />
-  <source src="${sessionScope.classMessage.usl}" type="video/ogg" />
-  <source src="${sessionScope.classMessage.usl}" type="video/webm" />
-  <object data="${sessionScope.classMessage.usl}" width="1050" height="600">
-    <embed src="${sessionScope.classMessage.usl}" width="1050" height="600" />
+  <source src="${sessionScope.classMessage.url}" type="video/mp4" />
+  <source src="${sessionScope.classMessage.url}" type="video/ogg" />
+  <source src="${sessionScope.classMessage.url}" type="video/webm" />
+  <object data="${sessionScope.classMessage.url}" width="1050" height="600">
+    <embed src="${sessionScope.classMessage.url}" width="1050" height="600" />
   </object>
 </video>
 			</div>
