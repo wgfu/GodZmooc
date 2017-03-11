@@ -84,6 +84,12 @@
 			</action>
 	</package>
 	
+	<package name="calculateScoreAction" namespace="/" extends="struts-default">
+<action name="calculateScore" class="calculateScore">
+
+			</action>
+	</package>
+	
 	<package name="findHomeworkAction" namespace="/" extends="struts-default">
 <action name="findHomework" class="findHomework" method="findHomeworkAction">
 <result name="success" type="redirect">/HomeworkView.jsp</result>

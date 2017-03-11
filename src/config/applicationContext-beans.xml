@@ -7,7 +7,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 <!-- Spring管理Struts2的Dao和Service -->
-
+<bean id="getAnswerTool" class="Service.GetAnswerTool" scope="prototype"></bean>
+<bean id="calculateTool" class="Service.CalculateTool" scope="prototype"></bean>
 <bean id="wordConvertToHtmlTool" class="Service.WordConvertToHtmlTool">	</bean>
 <bean id="iUserManage" class="Service.UserManageImp">
 		<property name="iUserDao" ref="iUserDao"></property>
@@ -81,6 +82,7 @@
 	<bean id="iScoreDao" class="Dao.ScoreDaoImp">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">  
      <property name="sessionFactory" ref="sessionFactory" /> 
      </bean> 
@@ -96,6 +98,7 @@
  <bean id="addTest" class="Action.TestAndHomeworkAction" scope="prototype"></bean>
   <bean id="findTest" class="Action.TestAndHomeworkAction" scope="prototype"></bean>
   <bean id="findHomework" class="Action.TestAndHomeworkAction" scope="prototype"></bean>
+    <bean id="calculateScore" class="Action.CalculateScoreAction" scope="prototype"></bean>
 	<!-- *********************************************************** -->
 	<!-- *************************StudyAction*********************** -->
 	<bean id="studyManage" class="Action.StudyManageAction" scope="prototype"></bean>
