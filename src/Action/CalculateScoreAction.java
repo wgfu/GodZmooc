@@ -1,14 +1,19 @@
 package Action;
 
 import java.io.PrintWriter;
+import java.util.Date;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+import Dao.ITestAndHomeworkDao;
+import Entity.User;
+import Entity.score;
 import Service.CalculateTool;
 import Service.GetAnswerTool;
 
@@ -17,6 +22,14 @@ public class CalculateScoreAction extends ActionSupport{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Resource
+	private ITestAndHomeworkDao iScoreManage;
+	public ITestAndHomeworkDao getIScoreManage() {
+		return iScoreManage;
+	}
+	public void setIScoreManage(ITestAndHomeworkDao iScoreManage) {
+		this.iScoreManage = iScoreManage;
+	}
 	@Resource
 	private CalculateTool calculateTool;
 	@Resource
@@ -32,6 +45,13 @@ public class CalculateScoreAction extends ActionSupport{
 	}
 	public void setGetAnswerTool(GetAnswerTool getAnswerTool) {
 		this.getAnswerTool = getAnswerTool;
+	}
+	private Integer testid;
+public Integer getTestid() {
+		return testid;
+	}
+	public void setTestid(Integer testid) {
+		this.testid = testid;
 	}
 private String select;
    public String getSelect() {
@@ -64,18 +84,27 @@ private String text;
 	public String execute ()throws Exception
 	{
 
-		 HttpServletResponse response=ServletActionContext.getResponse();  
+		    HttpServletResponse response=ServletActionContext.getResponse();  
 		    response.setContentType("text/html;charset=GBK");
 		    String realpath=ServletActionContext.getServletContext().getRealPath("");
-		String []list=getAnswerTool.getAnswer(realpath+getAnswerurl());
+		    String []list=getAnswerTool.getAnswer(realpath+getAnswerurl());
 		    PrintWriter out = response.getWriter(); 
-		    double sum=100;
+		    double sum=0;
 		    sum+=calculateTool.calculate(calculateTool.Convert(getSelect()), calculateTool.Convert(list[0]))*2;
 		    sum+=calculateTool.calculate(calculateTool.Convert(getJudge()), calculateTool.Convert(list[1]))*2;
 		    sum+=calculateTool.calculate(calculateTool.Convert(getText()), calculateTool.Convert(list[2]))*2;
 		    out.println(sum);  
 		    out.flush();  
 		    out.close();  
+		    score score=new score();
+		    score.setScore(sum);
+		    score.setTestid(getTestid());
+		    User user=(User) ActionContext.getContext().getSession().get("user");
+		    score.setUserid(user.getUserid());
+		    Date date=new Date();
+			java.sql.Date date_sql=new java.sql.Date(date.getTime());
+			score.setTime(date_sql);
+		    iScoreManage.addT(score);
 		return NONE;
 	}
 
