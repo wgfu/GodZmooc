@@ -89,7 +89,7 @@
 		</div>
 		<s:if test="#session.classMessage.type=='文字教学'">
 		
-			<div style="width:85%;position:absolute;left:180px;top:235px;height:63% " >
+			<div style="width:85%;position:absolute;left:150px;top:235px;height:58% " >
 				<iframe src="${sessionScope.classMessage.url}" width="100%" height="100%"> </iframe>
 				</div>
 				
@@ -109,8 +109,66 @@
 </video>
 			</div>
 				</s:else>
+					<div class="list-group-item" style="width:80%; position:absolute; top:85%;left:10%;">
+					写评论：<br>
+					<br>
+					<form action="addComment" method="post">
+					<input type="hidden" name=comment.commentid value="${sessionScope.classMessage.commentid}">
+						&#12288&#12288&#12288&#12288<textarea name="comment.text" cols="80" rows="6"></textarea>
+						<br> &#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288
+						&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288
+						<input type="submit" value="提交评论">
+						</form>
+					</div>
+					<div  style="width:80%; position:absolute; top:1075px;left:10%">
+			<ul class="nav nav-pills">
+				<li class="active">
+					 <a > <span class="badge pull-right">42</span> 全部评论</a>
+				</li>
+				</ul>
+					<div class="list-group-item">
+					<table style="border-collapse:separate; border-spacing:15px ;">
+					<tr>
+					<td colspan="3">
+				<img  src="Image/yuwen.png" height="75" width="60"/>
+				</td>
+				<td>
+				<h5> 
+				dasdasdasdasds
+				&#12288&#12288
+				2017-5-5
 				
-				<div style="width:100%; position:fixed; left:43%; bottom:56px;">
+				</h5> 
+				  <div style="width:1200px;height:45px;overflow:auto;">
+                 <h5>
+                 adasdaiodasdasdasdoasdaosndaosndoasndasndasindasod
+                  adasdaiodasdasdasdoasdaosndaosndoasndasndasindasod
+     
+                 </h5>
+                  </div>
+				</td>
+				</tr>
+			</table>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				<div>
+					<br><br><br><br><br>	<br>	<br><br>
+					</div>
+					</div>
+		
+					
+					
+						
+							
+					
+				<div style="width:100%; position:fixed; left:44%; bottom:56px;">
 	<a href="findHomework?homeworkid=${sessionScope.classMessage.homeworkid}" class="btn btn-primary btn-large">查看作业</a>
 	&#12288&#12288&#12288
 <a href="findTest?testid=${sessionScope.classMessage.testid}" class="btn btn-primary btn-large">查看考试</a>

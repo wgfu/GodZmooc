@@ -1,8 +1,10 @@
 package Dao;
 
+import java.util.List;
+
 public interface ICommentPartDao {
-	public <T> T getRuslt(Class <T> t);
-	public <T> void updateT (Class <T> t);
-	public <T> void deleteT (Class <T> t);
-	public <T> void addT(Class <T> t);
+	public <T> List<?> getRuslt(T t);
+	public <T> void updateT (T t);
+	public <T> void deleteT (T t);
+	public <T> void addT(T t);
 }

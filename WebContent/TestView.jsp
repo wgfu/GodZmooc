@@ -36,6 +36,7 @@ $(document).ready(function(){
 	       var judge=new Array();
 	       var text=new Array();
 	       var answerurl=$("#answerurl").val();
+	       var testid=$("testid").val();
 	       for(var j=1;j<16;j++)
 	    	   {
 	    	   var tmp1=j+"";
@@ -58,7 +59,8 @@ $(document).ready(function(){
 	            	 select:selectList,
 	            	 judge:judgeList,
 	            	 text:textList,
-	            	 answerurl:answerurl
+	            	 answerurl:answerurl,
+	            	 testid:testid
 	            	 },
 	             dataType: "json",
 	             success: function(data){
@@ -185,6 +187,7 @@ $(document).ready(function(){
 	<div class="row clearfix">
 		<div class="col-md-4 column">
 		<input type="hidden" id="answerurl" value="${sessionScope.testMessage.answerurl}">
+		<input type="hidden" id="testid" value="${sessionScope.testMessage.testid}">
 			<h3>
 				一.选择题
 			</h3>

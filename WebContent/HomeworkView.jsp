@@ -99,7 +99,14 @@
 </div>
 	</div>
 </div>
-
+		<div  style="width:80%; position:absolute; top:100%;left:10%;">
+						<br>
+						<br>
+						<br>
+						<br><br>
+						<br><br>
+						<br>	
+					</div>
 <div style="width:100%; position:fixed; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>

@@ -2,7 +2,7 @@ package Entity;
 
 
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +21,7 @@ public class Comment {
 	private String text;
 	private Date time;
 	private Integer replyid;
-	@Column(name="comment", length=15)
+	@Column(name="commentid", length=15)
 	public Integer getCommentid() {
 		return commentid;
 	}

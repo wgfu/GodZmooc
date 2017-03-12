@@ -19,32 +19,32 @@ public class ReplyDaoImp implements ICommentPartDao{
 
 		@SuppressWarnings("unchecked")
 		@Override
-		public <T> T getRuslt(Class<T> t) {
+		public <T> List<?> getRuslt(T t) {
 			// TODO Auto-generated method stub
-			Reply reply=null;
+	
 			String sql="from Reply p where p.replyid=?";
 			 List<?> list=hibernateTemplate.find(sql, t);
 			if(!list.isEmpty()){
-				return (T) reply;
+				return  list;
 				}
 			
 			return null;
 		}
 
 		@Override
-		public <T> void updateT(Class<T> t) {
+		public <T> void updateT(T t) {
 			// TODO Auto-generated method stub
 			hibernateTemplate.merge(t);
 		}
 
 		@Override
-		public <T> void deleteT(Class<T> t) {
+		public <T> void deleteT(T t) {
 			// TODO Auto-generated method stub
 			hibernateTemplate.delete(t);
 		}
 
 		@Override
-		public <T> void addT(Class<T> t) {
+		public <T> void addT(T t) {
 			// TODO Auto-generated method stub
 			hibernateTemplate.save(t);
 		}

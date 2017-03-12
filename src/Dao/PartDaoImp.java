@@ -21,31 +21,31 @@ public class PartDaoImp implements ICommentPartDao{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <T> T getRuslt(Class<T> t) {
+	public <T> List<?> getRuslt(T t) {
 		// TODO Auto-generated method stub
-		Part part=null;
+	
 		String sql="from Part p where p.partname=?";
 		 List<?> list=hibernateTemplate.find(sql, t);
-		if(!list.isEmpty()){part=(Part)list.get(0);}
-		return (T) part;
+		if(!list.isEmpty()){return list;}
+		return null;
 		
 	}
 
 	@Override
-	public <T> void updateT(Class<T> t) {
+	public <T> void updateT(T t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.merge(t);
 	}
 
 	@Override
-	public <T> void deleteT(Class<T> t) {
+	public <T> void deleteT(T t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.delete(t);
 		
 	}
 
 	@Override
-	public <T> void addT(Class<T> t) {
+	public <T> void addT(T t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.save(t);
 	}

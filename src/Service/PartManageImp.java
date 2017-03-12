@@ -1,5 +1,7 @@
 package Service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import Dao.ICommentPartDao;
@@ -19,25 +21,25 @@ public void setIPartDao(ICommentPartDao iPartDao) {
 }
 
 	@Override
-	public <T> T getRuslt(Class<T> t) {
+	public <T> List<?> getRuslt(T t) {
 		// TODO Auto-generated method stub
 		return iPartDao.getRuslt(t);
 	}
 
 	@Override
-	public <T> void updateT(Class<T> t) {
+	public <T> void updateT(T t) {
 		// TODO Auto-generated method stub
 		iPartDao.updateT(t);
 	}
 
 	@Override
-	public <T> void deleteT(Class<T> t) {
+	public <T> void deleteT(T t) {
 		// TODO Auto-generated method stub
 		iPartDao.deleteT(t);
 	}
 
 	@Override
-	public <T> void addT(Class<T> t) {
+	public <T> void addT(T t) {
 		// TODO Auto-generated method stub
 		iPartDao.addT(t);
 	}
