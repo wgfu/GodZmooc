@@ -56,7 +56,19 @@
 
 	<package name="classMessageAction" namespace="/" extends="struts-default">
 <action name="classMessage" class="classMessage" >
+<result name="success" type="redirect">findComment</result>
+			</action>
+	</package>
+	
+	<package name="findCommentAction" namespace="/" extends="struts-default">
+<action name="findComment" class="findComment" method="findCommentAction">
 <result name="success" type="redirect">/ClassMessage.jsp</result>
+			</action>
+	</package>
+	
+	<package name="addCommentAction" namespace="/" extends="struts-default">
+<action name="addComment" class="addComment" method="addCommentAction">
+<result name="success" type="redirect">findComment</result>
 			</action>
 	</package>
 	

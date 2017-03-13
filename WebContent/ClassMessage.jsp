@@ -109,9 +109,9 @@
 </video>
 			</div>
 				</s:else>
-					<div class="list-group-item" style="width:80%; position:absolute; top:85%;left:10%;">
+					<div class="list-group-item" style="width:80%; position:absolute; top:89%;left:10%;">
 					写评论：<br>
-					<br>
+					
 					<form action="addComment" method="post">
 					<input type="hidden" name=comment.commentid value="${sessionScope.classMessage.commentid}">
 						&#12288&#12288&#12288&#12288<textarea name="comment.text" cols="80" rows="6"></textarea>
@@ -123,9 +123,11 @@
 					<div  style="width:80%; position:absolute; top:1075px;left:10%">
 			<ul class="nav nav-pills">
 				<li class="active">
-					 <a > <span class="badge pull-right">42</span> 全部评论</a>
+					 <a > <span class="badge pull-right">${sessionScope.commentCount }</span> 全部评论</a>
 				</li>
 				</ul>
+				<s:if test="#session.commentList!=null">
+				<s:iterator value="#session.commentList" var="commentList">
 					<div class="list-group-item">
 					<table style="border-collapse:separate; border-spacing:15px ;">
 					<tr>
@@ -134,15 +136,14 @@
 				</td>
 				<td>
 				<h5> 
-				dasdasdasdasds
+				${commentList.username}
 				&#12288&#12288
-				2017-5-5
+				${commentList.time}
 				
 				</h5> 
 				  <div style="width:1200px;height:45px;overflow:auto;">
                  <h5>
-                 adasdaiodasdasdasdoasdaosndaosndoasndasndasindasod
-                  adasdaiodasdasdasdoasdaosndaosndoasndasndasindasod
+                ${commentList.text}
      
                  </h5>
                   </div>
@@ -150,8 +151,12 @@
 				</tr>
 			</table>
 				</div>
+				</s:iterator>
 				
-				
+				</s:if>
+				<s:else>
+				     <h3>暂无评论</h3>
+				</s:else>
 				
 				
 				

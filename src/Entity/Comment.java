@@ -21,6 +21,14 @@ public class Comment {
 	private String text;
 	private Date time;
 	private Integer replyid;
+	private String username;
+	@Column(name="username", length=30)
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	@Column(name="commentid", length=15)
 	public Integer getCommentid() {
 		return commentid;

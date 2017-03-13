@@ -22,7 +22,7 @@ private HibernateTemplate hibernateTemplate;
 	public <T> List<?> getRuslt(T t) {
 		// TODO Auto-generated method stub
 		
-		String sql="from Comment c where c.partid=?";
+		String sql="from Comment c where c.commentid=?";
 		 List<?> list=hibernateTemplate.find(sql, t);
 		if(!list.isEmpty())
 		{

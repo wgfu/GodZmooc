@@ -113,4 +113,9 @@
     <!-- *************************UserAction*********************** -->
     <bean id="userInfo" class="Action.UserInfoAction" scope="prototype"></bean>
     <!-- *********************************************************** -->
+    
+        <!-- ********************CommentAction********************** -->
+         <bean id="addComment" class="Action.CommentAction" scope="prototype"></bean>
+                 <bean id="findComment" class="Action.CommentAction" scope="prototype"></bean>
+            <!-- *********************************************************** -->
 </beans>
