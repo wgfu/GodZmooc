@@ -4,12 +4,8 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
-import Entity.Part;
-
-
-
-public class PartDaoImp implements ICommentPartDao{
-    private HibernateTemplate hibernateTemplate;
+public class DiscussionDaoImp implements ICommentPartDao{
+private HibernateTemplate hibernateTemplate;
     
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
@@ -19,27 +15,24 @@ public class PartDaoImp implements ICommentPartDao{
 		this.hibernateTemplate = hibernateTemplate;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public <T> List<?> getRuslt(T t) {
 		// TODO Auto-generated method stub
-	if(t!=null&&t!="")
+		if(t!=null&&t!="")
 		{
-		String sql="from Part p where p.partname=?";
+		String sql="from Discussion d where d.partid=?";
 		 List<?> list=hibernateTemplate.find(sql, t);
 		
 		if(!list.isEmpty()){return list;}
 		return null;
 		}
 	else{
-		String sql="from Part p";
+		String sql="from Discussion d";
 		 List<?> list=hibernateTemplate.find(sql);
 		
 		if(!list.isEmpty()){return list;}
 		return null;
 	}
-		
-	
 	}
 
 	@Override
@@ -52,7 +45,6 @@ public class PartDaoImp implements ICommentPartDao{
 	public <T> void deleteT(T t) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.delete(t);
-		
 	}
 
 	@Override

@@ -47,6 +47,7 @@
 				<value>Entity.Test</value>
 				<value>Entity.score</value>
 				<value>Entity.Homework</value>
+				<value>Entity.Discussion</value>
 			</list>
 		</property>
 

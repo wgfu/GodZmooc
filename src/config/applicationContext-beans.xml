@@ -52,6 +52,12 @@
 	<bean id="iCommentDao" class="Dao.CommentDaoImp">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	<bean id="iDiscussionManage" class="Service.DiscussionManageImp">
+		<property name="iDiscussionDao" ref="iDiscussionDao"></property>
+	</bean>
+	<bean id="iDiscussionDao" class="Dao.DiscussionDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
 	<bean id="iReplyManage" class="Service.ReplyManageImp">
 		<property name="iReplyDao" ref="iReplyDao"></property>
 	</bean>
@@ -82,6 +88,7 @@
 	<bean id="iScoreDao" class="Dao.ScoreDaoImp">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	
 	
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">  
      <property name="sessionFactory" ref="sessionFactory" /> 
