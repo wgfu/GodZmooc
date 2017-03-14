@@ -20,7 +20,7 @@ public class Comment {
 	private String userid;
 	private String text;
 	private Date time;
-	private Integer replyid;
+
 	private String username;
 	@Column(name="username", length=30)
 	public String getUsername() {
@@ -57,14 +57,7 @@ public class Comment {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-	@Column(name="replyid", length=20)
-	public Integer getReplyid() {
-		return replyid;
-	}
-	
-	public void setReplyid(Integer replyid) {
-		this.replyid = replyid;
-	}
+
 	@Id
 	//采用数据库自增方式生成主键
 	//@GeneratedValue(strategy=GenerationType.AUTO)
