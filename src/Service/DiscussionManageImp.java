@@ -2,15 +2,18 @@ package Service;
 
 import java.util.List;
 
+import Dao.ICommentPartDao;
+
 public class DiscussionManageImp implements ICommentPartManage{
 
-	private ICommentPartManage iDiscussionDao;
+	private ICommentPartDao iDiscussionDao;
 
-	public ICommentPartManage getIDiscussionDao() {
+	
+	public ICommentPartDao getIDiscussionDao() {
 		return iDiscussionDao;
 	}
 
-	public void setIDiscussionDao(ICommentPartManage iDiscussionDao) {
+	public void setIDiscussionDao(ICommentPartDao iDiscussionDao) {
 		this.iDiscussionDao = iDiscussionDao;
 	}
 

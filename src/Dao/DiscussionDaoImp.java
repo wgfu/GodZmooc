@@ -20,8 +20,8 @@ private HibernateTemplate hibernateTemplate;
 		// TODO Auto-generated method stub
 		if(t!=null&&t!="")
 		{
-		String sql="from Discussion d where d.partid=?";
-		 List<?> list=hibernateTemplate.find(sql, t);
+	
+		 List<?> list=hibernateTemplate.findByExample(t);
 		
 		if(!list.isEmpty()){return list;}
 		return null;

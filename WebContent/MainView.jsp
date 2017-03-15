@@ -258,6 +258,112 @@
 		</div>
 		
 	</div>
+	<div class="row clearfix">
+		<div class="col-md-1 column">
+		</div>
+		<div class="col-md-10 column">
+		<div class="page-header">
+				<h1>
+					讨论区 <small>Discussion</small>
+				</h1>
+			</div>
+			<div class="tabbable" id="tabs-847469">
+			
+				<ul class="nav nav-tabs">
+					<s:iterator value="#session.PartList" var="Part">
+	<s:if test="#Part.mark=='active'">
+					<li class="active">
+						 <a href="#panel-${Part.id}" data-toggle="tab">${Part.Partname}</a>
+					</li>
+					</s:if>
+					<s:else>
+					<li >
+						 <a href="#panel-${Part.id}" data-toggle="tab">${Part.Partname}</a>
+					</li>
+					</s:else>
+					</s:iterator>
+				</ul>
+				</div>
+				<div class="tab-content">
+				<s:iterator value="#session.PartList" var="Part">
+				<s:if test="#Part.mark=='active'">
+					<div class="tab-pane active" id="panel-${Part.id}">
+						<s:if test="#Part.DiscussionList!=null">
+						<s:iterator value="#Part.DiscussionList" var="Discussion">
+						<div class="list-group-item">
+						<table>
+						<tr>
+						<td>
+					<h4 class="list-group-item-heading">
+					<a href="discussionMessage?discussionid=${Discussion.discussionid}">	${Discussion.title }</a>
+					
+					</h4>
+					</td>
+					<td>
+					<p class="list-group-item-text">
+						&#12288&#12288&#12288&#12288 ${Discussion.username }    	&#12288 ${Discussion.time }
+					</p>
+					</td>
+					</tr>
+					</table>
+				</div>
+				</s:iterator>
+			
+						</s:if>
+						<s:else>
+						<p>
+							暂无讨论发消息发布
+						</p>
+						</s:else>
+					</div>
+					</s:if>
+					<s:else>
+					<div class="tab-pane " id="panel-${Part.id}">
+					<s:if test="#Part.DiscussionList!=null">
+						<s:iterator value="#Part.DiscussionList" var="Discussion">
+						<div class="list-group-item">
+						<table>
+						<tr>
+						<td>
+					<h4 class="list-group-item-heading">
+					<a href="discussionMessage?discussionid=${Discussion.discussionid}">	${Discussion.title }</a>
+					
+					</h4>
+					</td>
+					<td>
+					<p class="list-group-item-text">
+						&#12288&#12288&#12288&#12288 ${Discussion.username }    	&#12288 ${Discussion.time }
+					</p>
+					</td>
+					</tr>
+					</table>
+				</div>
+				</s:iterator>
+						</s:if>
+						
+						<s:else>
+						<p>
+							暂无讨论发消息发布
+						</p>
+						</s:else>
+					</div>
+					</s:else>
+					
+					</s:iterator>
+				
+			</div>
+	<div>
+<br>
+<br>
+<br>
+
+<br>
+</div>
+	
+		</div>
+		<div class="col-md-1 column">
+		</div>
+	</div>
 </div>
 
 </body>

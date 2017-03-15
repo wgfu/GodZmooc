@@ -108,4 +108,16 @@
 			</action>
 	</package>
 
+	<package name="discussionAction" namespace="/" extends="struts-default">
+<action name="discussion" class="discussion">
+<result name="success" type="redirect">/MainView.jsp</result>
+			</action>
+	</package>
+	
+	<package name="discussionMessageAction" namespace="/" extends="struts-default">
+<action name="discussionMessage" class="discussionMessage" method="discussionMessageAction">
+<result name="success" type="redirect">/DiscussionMessage.jsp</result>
+			</action>
+	</package>
+	
 </struts>
