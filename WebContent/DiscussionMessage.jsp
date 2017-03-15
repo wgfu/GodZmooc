@@ -11,6 +11,20 @@
       <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
        <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <style type="text/css"> 
+table 
+{ 
+border-collapse: collapse; 
+border: none; 
+width: 100%;
+
+} 
+td 
+{ 
+border: dashed GREY 4px; 
+
+} 
+</style> 
 <title>查看权限</title>
 </head>
 <body>
@@ -68,9 +82,79 @@
 					</ul>
 				</div>
 			</nav>
+		<div>
+		<br>
+		
+		</div>
+		<div class="col-md-1 column">
+		</div>
+		<div class="col-md-10 column" >
+		<div style="position:absolute;overflow:auto;width:100%;height:430px">
+		<table >
+		<tr height="45px">
+        <td width="10%">
+        
+        </td>	
+         <td width="70%">
+           <h4>  &nbsp&nbsp 金价问题不解决，玩家只会越来越少，不服来辩</h4>
+        </td>	
+        		
+		</tr>
+		
+			<tr height="30px">
+        <td style="border-bottom:1px dashed #00CCCC;">
+      
+        </td>	
+         <td style="border-bottom:1px dashed #00CCCC;">
+      
+        </td>	
+         		
+		</tr>
+		<tr height="200px">
+        <td style="border-top:1px dashed #00CCCC;">
+      
+        </td>	
+         <td style="border-top:1px dashed #00CCCC;">
+        </td>	
+       	</tr>
 		
 		
+		<tr height="30px">
+        <td style="border-bottom:1px dashed #00CCCC;">
+      
+        </td>	
+         <td style="border-bottom:1px dashed #00CCCC;">
+      
+        </td>	
+         		
+		</tr>
+		<tr height="300px">
+        <td style="border-top:1px dashed #00CCCC;">
+      
+        </td>	
+         <td style="border-top:1px dashed #00CCCC;">
+      
+        </td>	
+         		
+		</tr>
 		
+		</table>
+		</div>
+		<div class="list-group-item" style="width:60%; position:fixed; top:72%; height:20%;left:20%">
+					<h4>发贴:</h4>
+						<form action="addReply" method="post">
+						
+					<input type="hidden" name=reply.replyid value="${sessionScope.discussion.replyid}">
+						<textarea name="reply.text" cols="100" rows="4"></textarea>
+						
+					<input type="submit" value="发表回复">
+					
+						</form>
+					</div>
+		
+		</div>
+		<div class="col-md-1 column">
+		</div>
 		
 	</div>
 </div>
