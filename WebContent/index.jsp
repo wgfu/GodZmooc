@@ -13,7 +13,7 @@
 <body >
  <script language="JavaScript">
  
- window.location.href="discussion";//人才管理系统主界面
+ window.location.href="discussion";
 </script>
 
 </body>

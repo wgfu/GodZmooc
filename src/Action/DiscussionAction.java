@@ -1,28 +1,49 @@
 package Action;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
-
-import org.apache.poi.ss.formula.functions.Irr;
-
-import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import Entity.Discussion;
 import Entity.Part;
 import Entity.Reply;
+import Entity.User;
 import Service.ICommentPartManage;
 
+
 public class DiscussionAction extends ActionSupport{
+	private String type;
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	@Resource
 	private ICommentPartManage iPartManage;
 	@Resource
 	private ICommentPartManage iDiscussionManage;
 	private Integer discussionid;
+	private Reply reply;
+	private Discussion discussion;
+	public Discussion getDiscussion() {
+		return discussion;
+	}
+	public void setDiscussion(Discussion discussion) {
+		this.discussion = discussion;
+	}
+	public Reply getReply() {
+		return reply;
+	}
+	public void setReply(Reply reply) {
+		this.reply = reply;
+	}
 	@Resource
 	private ICommentPartManage iReplyManage;
 public ICommentPartManage getIReplyManage() {
@@ -88,13 +109,13 @@ List<HashMap<String,Object>> PartList=new ArrayList<>();
 {
     Discussion discussion=new Discussion();
     discussion.setDiscussionid(getDiscussionid());
-   
-  
     discussion=(Discussion) iDiscussionManage.getRuslt(discussion).get(0);
+  
     	List <?> list=iReplyManage.getRuslt(discussion.getReplyid());
+    	ActionContext.getContext().getSession().remove("ReplyList");
     	if(list!=null&&list.size()>0)
     	{
-    		ActionContext.getContext().getSession().remove("ReplyList");
+    
     		ActionContext.getContext().getSession().put("ReplyList",list);
     	}
     	ActionContext.getContext().getSession().remove("DiscussionMessage");
@@ -102,4 +123,34 @@ List<HashMap<String,Object>> PartList=new ArrayList<>();
 	
 	return SUCCESS;	
 }
+      public String addReplyAction()throws Exception
+      {
+    	  User user=(User) ActionContext.getContext().getSession().get("user");
+    	  getReply().setUserid(user.getUserid());
+    	  getReply().setUsername(user.getUsername());
+    	  Date date=new Date();
+    	  SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	  String date1=format.format(date);
+    	  getReply().setTime(format.parse(date1));
+    	  iReplyManage.addT(getReply());
+    	 
+    	  return SUCCESS;
+      }
+      public String addDiscussionAction()throws Exception
+      {
+    	  Part part=(Part) iPartManage.getRuslt(getType()).get(0);
+    	  getDiscussion().setPartid(part.getPartid());
+    	  Date date=new Date();
+    	  SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	  String date1=format.format(date);
+    	  getDiscussion().setTime(format.parse(date1));
+    	  User user=(User) ActionContext.getContext().getSession().get("user");
+    	  getDiscussion().setUserid(user.getUserid());
+    	  getDiscussion().setUsername(user.getUsername());
+    		getDiscussion().setDiscussionid((int) ((int) System.currentTimeMillis()*System.currentTimeMillis()/10000));
+    		getDiscussion().setReplyid((int) ((int) System.currentTimeMillis()*System.currentTimeMillis()/11111));
+    		iDiscussionManage.addT(getDiscussion());
+    		setDiscussionid(discussion.getDiscussionid());
+    	  return SUCCESS;
+      }
 }

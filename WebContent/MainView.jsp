@@ -263,9 +263,11 @@
 		</div>
 		<div class="col-md-10 column">
 		<div class="page-header">
+
 				<h1>
 					讨论区 <small>Discussion</small>
 				</h1>
+			
 			</div>
 			<div class="tabbable" id="tabs-847469">
 			
@@ -283,6 +285,7 @@
 					</s:else>
 					</s:iterator>
 				</ul>
+	
 				</div>
 				<div class="tab-content">
 				<s:iterator value="#session.PartList" var="Part">
@@ -352,7 +355,9 @@
 					</s:iterator>
 				
 			</div>
-	<div>
+						<br>
+	<div align="center">
+	<a href="AddDiscussion.jsp" class="btn btn-primary large">发布帖子</a>
 <br>
 <br>
 <br>

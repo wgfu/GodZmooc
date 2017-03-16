@@ -82,94 +82,47 @@ border: dashed GREY 4px;
 					</ul>
 				</div>
 			</nav>
-		<div>
-		<br>
 		
-		</div>
-		<div class="col-md-1 column">
-		</div>
-		<div class="col-md-10 column" >
-		<div style="position:absolute;overflow:auto;width:100%;height:540px">
-		<table >
-		<tr height="45px">
-        <td width="10%">
-        
-        </td>	
-         <td width="70%">
-           <h4><big>  &nbsp&nbsp ${sessionScope.DiscussionMessage.title }</big></h4>
-        </td>	
-        		
-		</tr>
 		
-			<tr height="30px">
-        <td style="border-bottom:1px dashed #00CCCC;">
-         &nbsp&nbsp   &nbsp&nbsp ${sessionScope.DiscussionMessage.username }
-        </td>	
-         <td style="border-bottom:1px dashed #00CCCC;">
-        &nbsp&nbsp  楼主&nbsp|&nbsp&nbsp${sessionScope.DiscussionMessage.time }
-        </td>	
-         		
-		</tr>
-		<tr height="300px">
-        <td style="border-top:1px dashed #00CCCC;">
-         <div align="center">
-         <img src="Image/yuwen.png" width="140px" height="160px">
-         </div>
-        </td>	
-         <td style="border-top:1px dashed #00CCCC;">
-         <div style="text-align:center;overflow:auto;height:290px">
-        <h4>
-        ${sessionScope.DiscussionMessage.text }
-         </h4>
-         </div>
-        </td>	
-       	</tr>
-		<s:if test="#session.ReplyList!=null">
-		<s:iterator value="#session.ReplyList" var="ReplyList">
-		<tr height="30px">
-        <td style="border-bottom:1px dashed #00CCCC;">
-      &nbsp&nbsp  &nbsp&nbsp  ${ReplyList.username }
-        </td>	
-         <td style="border-bottom:1px dashed #00CCCC;">
-       &nbsp&nbsp   <s:if test="#session.user.userid==#ReplyList.userid">楼主&nbsp|&nbsp</s:if> ${ReplyList.time }
-        </td>	
-         		
-		</tr>
-		<tr height="300px">
-        <td style="border-top:1px dashed #00CCCC;">
-        <div align="center">
-         <img src="Image/yuwen.png" width="140px" height="160px">
-         </div>
-        </td>	
-         <td style="border-top:1px dashed #00CCCC;">
-        <div style="text-align:center;overflow:auto;height:290px">
-        <h4>
-        ${ReplyList.text }
-         </h4>
-         </div>
-        </td>	
-         		
-		</tr>
-		</s:iterator>
-		</s:if>
-		
-		</table>
-		</div>
-		<div class="list-group-item" style="width:60%; position:fixed; top:68%; height:25%;left:20%">
-					<h4>发贴:</h4>
-						<form action="addReply" method="post">
-						
-					<input type="hidden" name="reply.replyid" value="${sessionScope.DiscussionMessage.replyid}">
-					<input type="hidden" name="discussionid" value="${sessionScope.DiscussionMessage.discussionid}">
-						<textarea name="reply.text" cols="100" rows="7"></textarea>
-						
-					<input type="submit" value="发表回复">
-					
-						</form>
-					</div>
-		
-		</div>
-		<div class="col-md-1 column">
+		<div class="col-md-12 column" >
+			
+			<h3 class="text-error text-center">
+				·发布帖子·
+			</h3>
+			<form role="form" action="addDiscussion" method="post" >
+  <div class="form-group">
+    <label for="name">帖子主题</label>
+    <input type="text" class="form-control" id="name" placeholder="请输入帖子主题" name="discussion.title"> 
+  </div>
+   <div class="form-group">
+ 	<label for="name" >请选择帖子板块类型：</label>
+ 	<br>
+		<select class="selectpicker" name="type">
+			<option value="">请选择帖子板块类型</option>
+			<option value="语文讨论区" >语文讨论区</option>
+			<option value="数学讨论区" >数学讨论区</option>
+			<option value="英语讨论区" >英语讨论区</option>
+			<option value="化学讨论区" >化学讨论区</option>
+			<option value="物理讨论区" >物理讨论区</option>
+			<option value="生物讨论区" >生物讨论区</option>
+			<option value="地理讨论区" >地理讨论区</option>
+			<option value="历史讨论区"  >历史讨论区</option>
+			<option value="政治讨论区" >政治讨论区</option>
+			<option value="音乐讨论区" >音乐讨论区</option>
+			<option value="计算机讨论区">计算机讨论区</option>
+			
+		</select>
+  
+   </div>
+ 
+  
+  <div class="form-group">
+    <label for="discussion.text">请输入帖子内容</label>
+    <textarea class="form-control" rows="20" name="discussion.text"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary btn-large">发布帖子</button>
+  
+</form>
 		</div>
 		
 	</div>

@@ -16,6 +16,14 @@ public class Reply {
 	private String userid;
 	private Date time;
 	private String text;
+	private String username;
+	@Column(name="username", length=30)
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	@Column(name="replyid", length=20)
 	public Integer getReplyid() {
 		return replyid;

@@ -126,5 +126,8 @@
                  <bean id="findComment" class="Action.CommentAction" scope="prototype"></bean>
                       <bean id="discussion" class="Action.DiscussionAction" scope="prototype"></bean>
                        <bean id="discussionMessage" class="Action.DiscussionAction" scope="prototype"></bean>
+                        <bean id="addReply" class="Action.DiscussionAction" scope="prototype"></bean>
+                         <bean id="addDiscussion" class="Action.DiscussionAction" scope="prototype"></bean>
+                       
             <!-- *********************************************************** -->
 </beans>

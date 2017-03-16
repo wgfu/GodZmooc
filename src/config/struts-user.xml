@@ -14,7 +14,7 @@
 
 	<package name="loginAction" namespace="/" extends="struts-default">
 <action name="login" class="login" >
-<result name="success" type="redirect">/MainView.jsp</result>
+<result name="success" type="redirect">/index.jsp</result>
 			</action>
 	</package>
 	
@@ -26,7 +26,7 @@
 	
 	<package name="registAction" namespace="/" extends="struts-default">
 <action name="regist" class="regist" >
-<result name="success" type="redirect">/MainView.jsp</result>
+<result name="success" type="redirect">/index.jsp</result>
 			</action>
 	</package>
 	
@@ -117,6 +117,18 @@
 	<package name="discussionMessageAction" namespace="/" extends="struts-default">
 <action name="discussionMessage" class="discussionMessage" method="discussionMessageAction">
 <result name="success" type="redirect">/DiscussionMessage.jsp</result>
+			</action>
+	</package>
+	
+	<package name="addReplyAction" namespace="/" extends="struts-default">
+<action name="addReply" class="addReply" method="addReplyAction">
+     <result name="success" type="chain">discussionMessage</result>
+			</action>
+	</package>
+	
+	<package name="addDiscussionAction" namespace="/" extends="struts-default">
+<action name="addDiscussion" class="addDiscussion" method="addDiscussionAction">
+     <result name="success" type="chain">discussionMessage</result>
 			</action>
 	</package>
 	

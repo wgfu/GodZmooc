@@ -28,7 +28,9 @@
       
     </welcome-file-list>
 
-
+<session-config>
+<session-timeout>3000</session-timeout>
+</session-config>
 
 
 
