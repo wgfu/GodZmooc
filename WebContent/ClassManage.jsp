@@ -96,19 +96,15 @@ border-top:solid 0px #333333;"
 						<th>
 							考试
 						</th>
-						<th>
-							已收藏该课程学生名单
-						</th>
-						<th>
-							修改
-						</th>
+					
+						
 					</tr>
 				</thead>
 				<tbody>
 				<s:iterator value="#session.classInfo" var="c">
 					<tr >
 						<td>
-							${c.classname}
+							<a href="classMessage?classInfoid=${c.classInfoid}">${c.classname}</a>
 						</td>
 						<td>
 							${c.type}
@@ -121,7 +117,7 @@ border-top:solid 0px #333333;"
 							<p><a class="btn btn-primary btn-large" href="AddHomework.jsp?classInfoid=${c.classInfoid}">添加作业 &raquo;</a></p>
 							</s:if>
 							<s:else>
-							<p><a class="btn btn-primary btn-large" href="changeHomework?homeworkid="+"${c.homeworkid}">查看/修改作业 &raquo;</a></p>
+							<p>已发布作业
 							</s:else>
 						</td>
 						<td>
@@ -129,15 +125,11 @@ border-top:solid 0px #333333;"
 							<p><a class="btn btn-primary btn-large" href="AddTest.jsp?classInfoid=${c.classInfoid}">添加考试 &raquo;</a></p>
 							</s:if>
 							<s:else>
-							<p><a class="btn btn-primary btn-large" href="changeTest?testid="+"${c.testid}">查看/修改考试 &raquo;</a></p>
+							<p><a class="btn btn-primary btn-large" href="changeTest?testid="+"${c.testid}">查看已收藏该课程学生 &raquo;</a></p>
 							</s:else>
 						</td>
-						<td>
-							开始作业
-						</td>
-						<td>
-							开始作业
-						</td>
+					
+						
 					</tr>
 					</s:iterator>
 				</tbody>
