@@ -36,7 +36,7 @@ $(document).ready(function(){
 	       var judge=new Array();
 	       var text=new Array();
 	       var answerurl=$("#answerurl").val();
-	       var testid=$("testid").val();
+	       var testid=$("#testid").val();
 	       for(var j=1;j<16;j++)
 	    	   {
 	    	   var tmp1=j+"";
@@ -262,7 +262,7 @@ $(document).ready(function(){
 					<input type="radio" name="select11" value="D">D
 				</li>
 				<li>
-			<input type="radio" name="select2" value="A">A
+			<input type="radio" name="select12" value="A">A
 					<input type="radio" name="select12" value="B">B
 					<input type="radio" name="select12" value="C">C
 					<input type="radio" name="select12" value="D">D

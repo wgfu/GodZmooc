@@ -16,6 +16,7 @@ import Entity.User;
 import Entity.score;
 import Service.CalculateTool;
 import Service.GetAnswerTool;
+import Service.ITestAndHomeworkManage;
 
 public class CalculateScoreAction extends ActionSupport{
 	/**
@@ -23,11 +24,11 @@ public class CalculateScoreAction extends ActionSupport{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Resource
-	private ITestAndHomeworkDao iScoreManage;
-	public ITestAndHomeworkDao getIScoreManage() {
+	private ITestAndHomeworkManage iScoreManage;
+	public ITestAndHomeworkManage getIScoreManage() {
 		return iScoreManage;
 	}
-	public void setIScoreManage(ITestAndHomeworkDao iScoreManage) {
+	public void setIScoreManage(ITestAndHomeworkManage iScoreManage) {
 		this.iScoreManage = iScoreManage;
 	}
 	@Resource

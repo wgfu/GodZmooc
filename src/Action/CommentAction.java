@@ -66,15 +66,17 @@ public class CommentAction extends ActionSupport{
 	public String findCommentAction()throws Exception
 	{
 		ClassInfo classInfo=(ClassInfo) ActionContext.getContext().getSession().get("classMessage");
+		ActionContext.getContext().getSession().remove("commentList");
+		ActionContext.getContext().getSession().remove("commentCount");
 		if(classInfo.getCommentid()!=null)
 		{
 			List<?> list=iCommentManage.getRuslt(classInfo.getCommentid());
-	
+			
 			if(list!=null&&!list.isEmpty()&&list.size()>0)
 			{
-				ActionContext.getContext().getSession().remove("commentCount");
+			
 				ActionContext.getContext().getSession().put("commentCount", list.size());
-				ActionContext.getContext().getSession().remove("commentList");
+			
 				ActionContext.getContext().getSession().put("commentList", list);
 			}
 		
