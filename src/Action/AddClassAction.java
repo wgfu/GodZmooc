@@ -101,6 +101,8 @@ public class AddClassAction extends ActionSupport{
 		java.sql.Date date_sql=new java.sql.Date(date.getTime());
 		classInfo.setTime(date_sql);
 		classInfo.setClassid(iClassManage.getClassByType(getType()).getClassid());
+		 int k=(int) (Math.random()*Math.random()*111111);
+	      classInfo.setCommentid(k);
 		int i=(int) System.currentTimeMillis();
 			String cString=i+"";
 		   	  String suffix =getFileFileName().substring(getFileFileName().lastIndexOf("."));

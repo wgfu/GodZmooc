@@ -106,28 +106,39 @@ border-top:solid 0px #333333;" >
 				</thead>
 				
 				<tbody>
-				<s:iterator value="#session.studyInfoList" >
+				<s:iterator value="#session.studyInfoList" var="studyInfoList" >
 					<tr >
 						<td>
-							${classname}
+							${studyInfoList.classname}
 						</td>
 						<td>
-							${classLevel}
+							${studyInfoList.classLevel}
 						</td>
 						<td>
-							${time}
+							${studyInfoList.time}
 						</td>
 						<td>
-						${classname}
+						
+						<s:if test="#studyInfoList.homeworkid!=null">
+					<a href="findHomework?homeworkid=${studyInfoList.homeworkid}" >查看作业</a>
+					</s:if>
+					<s:else>
+					暂无作业发布
+					</s:else>
 						</td>
 						<td>
-							Call in to confirm
+						<s:if test="#studyInfoList.testid!=null">
+							<a href="findTest?testid=${studyInfoList.testid}">查看考试</a>
+							</s:if>
+							<s:else>
+					暂无考试发布
+					</s:else>
 						</td>
 						<td>
-							开始考试
+							<a href="classMessage?classInfoid=${studyInfoList.classInfoid}">进入课程学习</a>
 						</td>
 						<td>
-							开始作业
+							<a href="deleteStudyPlan?classInfoid=${studyInfoList.classInfoid}">删除该课程</a>
 						</td>
 					
 					</tr>

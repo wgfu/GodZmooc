@@ -1,19 +1,20 @@
 package Action;
 
-import java.util.ArrayList;
+
+
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import com.opensymphony.xwork2.Action;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import Entity.ClassInfo;
 import Entity.Comment;
 import Entity.User;
-import Entity.UserInfo;
+
 import Service.ICommentPartManage;
 import Service.IUserInfoManage;
 

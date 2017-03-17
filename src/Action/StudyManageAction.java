@@ -71,9 +71,13 @@ public class StudyManageAction extends ActionSupport{
 				list1.add(classInfo);;
 			}
 			}
+			ActionContext.getContext().getSession().remove("studyInfoList");
+			ActionContext.getContext().getSession().remove("none");
 			ActionContext.getContext().getSession().put("studyInfoList", list1);
 			return SUCCESS;
 		}
+		ActionContext.getContext().getSession().remove("studyInfoList");
+		ActionContext.getContext().getSession().remove("none");
 		ActionContext.getContext().getSession().put("none","ÔÝÎÞÊÕ²Ø¿Î³Ì£¡£¡£¡");
 		return SUCCESS;
 	}
@@ -104,6 +108,22 @@ public class StudyManageAction extends ActionSupport{
 		java.sql.Date date_sql=new java.sql.Date(date.getTime());
 		study.setStarttime(date_sql);
 		iStudyManage.addStudy(study);
+		return SUCCESS;
+	}
+	public String deleteStudyPlanAction()throws Exception
+	{
+		User user=(User) ActionContext.getContext().getSession().get("user");
+		List<?> list=iStudyManage.getStudy(user.getUserid());
+		for(int i=0;i<list.size();i++)
+		{
+		Study study=(Study) list.get(i);
+		if(study.getClassInfoid().equals(getClassInfoid())){
+			
+			iStudyManage.deleteStudy(study);
+			break;
+		}
+		}
+		
 		return SUCCESS;
 	}
 }

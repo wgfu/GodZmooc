@@ -256,14 +256,12 @@
 		</div>
 		<div class="col-md-1 column">
 		</div>
-		
 	</div>
 	<div class="row clearfix">
 		<div class="col-md-1 column">
 		</div>
 		<div class="col-md-10 column">
 		<div class="page-header">
-
 				<h1>
 					讨论区 <small>Discussion</small>
 				</h1>

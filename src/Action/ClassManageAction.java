@@ -31,8 +31,7 @@ public void setIClassInfoManage(IClassInfoManage iClassInfoManage)
 	      User user=(User) ActionContext.getContext().getSession().get("user");
 	      ClassInfo classInfo=new ClassInfo();
 	      classInfo.setUserid(user.getUserid());
-	      int i=(int) (Math.random()*100000);
-	      classInfo.setCommentid(i);
+	     
 	      List<?> list=iClassInfoManage.getClassInfoDefault(classInfo);
 	      if(list!=null&&!list.isEmpty()&&list.size()>0)
 			{

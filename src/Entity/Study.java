@@ -14,8 +14,8 @@ public class Study {
 	private int id;
     private String userid;
     private Date starttime;
-    private int testid;
-    private int homeworkid;
+    private Integer testid;
+    private Integer homeworkid;
     private Integer classInfoid;
 	@Column(name="classInfoid", length=15)
 	public Integer getClassInfoid() {
@@ -51,17 +51,17 @@ public class Study {
 		this.starttime = starttime;
 	}
 	@Column(name="testid", length=15)
-	public int getTestid() {
+	public Integer getTestid() {
 		return testid;
 	}
-	public void setTestid(int testid) {
+	public void setTestid(Integer testid) {
 		this.testid = testid;
 	}
 	@Column(name="homeworkid", length=15)
-	public int getHomeworkid() {
+	public Integer getHomeworkid() {
 		return homeworkid;
 	}
-	public void setHomeworkid(int homeworkid) {
+	public void setHomeworkid(Integer homeworkid) {
 		this.homeworkid = homeworkid;
 	}
 	

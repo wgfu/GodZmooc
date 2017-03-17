@@ -66,6 +66,12 @@
 <result name="success" type="redirect">studyManage</result>
 			</action>
 	</package>
+	
+	<package name="deleteStudayPlanAction" namespace="/" extends="struts-default">
+<action name="deleteStudyPlan" class="deleteStudyPlan" method="deleteStudyPlanAction">
+<result name="success" type="redirect">studyManage</result>
+			</action>
+	</package>
 
 	<package name="classMessageAction" namespace="/" extends="struts-default">
 <action name="classMessage" class="classMessage" >

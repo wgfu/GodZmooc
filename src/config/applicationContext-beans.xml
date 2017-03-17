@@ -111,6 +111,7 @@
 	<!-- *************************StudyAction*********************** -->
 	<bean id="studyManage" class="Action.StudyManageAction" scope="prototype"></bean>
 	<bean id="addStudayPlan" class="Action.StudyManageAction" scope="prototype"></bean>
+	<bean id="deleteStudyPlan" class="Action.StudyManageAction" scope="prototype"></bean>
     <!-- *********************************************************** -->
     <!-- *************************ResouceAction********************* -->
     <bean id="findResource" class="Action.FindResourceAction" scope="prototype"></bean>

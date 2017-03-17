@@ -74,9 +74,9 @@
 			</div>
 			<div class="span12">
 			<h1 class="text-center text-info">
-			<big>${sessionScope.classMessage.classname}</big>	
+			<big>${sessionScope.homeWorkMessage.homeworkname}</big>	
 			</h1>
-			<div  style="position:absolute;width:60%;left:20%;overflow:auto;height:80px" >
+			<div  style="position:absolute;width:60%;left:20%;overflow:auto;height:100px" >
 			
 	<p class="list-group-item-text">
 		<h3 align="center">作业简介：</h3>
@@ -87,7 +87,7 @@
 		
 		
 		
-			<div style="width:85%;position:absolute;left:160px;top:220px;height:64% " >
+			<div style="width:85%;position:absolute;left:160px;top:250px;height:62% " >
 				<iframe src="${sessionScope.homeWorkMessage.url}" width="100%" height="100%"> </iframe>
 				</div>
 				
@@ -99,14 +99,7 @@
 </div>
 	</div>
 </div>
-		<div  style="width:80%; position:absolute; top:100%;left:10%;">
-						<br>
-						<br>
-						<br>
-						<br><br>
-						<br><br>
-						<br>	
-					</div>
+		
 <div style="width:100%; position:fixed; left:0; bottom:0;">
 			<ul class="breadcrumb">
 				<li>
