@@ -16,7 +16,7 @@
 <script>
 $(document).ready(function(){
 	
-	$(function(){
+
 	    // 设置属性值
 	    $("input:button").click(function() {
 	        var selectList = "";
@@ -72,7 +72,7 @@ $(document).ready(function(){
 	         });
 	      
 	    });
-	})
+	
 })
 </script>
 </head>

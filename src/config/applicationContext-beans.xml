@@ -97,8 +97,9 @@
 	<!-- Spring管理Struts2的Action -->
 	<!-- *************************CommonAction*********************** -->
 <bean id="login" class="Action.LoginAction" scope="prototype"></bean>
+<bean id="outLogin" class="Action.LoginAction" scope="prototype"></bean>
 <bean id="regist" class="Action.RegistAction" scope="prototype"></bean>
-
+<bean id="checkUsername" class="Action.LoginAction" scope="prototype"></bean>
 <!-- *********************************************************** -->
 <!-- *************************TestAndHomeworkAction*********************** -->
  <bean id="addHomework" class="Action.TestAndHomeworkAction" scope="prototype"></bean>

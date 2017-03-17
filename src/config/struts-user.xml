@@ -15,9 +15,22 @@
 	<package name="loginAction" namespace="/" extends="struts-default">
 <action name="login" class="login" >
 <result name="success" type="redirect">/index.jsp</result>
+<result name="fail" type="redirect">/error.jsp</result>
 			</action>
 	</package>
 	
+	<package name="checkUsernameAction" namespace="/" extends="struts-default">
+<action name="checkUsername" class="checkUsername" method="checkUsernameAction">
+
+			</action>
+	</package>
+	
+	<package name="outLoginAction" namespace="/" extends="struts-default">
+<action name="outlogin" class="outLogin" method="outLoginAction">
+<result name="success" type="redirect">/index.jsp</result>
+			</action>
+	</package>
+
 	<package name="addClassaaAction" namespace="/" extends="struts-default">
 <action name="addClass" class="addClass" >
 <result name="success" type="redirect">classManage</result>
