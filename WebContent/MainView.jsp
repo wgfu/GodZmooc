@@ -53,7 +53,7 @@
 			</div>
 		</div>
 		<div class="col-md-8 column">
-			<div class="carousel slide" id="carousel-477290">
+			<div class="carousel slide" id="carousel-477290"  data-ride="carousel">
 			
 				<div class="carousel-inner">
 					<div class="item">
