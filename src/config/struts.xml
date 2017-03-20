@@ -11,7 +11,8 @@
 	<!-- 更改struts2请求Action的后缀名，默认为action。若想去掉后缀，设为","即可 -->
 	<constant name="struts.action.extension" value=","></constant>
 	 <!-- 所允许上传文件的总大小 -->  
-  <constant name="struts.multipart.maxSize" value="40000000"/> 
+  <constant name="struts.multipart.maxSize" value="1024000000"/> 
+	<constant name="struts.action.excludePattern" value="/websocket*"></constant>  <!-- 取消拦截wsServlet -->
 	
 <!-- 公共包 -->
 

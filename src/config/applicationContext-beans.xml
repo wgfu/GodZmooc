@@ -7,10 +7,10 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 <!-- Spring管理Struts2的Dao和Service -->
-<bean id="getAnswerTool" class="Service.GetAnswerTool" scope="prototype"></bean>
-<bean id="calculateTool" class="Service.CalculateTool" scope="prototype"></bean>
-<bean id="wordConvertToHtmlTool" class="Service.WordConvertToHtmlTool">	</bean>
-<bean id="iUserManage" class="Service.UserManageImp">
+<bean id="getAnswerTool" class="Service.GetAnswerTool" ></bean>
+<bean id="calculateTool" class="Service.CalculateTool" ></bean>
+<bean id="wordConvertToHtmlTool" class="Service.WordConvertToHtmlTool" >	</bean>
+<bean id="iUserManage" class="Service.UserManageImp" >
 		<property name="iUserDao" ref="iUserDao"></property>
 	</bean>
 	<bean id="iUserDao" class="Dao.UserDaoImp">

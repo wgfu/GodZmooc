@@ -67,17 +67,12 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="E:/SM/GodZmooc/WebContent/WEB-INF/lib/commons-beanutils-1.8.3.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="E:/SM/GodZmooc/WebContent/WEB-INF/lib/ezmorph-1.0.6.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="E:/SM/GodZmooc/WebContent/WEB-INF/lib/websocket-api.jar">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/websocket">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

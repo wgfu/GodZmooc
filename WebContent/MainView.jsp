@@ -145,7 +145,7 @@
 				</div>
 				<div class="col-md-3">
 					<div class="thumbnail">
-						<a href="findResource?classLevel=中学"><img alt="280x80" src="Image/zhongxue.png" /></a>
+						<a href="findResource?classLevel=初中"><img alt="280x80" src="Image/zhongxue.png" /></a>
 						<div class="caption">
 							<h3>
 							中学课程
