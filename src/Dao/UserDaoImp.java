@@ -38,6 +38,12 @@ public class UserDaoImp implements IUserDao{
 		hibernateTemplate.merge(user);
 		
 	}
-	
-
+	public User getUserByUserid(String userid)
+	{// TODO Auto-generated method stub
+	User user =null;
+	String sql="from User u where u.userid=?";
+	 List<?> list=hibernateTemplate.find(sql, userid);
+	if(!list.isEmpty()){user=(User)list.get(0);}
+	return user;
+}
 }

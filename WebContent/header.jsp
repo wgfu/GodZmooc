@@ -54,6 +54,11 @@
 								<li>
 									 <a href="classManage">已发布课程管理</a>
 								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="Chat.jsp" target="_blank">聊天室</a>
+								</li>
 							</ul>
 						</li>		
         </s:else>

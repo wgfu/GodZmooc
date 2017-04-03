@@ -26,6 +26,39 @@ border: dashed GREY 4px;
 } 
 </style> 
 <title>查看权限</title>
+
+<script>
+$(document).ready(function(){
+$("input:button[id='addFriends']").click(function() {
+	var userid=$(this).attr("name");
+	
+		   $.ajax({
+	             type: "POST",
+	             url: "addFriends",
+	             data: {
+	            	 userid:userid
+	            	 },
+	             dataType: "json",
+	             success: function(data){
+	            	 if(data==1)
+	            	 { alert("添加好友成功！！！");}
+	            	 else if(data==0)
+	            		 {
+	            		 alert("已添加该好友！！！");
+	            		 }
+	            	 else{
+	            		 alert("不能添加自己为好友哟！！！");
+	            	 }
+	                      },
+	            	 error: function (msg) {
+	            		 alert("添加失败！！！");
+	                 }
+	         });
+	});
+	
+})
+</script>
+
 </head>
 <body>
 <div class="container" style="width:100%">
@@ -63,6 +96,9 @@ border: dashed GREY 4px;
         <td style="border-top:1px dashed #00CCCC;">
          <div align="center">
          <img src="Image/yuwen.png" width="140px" height="160px">
+       <br>
+       <br>
+       <input type="button" id="addFriends" class="btn btn-primary btn-large" value="添加好友" name="${sessionScope.DiscussionMessage.userid}">
          </div>
         </td>	
          <td style="border-top:1px dashed #00CCCC;">
@@ -88,6 +124,9 @@ border: dashed GREY 4px;
         <td style="border-top:1px dashed #00CCCC;">
         <div align="center">
          <img src="Image/yuwen.png" width="140px" height="160px">
+          <br>
+          <br>
+          <input type="button" id="addFriends" class="btn btn-primary btn-large" value="添加好友" name="${ReplyList.userid}">
          </div>
         </td>	
          <td style="border-top:1px dashed #00CCCC;">

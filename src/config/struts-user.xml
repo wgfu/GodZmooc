@@ -151,4 +151,10 @@
 			</action>
 	</package>
 	
+	<package name="addFriendsAction" namespace="/" extends="struts-default">
+<action name="addFriends" class="addFriends" method="addFriendsAction">
+ 
+			</action>
+	</package>
+	
 </struts>

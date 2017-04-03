@@ -7,7 +7,12 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 <!-- Spring管理Struts2的Dao和Service -->
-<bean id="getAnswerTool" class="Service.GetAnswerTool" ></bean>
+<bean id="getAnswerTool" class="Service.GetAnswerTool"></bean>
+<bean id="mongoConnectionTool" class="Dao.MongoConnectionTool">
+<property name="url" value="localhost"></property>
+<property name="postid" value="27017"></property>
+<property name="databaseName" value="godzmooc"></property>
+</bean>
 <bean id="calculateTool" class="Service.CalculateTool" ></bean>
 <bean id="wordConvertToHtmlTool" class="Service.WordConvertToHtmlTool" >	</bean>
 <bean id="iUserManage" class="Service.UserManageImp" >
@@ -88,6 +93,9 @@
 	<bean id="iScoreDao" class="Dao.ScoreDaoImp">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	<bean id="iMongoManage" class="Service.MongoManageImp"></bean>
+	
+	<bean id="iMongoDao" class="Dao.MongoDaoImp"></bean>
 	
 	
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">  
@@ -132,4 +140,9 @@
                          <bean id="addDiscussion" class="Action.DiscussionAction" scope="prototype"></bean>
                        
             <!-- *********************************************************** -->
+            
+              <!-- ********************CommunicationAction********************* -->
+                <bean id="addFriends" class="Action.CommunicationAction" scope="prototype"></bean>
+              
+                <!-- *********************************************************** -->
 </beans>

@@ -39,5 +39,8 @@ public class UserManageImp implements IUserManage{
 		// TODO Auto-generated method stub
 		iUserDao.updateUser(user);
 	}
-
+	public User getUserByUserid(String userid)
+	{
+		return iUserDao.getUserByUserid(userid);
+	}
 }

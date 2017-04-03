@@ -13,6 +13,38 @@
        <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 <title>主界面</title>
+<script>
+
+	
+$(document).ready(function(){
+$("input:button[id='addFriends']").click(function() {
+	var userid=$(this).attr("name");
+		   $.ajax({
+	             type: "POST",
+	             url: "addFriends",
+	             data: {
+	            	 userid:userid
+	            	 },
+	             dataType: "json",
+	             success: function(data){
+	            	 if(data==1)
+	            	 { alert("添加好友成功！！！");}
+	            	 else if(data==0)
+	            		 {
+	            		 alert("已添加该好友！！！");
+	            		 }
+	            	 else{
+	            		 alert("不能添加自己为好友哟！！！");
+	            	 }
+	                      },
+	            	 error: function (msg) {
+	            		 alert("添加失败！！！");
+	                 }
+	         });
+	});
+	
+})
+</script>
 </head>
 <body>
  
@@ -27,8 +59,13 @@
 			</h1>
 
 			<h6 class="text-center text">
-			作者：${sessionScope.author.name}
+			作者：${sessionScope.author.name} 
+			<s:if test="#session.author.userid!=null">
+			&nbsp&nbsp<input type="button" id="addFriends" class="btn btn-primary btn-large" value="+" name="${sessionScope.author.userid}">
+			
+			</s:if>
 			</h6>
+			
 			<h6 class="text-center text">
 			发布时间：${sessionScope.classMessage.time}
 			</h6>
@@ -87,7 +124,10 @@
 				<h5> 
 				${commentList.username}
 				&#12288&#12288
+			
 				${commentList.time}
+				&#12288&#12288
+				<input type="button" id="addFriends" class="btn btn-primary btn-large" value="+" name="${commentList.userid}">
 				
 				</h5> 
 				  <div style="width:1200px;height:45px;overflow:auto;">
