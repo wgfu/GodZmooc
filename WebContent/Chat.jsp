@@ -49,7 +49,7 @@
    
         };
 
-        // 点击Send按钮时的操作
+        // 发送消息
         $("#send").click(function() {
          if (!um.hasContents()) {    // 判断消息输入框是否为空
           // 消息输入框获取焦点
@@ -62,17 +62,18 @@
           setTimeout("$('.edui-container').removeClass('am-animation-shake')", 1000);
          }
           else {
-        
+        	  var Friendsname= $("#Friendsname").text();
           // 发送消息
           socket.send(JSON.stringify({
+           action : "sendMessage",
+           username : username,
+           Friendsname : Friendsname, 
            content : um.getContent(),
-           nickname : username
           }));
           // 清空消息输入框
           um.setContent('');
           // 消息输入框获取焦点
           um.focus();
-         
          }
         });
         // 把消息添加到聊天内容中
@@ -81,38 +82,66 @@
         	 message = JSON.parse(evt.data);
         	 switch(message.action)
         	 {
-        	 case "addmessage" : addMessage(message);
+        	 case "sendmessage" : addMessage(message);
         	 case "getFriendsList" : getFriendsList(message);
+        	 case "notify" : notify(message);
+        	 case "changecount" : changcount(message);
         	 }
           };
-          $('.test').on('click',function(){
-        	  alert("111");
-        	  });
-      
+          
+          $("#FriendsList").delegate("a","click",function(){
+       	   $("#window").css('display','block'); 
+       	   $("#Friendsname").html($(this).attr("name"));
+       	 socket.send(JSON.stringify({
+             action : "changewindowstatus",
+             status : "open",
+             Friendsname:$(this).attr("name")
+            }));
+       	  });
+           $("#closewindow").click(function ()
+        		   {
+        	   $("#window").css('display','none');
+        	   var Friendsname= $("#Friendsname").text();
+        	   var username=$("#username").val();
+        	   socket.send(JSON.stringify({
+                   action : "changewindowstatus",
+                   status : "close",
+                   username:username,
+                   Friendsname:Friendsname
+                  }));
+        	   });
+         
           function getFriendsList(message)
           {
-        	  var FriendsListItem ="<div class='list-group-item'><a href=javascript:void(0); class='test' name="
+        	  var FriendsListItem ="<div class='list-group-item'><a href=javascript:void(0); name="
         	  +message.Friendsname+">"
         	  +"<img  src='Image/yuwen.png' height='70px' width='60px'/></a>"
-		+"<span style='font-size:18px'><a href='#'>"+message.Friendsname
+		+"<span style='font-size:18px'><a href=javascript:void(0); name="
+  	  +message.Friendsname
+  	  +">"
+  	  +message.Friendsname
 		+"</a><br>&nbsp&nbsp"
+		+"<span id="
+		+message.Friendsname+"status>"
 		+message.status
-		+"</span><span class='badge'>"
+		+"</span></span><span class='badge' id="
+		+message.Friendsname+"count>"
 		+message.count
 		+"</span> </div>"
 		$(FriendsListItem).appendTo('#FriendsList');
           }
+          
         function addMessage(message) {
         
          var messageItem = '<li class="am-comment '
            + (message.isSelf? 'am-comment-success' : 'am-comment-flip')
            + '">'
            + '<a href="javascript:void(0)" ><img src="assets/images/'
-           + (message.isSelf ? 'self.png' : 'others.jpg')
+           + (message.isSelf ? 'Img/yuwen.png' : 'others.jpg')
            + '" alt="" class="am-comment-avatar" width="48" height="48"/></a>'
            + '<div class="am-comment-main"><header class="am-comment-hd"><div class="am-comment-meta">'
            + '<a href="javascript:void(0)" class="am-comment-author">'
-           + message.nickname + '</a> <time>' + message.date
+           + message.username + '</a> <time>' + message.time
            + '</time></div></header>'
            + '<div class="am-comment-bd">' + message.content
            + '</div></div></li>';
@@ -131,10 +160,11 @@
    
   
  <!-- title start -->
+ <div id="window" style="display:none">
  <div class="title">
   <div class="am-g am-g-fixed">
    <div class="am-u-sm-12">
-    <h1 class="am-text-primary">聊天室</h1>
+    <h1 class="am-text-primary">当前联系人：<span id="Friendsname"></span></h1>
    </div>
   </div>
  </div>
@@ -169,8 +199,13 @@
     <button id="send" type="button" class="am-btn am-btn-primary">
      <i class="am-icon-send"></i> Send
     </button>
+    <button id="closewindow" type="button" class="am-btn am-btn-primary">
+     <i class="am-icon-close"></i>关闭窗口
+    </button>
    </div>
   </div>
+ </div>
+ 
  </div>
  <div style="width:19%;height:75%;position:fixed;left:15px;top:100px;overflow:auto;">
  	<div class="col-md-12 column">
