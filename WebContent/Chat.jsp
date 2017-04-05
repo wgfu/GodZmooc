@@ -82,21 +82,57 @@
         	 message = JSON.parse(evt.data);
         	 switch(message.action)
         	 {
-        	 case "sendmessage" : addMessage(message);
-        	 case "getFriendsList" : getFriendsList(message);
-        	 case "notify" : notify(message);
-        	 case "changecount" : changcount(message);
+        	 case "sendMessage": addMessage(message);break;
+        	 case "getFriendsList" : getFriendsList(message);break;
+        	 case "notify" : notify(message);break;
+        	 case "changecount" : changcount(message);break;
         	 }
           };
+          
+          function notify(message)
+          {
+        	  var Friendsname=message.Friendsname;
+        	  var status=message.status;
+        	  var id=Friendsname+"status";
+        	  var obj=document.getElementsByTagName("span");
+        	  for(var i=0;i<obj.length;i++)
+    		  {
+    		  if(obj[i].id==id)
+    		  {
+    			  obj[i].innerHTML=status;
+    		  }
+    		  }
+          }
+          
+          function changcount(message)
+          {
+        	  var Friendsname=message.Friendsname;
+        	  var count=message.count;
+        	  var id=Friendsname+"count";
+        	  var obj=document.getElementsByTagName("span");
+        	  for(var i=0;i<obj.length;i++)
+        		  {
+        		  if(obj[i].id==id)
+        		  {
+        			  obj[i].innerHTML=count;
+        		  }
+        		  }
+          }
           
           $("#FriendsList").delegate("a","click",function(){
        	   $("#window").css('display','block'); 
        	   $("#Friendsname").html($(this).attr("name"));
+       	   var countid="#"+$(this).attr("name")+"count";
+       	  
+       	 $(countid).html("0");
+       	 
        	 socket.send(JSON.stringify({
              action : "changewindowstatus",
              status : "open",
+             username:username,
              Friendsname:$(this).attr("name")
             }));
+   
        	  });
            $("#closewindow").click(function ()
         		   {
@@ -132,12 +168,14 @@
           }
           
         function addMessage(message) {
-        
+        	var isself=true;
+        	if(message.isself==1)
+        		{isself=false;}
          var messageItem = '<li class="am-comment '
-           + (message.isSelf? 'am-comment-success' : 'am-comment-flip')
+           + (isself? 'am-comment-success' : 'am-comment-flip')
            + '">'
-           + '<a href="javascript:void(0)" ><img src="assets/images/'
-           + (message.isSelf ? 'Img/yuwen.png' : 'others.jpg')
+           + '<a href="javascript:void(0)" ><img src="'
+           + (isself ? 'Image/yuwen.png' : 'Image/yuwen.png')
            + '" alt="" class="am-comment-avatar" width="48" height="48"/></a>'
            + '<div class="am-comment-main"><header class="am-comment-hd"><div class="am-comment-meta">'
            + '<a href="javascript:void(0)" class="am-comment-author">'
@@ -149,7 +187,18 @@
          // 把滚动条滚动到底部
          $(".chat-content-container").scrollTop($(".chat-content-container")[0].scrollHeight);
         }
+        
+        
+        window.onbeforeunload = function () {  
+            closeWebSocket();  
+        }  
     });
+  //关闭WebSocket连接  
+    function closeWebSocket() {  
+        socket.close();  
+    }  
+ 
+    
     </script>
     
     
