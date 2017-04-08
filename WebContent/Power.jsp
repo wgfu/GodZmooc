@@ -80,7 +80,7 @@
 						<td>
 						<form action="changeUserPower" method="post">
 							<input type="hidden" value="${UserPowerList.userid}" name="userid">
-							<input type="text" name="power" style="width:40px"> 
+							<input type="text" name="powernum" style="width:40px"> 
 							<input type="submit" value="修改">
 							</form>
 						</td>

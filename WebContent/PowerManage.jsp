@@ -37,19 +37,21 @@
 					</tr>
 				</thead>
 				<tbody>
+				<s:iterator value="#session.PowerInfoList" var="PowerInfoList">
 					<tr class="success">
 						<td>
-							deleteComment
+							${PowerInfoList.actionName}
 						</td>
 						<td>
-					100
+					${PowerInfoList.level}
 						</td>
 						<td>
-							<form action="updatePower" method="post">
+							<form action="changePowerInfo" method="post">
 	<div class="row">
     <div class="col-lg-3">
-      <input type="text" class="form-control" placeholder="请输入新LEVEL">
-    </div>
+      <input type="text" class="form-control" placeholder="请输入新LEVEL" name="level">
+      <input type="hidden" value="${PowerInfoList.actionName}" name="actionName">
+    </div> 
     <div class="col-lg-4">
        <button  type="submit" class="btn btn-default">修改</button>
     </div>
@@ -57,22 +59,31 @@
 		</form>
 						</td>
 					</tr>
+					</s:iterator>
 				</tbody>
 			</table>
+			
 		</div>
+		
 	</div>
+	
+		
 </div>
+
+		<div>
+		<br><br><br><br><br><br><br><br>
+		</div>
 <div style="width:80%; position:fixed; left:0; bottom:100px">
-					<form class="form-horizontal" action="addPower" method="post">
+					<form class="form-horizontal" action="addPowerInfo" method="post">
 						<div class="row">
 						  <label for="firstname" class="col-sm-2 control-label" style="font-size:15px">添加权限:</label>
 						  <label for="firstname" class="col-sm-2 control-label">ACTIONNAME</label>
     <div class="col-lg-2" >
-       <input type="text" class="form-control" id="firstname" placeholder="请输入ACTIONNAME">
+       <input type="text" class="form-control" id="firstname" placeholder="请输入ACTIONNAME" name="power.actionName">
     </div>
      <label for="lastname" class="col-sm-2 control-label">LEVEL</label>
     <div class="col-lg-2">
-       <input type="text" class="form-control" id="lastname" placeholder="请输入LEVEL">
+       <input type="text" class="form-control" id="lastname" placeholder="请输入LEVEL" name="power.level">
     </div>
     <div class="col-lg-2">
          <button type="submit" class="btn btn-default">添加</button>

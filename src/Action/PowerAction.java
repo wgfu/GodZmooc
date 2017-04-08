@@ -51,6 +51,12 @@ public String getMyPowerAction() throws Exception
     
    public String getAllPowerInfoAction() throws Exception
    {
+	   ActionContext.getContext().getSession().remove("PowerInfoList");
+	   List<?> list= iPowerManage.getAll();
+	   if(list!=null&&list.size()>0)
+	   {
+		   ActionContext.getContext().getSession().put("PowerInfoList", list);
+		   }
 	  
 	   return SUCCESS;
    }

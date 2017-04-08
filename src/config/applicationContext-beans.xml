@@ -131,6 +131,11 @@
     <bean id="userInfo" class="Action.UserInfoAction" scope="prototype"></bean>
     <bean id="getMyPower" class="Action.PowerAction" scope="prototype"></bean>
      <bean id="getAllUserPowerInfo" class="Action.PowerAction" scope="prototype"></bean>
+     <bean id="changeUserPower" class="Action.PowerManageAction" scope="prototype"></bean>
+     <bean id="getAllPowerInfo" class="Action.PowerAction" scope="prototype"></bean>
+     <bean id="changePowerInfo" class="Action.PowerManageAction" scope="prototype"></bean>
+     <bean id="addPowerInfo" class="Action.PowerManageAction" scope="prototype"></bean>
+   
     <!-- *********************************************************** -->
     
         <!-- ********************CommentAction********************** -->

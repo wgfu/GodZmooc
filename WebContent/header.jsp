@@ -46,11 +46,20 @@
 								</li>
 								<li class="divider">
 								</li>
+								<s:if test="#session.user.power>100">
 								<li>
-									 <a href="getAllUserPowerInfo" target="_blank">权限管理</a>
+									 <a href="getAllUserPowerInfo" target="_blank">用户权限管理</a>
 								</li>
 								<li class="divider">
 								</li>
+							</s:if>
+							<s:if test="#session.user.power>150">
+								<li>
+									 <a href="getAllPowerInfo" target="_blank">权限管理</a>
+								</li>
+								<li class="divider">
+								</li>
+									</s:if>
 								<li>
 									 <a href="studyManage">已收藏课程</a>
 								</li>

@@ -168,5 +168,29 @@
   <result name="success" type="redirect">Power.jsp</result>
 			</action>
 	</package>
+	
+	<package name="changeUserPowerAction" namespace="/" extends="struts-default">
+<action name="changeUserPower" class="changeUserPower" method="changeUserPowerAction">
+  <result name="success" type="redirect">getAllUserPowerInfo</result>
+			</action>
+	</package>
+	
+	<package name="getAllPowerInfoAction" namespace="/" extends="struts-default">
+<action name="getAllPowerInfo" class="getAllPowerInfo" method="getAllPowerInfoAction">
+  <result name="success" type="redirect">PowerManage.jsp</result>
+			</action>
+	</package>
+
+<package name="changePowerInfoAction" namespace="/" extends="struts-default">
+<action name="changePowerInfo" class="changePowerInfo" method="changePowerInfoAction">
+  <result name="success" type="redirect">getAllPowerInfo</result>
+			</action>
+	</package>
+
+<package name="addPowerInfoAction" namespace="/" extends="struts-default">
+<action name="addPowerInfo" class="addPowerInfo" method="addPowerInfoAction">
+  <result name="success" type="redirect">getAllPowerInfo</result>
+			</action>
+	</package>
 
 </struts>
