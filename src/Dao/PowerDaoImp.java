@@ -43,5 +43,10 @@ public class PowerDaoImp implements IPowerDao{
 		// TODO Auto-generated method stub
 		hibernateTemplate.merge(power);
 	}
+	public List<?> getAll()
+	{
+		return hibernateTemplate.find("from Power p");
+		
+	}
 
 }

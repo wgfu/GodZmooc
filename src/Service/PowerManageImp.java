@@ -1,5 +1,7 @@
 package Service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import Dao.IPowerDao;
@@ -38,5 +40,9 @@ public void setIPowerDao(IPowerDao iPowerDao) {
 	public void updatePower(Power power) {
 		// TODO Auto-generated method stub
 		iPowerDao.updatePower(power);
+	}
+	public List<?> getAll()
+	{
+		return iPowerDao.getAll();
 	}
 }

@@ -120,6 +120,7 @@
           }
           
           $("#FriendsList").delegate("a","click",function(){
+        	  $('#message-list').empty();
        	   $("#window").css('display','block'); 
        	   $("#Friendsname").html($(this).attr("name"));
        	   var countid="#"+$(this).attr("name")+"count";
@@ -137,6 +138,7 @@
            $("#closewindow").click(function ()
         		   {
         	   $("#window").css('display','none');
+        	   $('#message-list').empty();
         	   var Friendsname= $("#Friendsname").text();
         	   var username=$("#username").val();
         	   socket.send(JSON.stringify({

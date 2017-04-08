@@ -79,6 +79,10 @@ public class CommunicationAction extends ActionSupport{
 		 List <Document> documents=new ArrayList<Document>();
 		 documents.add(document);
 		 iMongoManage.insertMany(collectionname,documents);
+		 Document document1=new Document("username",collectionname);
+		 List <Document> documents1=new ArrayList<Document>();
+		 documents.add(document1);
+		 iMongoManage.insertMany(username, documents1);
 		 return NONE;
 		 }
 

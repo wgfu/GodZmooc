@@ -42,7 +42,12 @@
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="#">个人权限</a>
+									 <a href="getMyPower">个人权限</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="getAllUserPowerInfo" target="_blank">权限管理</a>
 								</li>
 								<li class="divider">
 								</li>

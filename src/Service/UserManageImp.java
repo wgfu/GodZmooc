@@ -1,5 +1,7 @@
 package Service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import Dao.IUserDao;
@@ -42,5 +44,9 @@ public class UserManageImp implements IUserManage{
 	public User getUserByUserid(String userid)
 	{
 		return iUserDao.getUserByUserid(userid);
+	}
+	public List<?> getAll()
+	{
+		return iUserDao.getAll();
 	}
 }

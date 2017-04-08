@@ -46,4 +46,8 @@ public class UserDaoImp implements IUserDao{
 	if(!list.isEmpty()){user=(User)list.get(0);}
 	return user;
 }
+	 public List<?> getAll()
+	 {
+		 return hibernateTemplate.find("from User u");
+	 }
 }

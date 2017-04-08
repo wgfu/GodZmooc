@@ -129,6 +129,8 @@
     <!-- *********************************************************** -->
     <!-- *************************UserAction*********************** -->
     <bean id="userInfo" class="Action.UserInfoAction" scope="prototype"></bean>
+    <bean id="getMyPower" class="Action.PowerAction" scope="prototype"></bean>
+     <bean id="getAllUserPowerInfo" class="Action.PowerAction" scope="prototype"></bean>
     <!-- *********************************************************** -->
     
         <!-- ********************CommentAction********************** -->

@@ -31,7 +31,7 @@
 			</action>
 	</package>
 
-	<package name="addClassaaAction" namespace="/" extends="struts-default">
+	<package name="addClassAction" namespace="/" extends="struts-default">
 <action name="addClass" class="addClass" >
 <result name="success" type="redirect">classManage</result>
 			</action>
@@ -157,4 +157,16 @@
 			</action>
 	</package>
 	
+	<package name="getMyPowerAction" namespace="/" extends="struts-default">
+<action name="getMyPower" class="getMyPower" method="getMyPowerAction">
+  <result name="success" type="redirect">MyPower.jsp</result>
+			</action>
+	</package>
+
+<package name="getAllUserPowerInfoAction" namespace="/" extends="struts-default">
+<action name="getAllUserPowerInfo" class="getAllUserPowerInfo" method="getAllUserPowerInfoAction">
+  <result name="success" type="redirect">Power.jsp</result>
+			</action>
+	</package>
+
 </struts>
