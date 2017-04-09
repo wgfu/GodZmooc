@@ -101,6 +101,9 @@
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">  
      <property name="sessionFactory" ref="sessionFactory" /> 
      </bean> 
+     <!-- *************************Interceptor*********************** -->
+     <bean id="checkLoginAndPower" class="interceptor.CheckLoginAndPower" scope="prototype"></bean>
+     <!-- ************************************************************ -->
 <!-- *********************************************************** -->
 	<!-- Spring管理Struts2的Action -->
 	<!-- *************************CommonAction*********************** -->

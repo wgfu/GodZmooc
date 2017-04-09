@@ -16,7 +16,7 @@ import Service.IPowerManage;
 
 
 public class CheckLoginAndPower implements Interceptor{
-	private static HashMap<String,Integer> powerList=new HashMap<>();
+	
 	@Resource
 	private IPowerManage iPowerManage;
 
@@ -38,13 +38,7 @@ public class CheckLoginAndPower implements Interceptor{
 	public void init() {
 		System.out.println("------check.init------");
 		// TODO Auto-generated method stub
-		List<?> list= iPowerManage.getAll();
-		Power power=new Power();
-		for(int i=0;i<list.size();i++)
-		{
-			 power=(Power) list.get(i);
-			powerList.put(power.getActionName(),power.getLevel());
-		}
+		
 	}
 
 	@Override
@@ -54,12 +48,12 @@ public class CheckLoginAndPower implements Interceptor{
 		Map session=ActionContext.getContext().getSession();
 		HttpServletRequest request=ServletActionContext.getRequest();
 		String path=request.getRequestURI();
-		System.out.println(path);
-		String actionname=request.getRequestURI();
-		
+		String url[]=path.split("/");
+		String actionname=url[url.length-1];
 		if(session.get("user")!=null)
 		{
-			if((int)session.get("user.power")>powerList.get(actionname))
+			Power power=iPowerManage.getPower(actionname);
+			if((int)session.get("user.power")>power.getLevel())
 			{
 				return arg0.invoke();
 			}

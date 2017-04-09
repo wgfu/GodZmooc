@@ -31,8 +31,9 @@
 			</action>
 	</package>
 
-	<package name="addClassAction" namespace="/" extends="struts-default">
+	<package name="addClassAction" namespace="/" extends="abstract_struts">
 <action name="addClass" class="addClass" >
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">classManage</result>
 			</action>
 	</package>
@@ -43,8 +44,9 @@
 			</action>
 	</package>
 	
-<package name="userInfoAction" namespace="/" extends="struts-default">
+<package name="userInfoAction" namespace="/" extends="abstract_struts">
 <action name="userInfo" class="userInfo" >
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">/UserInfo.jsp</result>
 			</action>
 	</package>
@@ -55,20 +57,23 @@
 			</action>
 	</package>
 	
-	<package name="studyManageAction" namespace="/" extends="struts-default">
+	<package name="studyManageAction" namespace="/" extends="abstract_struts">
 <action name="studyManage" class="studyManage" >
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">/StudyPlan.jsp</result>
 			</action>
 	</package>
 	
-		<package name="addStudayPlanAction" namespace="/" extends="struts-default">
+		<package name="addStudayPlanAction" namespace="/" extends="abstract_struts">
 <action name="addStudayPlan" class="addStudayPlan" method="addStudayPlanAction">
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">studyManage</result>
 			</action>
 	</package>
 	
-	<package name="deleteStudayPlanAction" namespace="/" extends="struts-default">
+	<package name="deleteStudayPlanAction" namespace="/" extends="abstract_struts">
 <action name="deleteStudyPlan" class="deleteStudyPlan" method="deleteStudyPlanAction">
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">studyManage</result>
 			</action>
 	</package>
@@ -85,32 +90,37 @@
 			</action>
 	</package>
 	
-	<package name="addCommentAction" namespace="/" extends="struts-default">
+	<package name="addCommentAction" namespace="/" extends="abstract_struts">
 <action name="addComment" class="addComment" method="addCommentAction">
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">findComment</result>
 			</action>
 	</package>
 	
-	<package name="classManageAction" namespace="/" extends="struts-default">
+	<package name="classManageAction" namespace="/" extends="abstract_struts">
 <action name="classManage" class="classManage" >
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">/ClassManage.jsp</result>
 			</action>
 	</package>
 	
-	<package name="addHomeworkAction" namespace="/" extends="struts-default">
+	<package name="addHomeworkAction" namespace="/" extends="abstract_struts">
 <action name="addHomework" class="addHomework" method="addHomeworkAction">
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">classManage</result>
 			</action>
 	</package>
 	
-	<package name="addTestAction" namespace="/" extends="struts-default">
+	<package name="addTestAction" namespace="/" extends="abstract_struts">
 <action name="addTest" class="addTest" method="addTestAction">
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">classManage</result>
 			</action>
 	</package>
 	
-	<package name="findTestAction" namespace="/" extends="struts-default">
+	<package name="findTestAction" namespace="/" extends="abstract_struts">
 <action name="findTest" class="findTest" method="findTestAction">
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">/TestView.jsp</result>
 			</action>
 	</package>
@@ -121,8 +131,9 @@
 			</action>
 	</package>
 	
-	<package name="findHomeworkAction" namespace="/" extends="struts-default">
+	<package name="findHomeworkAction" namespace="/" extends="abstract_struts">
 <action name="findHomework" class="findHomework" method="findHomeworkAction">
+<interceptor-ref name="myInterceptor" />
 <result name="success" type="redirect">/HomeworkView.jsp</result>
 			</action>
 	</package>
@@ -139,56 +150,65 @@
 			</action>
 	</package>
 	
-	<package name="addReplyAction" namespace="/" extends="struts-default">
+	<package name="addReplyAction" namespace="/" extends="abstract_struts">
 <action name="addReply" class="addReply" method="addReplyAction">
+<interceptor-ref name="myInterceptor" />
      <result name="success" type="chain">discussionMessage</result>
 			</action>
 	</package>
 	
-	<package name="addDiscussionAction" namespace="/" extends="struts-default">
+	<package name="addDiscussionAction" namespace="/" extends="abstract_struts">
 <action name="addDiscussion" class="addDiscussion" method="addDiscussionAction">
+<interceptor-ref name="myInterceptor" />
      <result name="success" type="chain">discussionMessage</result>
 			</action>
 	</package>
 	
-	<package name="addFriendsAction" namespace="/" extends="struts-default">
+	<package name="addFriendsAction" namespace="/" extends="abstract_struts">
 <action name="addFriends" class="addFriends" method="addFriendsAction">
+<interceptor-ref name="myInterceptor" />
  
 			</action>
 	</package>
 	
-	<package name="getMyPowerAction" namespace="/" extends="struts-default">
+	<package name="getMyPowerAction" namespace="/" extends="abstract_struts">
 <action name="getMyPower" class="getMyPower" method="getMyPowerAction">
+<interceptor-ref name="myInterceptor" />
   <result name="success" type="redirect">MyPower.jsp</result>
 			</action>
 	</package>
 
-<package name="getAllUserPowerInfoAction" namespace="/" extends="struts-default">
+<package name="getAllUserPowerInfoAction" namespace="/" extends="abstract_struts">
 <action name="getAllUserPowerInfo" class="getAllUserPowerInfo" method="getAllUserPowerInfoAction">
+<interceptor-ref name="myInterceptor" />
   <result name="success" type="redirect">Power.jsp</result>
 			</action>
 	</package>
 	
-	<package name="changeUserPowerAction" namespace="/" extends="struts-default">
+	<package name="changeUserPowerAction" namespace="/" extends="abstract_struts">
 <action name="changeUserPower" class="changeUserPower" method="changeUserPowerAction">
+<interceptor-ref name="myInterceptor" />
   <result name="success" type="redirect">getAllUserPowerInfo</result>
 			</action>
 	</package>
 	
-	<package name="getAllPowerInfoAction" namespace="/" extends="struts-default">
+	<package name="getAllPowerInfoAction" namespace="/" extends="abstract_struts">
 <action name="getAllPowerInfo" class="getAllPowerInfo" method="getAllPowerInfoAction">
+<interceptor-ref name="myInterceptor" />
   <result name="success" type="redirect">PowerManage.jsp</result>
 			</action>
 	</package>
 
-<package name="changePowerInfoAction" namespace="/" extends="struts-default">
+<package name="changePowerInfoAction" namespace="/" extends="abstract_struts">
 <action name="changePowerInfo" class="changePowerInfo" method="changePowerInfoAction">
+<interceptor-ref name="myInterceptor" />
   <result name="success" type="redirect">getAllPowerInfo</result>
 			</action>
 	</package>
 
-<package name="addPowerInfoAction" namespace="/" extends="struts-default">
+<package name="addPowerInfoAction" namespace="/" extends="abstract_struts">
 <action name="addPowerInfo" class="addPowerInfo" method="addPowerInfoAction">
+<interceptor-ref name="myInterceptor" />
   <result name="success" type="redirect">getAllPowerInfo</result>
 			</action>
 	</package>

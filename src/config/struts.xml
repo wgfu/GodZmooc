@@ -16,7 +16,22 @@
 	
 <!-- 公共包 -->
 
-
+<package name="abstract_struts" abstract="true" extends="struts-default"
+		namespace="/">
+		<interceptors>
+			<interceptor name="checkLoginAndPower" class="interceptor.CheckLoginAndPower" />
+			<interceptor-stack name="myInterceptor">
+					<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="checkLoginAndPower"/>
+		
+			</interceptor-stack>
+		</interceptors>
+	
+		<global-results>
+			<result name="PleaseLogin" >Login.jsp</result>
+				<result name="PermissionDenied" >PermissionDenied.jsp</result>
+		</global-results>
+	</package>
 
 	<!-- 包含的配置文件 -->
 	<include file="/config/struts-user.xml"></include>

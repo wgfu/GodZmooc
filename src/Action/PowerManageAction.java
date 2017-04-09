@@ -100,8 +100,9 @@ public class PowerManageAction extends ActionSupport{
 	public String changeUserPowerAction() throws Exception
 	{
 		User user=iUserManage.getUserByUserid(getUserid());
-		user.setPower(getPowernum());
-		iUserManage.updateUser(user);
+		if(getPowernum()<150)
+		{user.setPower(getPowernum());
+		iUserManage.updateUser(user);}
 		return SUCCESS;
 	}
 }
