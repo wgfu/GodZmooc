@@ -150,6 +150,13 @@
 			</action>
 	</package>
 	
+	<package name="deleteDiscussionAction" namespace="/" extends="abstract_struts">
+<action name="deleteDiscussion" class="deleteDiscussion" method="deleteDiscussionAction">
+<interceptor-ref name="myInterceptor" />
+<result name="success" type="redirect">/index.jsp</result>
+			</action>	
+	</package>
+	
 	<package name="addReplyAction" namespace="/" extends="abstract_struts">
 <action name="addReply" class="addReply" method="addReplyAction">
 <interceptor-ref name="myInterceptor" />

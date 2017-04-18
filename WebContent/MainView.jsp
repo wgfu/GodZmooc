@@ -13,6 +13,7 @@
        <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 <title>主界面</title>
+
 </head>
 <body>
  
@@ -253,10 +254,22 @@
 					<p class="list-group-item-text">
 						&#12288&#12288&#12288&#12288 ${Discussion.username }    	&#12288 ${Discussion.time }
 					</p>
+					
+					</td>
+					<td>
+					&#12288&#12288&#12288&#12288			&#12288&#12288&#12288&#12288
+					</td>
+					<td>
+						<form action="deleteDiscussion" method="post">
+					<input type="hidden" name="discussionid" value="${Discussion.discussionid}">
+					<input type="submit"  value="删除该贴" class="btn btn-primary large"	>
+					</form>
 					</td>
 					</tr>
 					</table>
+					
 				</div>
+				
 				</s:iterator>
 			
 						</s:if>
@@ -285,8 +298,18 @@
 						&#12288&#12288&#12288&#12288 ${Discussion.username }    	&#12288 ${Discussion.time }
 					</p>
 					</td>
+					<td>
+					&#12288&#12288&#12288&#12288			&#12288&#12288&#12288&#12288
+					</td>
+					<td>
+					<form action="deleteDiscussion" method="post">
+					<input type="hidden" name="discussionid" value="${Discussion.discussionid}">
+					<input type="submit"  value="删除该贴" class="btn btn-primary large"	>
+					</form>
+					</td>
 					</tr>
 					</table>
+					
 				</div>
 				</s:iterator>
 						</s:if>

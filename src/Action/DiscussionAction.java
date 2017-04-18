@@ -153,4 +153,12 @@ List<HashMap<String,Object>> PartList=new ArrayList<>();
     		setDiscussionid(discussion.getDiscussionid());
     	  return SUCCESS;
       }
+      public String deleteDiscussionAction()throws Exception
+      {
+    	  Discussion discussion=new Discussion();
+    	  discussion.setDiscussionid(getDiscussionid());
+    	  discussion=(Discussion) iDiscussionManage.getRuslt(discussion).get(0);
+    	  iDiscussionManage.deleteT(discussion);
+    	  return SUCCESS;
+      }
 }
