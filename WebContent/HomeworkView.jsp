@@ -21,6 +21,7 @@
 		<div class="col-md-12 column">
 			 <jsp:include page="header.jsp" flush="true"></jsp:include>  
 			</div>
+			<s:if test="#session.homeWorkMessage!=null">
 			<div class="span12">
 			<h1 class="text-center text-info">
 			<big>${sessionScope.homeWorkMessage.homeworkname}</big>	
@@ -46,6 +47,11 @@
 	
 <a href="${sessionScope.homeWorkMessage.answerurl}" class="btn btn-primary btn-large">查看作业答案</a>
 </div>
+</s:if>
+<s:else>
+<div align="center"><h1>暂无布置作业</h1></div>
+
+</s:else>
 	</div>
 </div>
 		

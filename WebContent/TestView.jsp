@@ -79,9 +79,11 @@ $(document).ready(function(){
 <body>
  
 <div class="container" style="width:100%">
+ <jsp:include page="header.jsp" flush="true"></jsp:include>  
+ <s:if test="#session.testMessage!=null">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			 <jsp:include page="header.jsp" flush="true"></jsp:include>  
+			
 			</div>
 			<div class="span12">
 			<h1 class="text-center text-info">
@@ -127,10 +129,14 @@ $(document).ready(function(){
 	
 <input type="button" class="btn btn-primary btn-large" value="提交答案">
 </div>
-	
+	</s:if>
+	<s:else>
+<div align="center"><h1>暂无布置考试</h1></div>
+
+</s:else>
 </div>
 
-
+<s:if test="#session.testMessage!=null">
 	<div  style="position:absolute;width:85%;left:160px;top:60%;overflow:auto;height:280px;border:2px solid #a0A1Af" >
 			<div class="container" style="width:100%">
 	<div class="row clearfix">
@@ -389,6 +395,7 @@ $(document).ready(function(){
 	</div>
 </div>
 			</div>
+			</s:if>
  <jsp:include page="footer.jsp" flush="true"></jsp:include>  
 </body>
 </html>

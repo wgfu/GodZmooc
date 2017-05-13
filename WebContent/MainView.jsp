@@ -34,23 +34,25 @@
 				 <a  class="list-group-item active">课程资源</a>
 				<div class="list-group-item">
 					<a href="findResource?type=语文" >语文</a>
-					<span class="badge">14</span>
+					
 				</div>
 				<div class="list-group-item">
 					
 						<a href="findResource?type=数学">数学</a>
-						<span class="badge">14</span>
+						
 		
 				</div>
 				<div class="list-group-item">
 						<a href="findResource?type=英语" >英语</a>
-						<span class="badge">14</span>
+					
 				</div> 
 				<div class="list-group-item">
 						<a href="findResource?type=政治" >政治</a>
-						<span class="badge">14</span>
 				</div> 
-				<a class="list-group-item active" href="#" > 更多>></a>
+				<div class="list-group-item">
+						<a href="findResource?type=音乐" >音乐</a>
+				</div> 
+				
 			</div>
 		</div>
 		<div class="col-md-8 column">
@@ -99,23 +101,21 @@
 				 <a  class="list-group-item active">课程资源</a>
 				<div class="list-group-item">
 					<a href="findResource?type=物理" >物理</a>
-					<span class="badge">14</span>
 				</div>
 				<div class="list-group-item">
 					
 						<a href="findResource?type=化学">化学</a>
-						<span class="badge">14</span>
 		
 				</div>
 				<div class="list-group-item">
 						<a href="findResource?type=生物" >生物</a>
-						<span class="badge">14</span>
 				</div>
 				<div class="list-group-item">
 						<a href="findResource?type=地理" >地理</a>
-						<span class="badge">14</span>
 				</div>
-				 <a class="list-group-item active" href="#" >  更多>></a>
+				<div class="list-group-item">
+						<a href="findResource?type=计算机" >计算机</a>
+				</div> 
 			</div>
 		</div>
 	</div>
@@ -211,7 +211,7 @@
 		<div class="col-md-1 column">
 		</div>
 		<div class="col-md-10 column">
-		<div class="page-header">
+		<div class="page-header" id="Discussion">
 				<h1>
 					讨论区 <small>Discussion</small>
 				</h1>

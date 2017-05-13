@@ -95,7 +95,7 @@ $("input:button[id='addFriends']").click(function() {
 		<tr height="300px">
         <td style="border-top:1px dashed #00CCCC;">
          <div align="center">
-         <img src="Image/yuwen.png" width="140px" height="160px">
+         <img src="Image/touxiang.png" width="140px" height="160px">
        <br>
        <br>
        <input type="button" id="addFriends" class="btn btn-primary btn-large" value="添加好友" name="${sessionScope.DiscussionMessage.userid}">
@@ -116,14 +116,14 @@ $("input:button[id='addFriends']").click(function() {
       &nbsp&nbsp  &nbsp&nbsp  ${ReplyList.username }
         </td>	
          <td style="border-bottom:1px dashed #00CCCC;">
-       &nbsp&nbsp   <s:if test="#session.user.userid==#ReplyList.userid">楼主&nbsp|&nbsp</s:if> ${ReplyList.time }
+       &nbsp&nbsp   <s:if test="#session.user.userid==#session.DiscussionMessage.userid">楼主&nbsp|&nbsp</s:if> ${ReplyList.time }
         </td>	
          		
 		</tr>
 		<tr height="300px">
         <td style="border-top:1px dashed #00CCCC;">
         <div align="center">
-         <img src="Image/yuwen.png" width="140px" height="160px">
+         <img src="Image/touxiang.png" width="140px" height="160px">
           <br>
           <br>
           <input type="button" id="addFriends" class="btn btn-primary btn-large" value="添加好友" name="${ReplyList.userid}">

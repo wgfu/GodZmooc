@@ -153,7 +153,7 @@
           {
         	  var FriendsListItem ="<div class='list-group-item'><a href=javascript:void(0); name="
         	  +message.Friendsname+">"
-        	  +"<img  src='Image/yuwen.png' height='70px' width='60px'/></a>"
+        	  +"<img  src='Image/touxiang.png' height='70px' width='60px'/></a>"
 		+"<span style='font-size:18px'><a href=javascript:void(0); name="
   	  +message.Friendsname
   	  +">"
@@ -177,7 +177,7 @@
            + (isself? 'am-comment-success' : 'am-comment-flip')
            + '">'
            + '<a href="javascript:void(0)" ><img src="'
-           + (isself ? 'Image/yuwen.png' : 'Image/yuwen.png')
+           + (isself ? 'Image/touxiang.png' : 'Image/touxiang.png')
            + '" alt="" class="am-comment-avatar" width="48" height="48"/></a>'
            + '<div class="am-comment-main"><header class="am-comment-hd"><div class="am-comment-meta">'
            + '<a href="javascript:void(0)" class="am-comment-author">'

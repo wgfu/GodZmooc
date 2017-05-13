@@ -118,7 +118,7 @@ $("input:button[id='addFriends']").click(function() {
 					<table style="border-collapse:separate; border-spacing:15px ;">
 					<tr>
 					<td colspan="3">
-				<img  src="Image/yuwen.png" height="75" width="60"/>
+				<img  src="Image/touxiang.png" height="75" width="60"/>
 				</td>
 				<td>
 				<h5> 

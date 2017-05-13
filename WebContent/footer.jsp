@@ -15,11 +15,9 @@
 					 <a href="index.jsp">主页</a>
 				</li>
 				<li>
-					 <a href="#">Library</a>
+					 <a href="MainView.jsp#Discussion">讨论区</a>
 				</li>
-				<li class="active">
-					Data
-				</li>
+				
 			</ul>
 			</div>
 </body>

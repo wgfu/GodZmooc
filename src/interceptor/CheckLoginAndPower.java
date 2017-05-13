@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.Interceptor;
 
 import Entity.Power;
+import Entity.User;
 
 import java.util.*;
 import Service.IPowerManage;
@@ -50,10 +51,17 @@ public class CheckLoginAndPower implements Interceptor{
 		String path=request.getRequestURI();
 		String url[]=path.split("/");
 		String actionname=url[url.length-1];
+		int action_level=0;
 		if(session.get("user")!=null)
 		{
+			User user=(User) session.get("user");
 			Power power=iPowerManage.getPower(actionname);
-			if((int)session.get("user.power")>power.getLevel())
+			if(power!=null)
+			{
+				action_level=power.getLevel();
+				System.out.println("xxxxx");
+			}
+			if(user.getPower()>action_level)
 			{
 				return arg0.invoke();
 			}
