@@ -14,7 +14,6 @@ public class score {
 	private int id;
 	private Integer testid;
 	private String userid;
-	
 	private Integer classid;
 	private double score;
 	private Date time;

@@ -198,7 +198,6 @@
   <result name="success" type="redirect">getAllUserPowerInfo</result>
 			</action>
 	</package>
-	
 	<package name="getAllPowerInfoAction" namespace="/" extends="abstract_struts">
 <action name="getAllPowerInfo" class="getAllPowerInfo" method="getAllPowerInfoAction">
 <interceptor-ref name="myInterceptor" />

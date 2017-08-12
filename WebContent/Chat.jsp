@@ -38,27 +38,20 @@
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
     $(document).ready(function(){
-    	
         var um = UE.getEditor('myEditor');
         var username=$("#username").val();
         var socket = new WebSocket('ws://${pageContext.request.getServerName()}:${pageContext.request.getServerPort()}${pageContext.request.contextPath}/websocket?'+username);
         // 处理服务器端发送的数据
-         
         socket.onmessage = function(event) {
          addMessage(event.data);
-   
         };
-
         // 发送消息
         $("#send").click(function() {
          if (!um.hasContents()) {    // 判断消息输入框是否为空
           // 消息输入框获取焦点
-         
           um.focus();
           // 添加抖动效果
-       
           $('.edui-container').addClass('am-animation-shake');
-       
           setTimeout("$('.edui-container').removeClass('am-animation-shake')", 1000);
          }
           else {

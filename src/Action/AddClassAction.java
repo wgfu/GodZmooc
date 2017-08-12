@@ -116,6 +116,14 @@ public class AddClassAction extends ActionSupport{
 		  	 
 			   	 classInfo.setUrl("Message/"+cString+suffix);
 			   	 url=realpath;
+			   	if(wordConvertToHtmlTool.WordConvertToHtml(file, url,cString+suffix))
+			   	{
+			   			iClassInfoManage.addClassInfo(classInfo);
+			   			return SUCCESS;
+			   	}
+			   	else{
+			   		return "fail";
+			   	}
 			}
 			else
 			{
@@ -123,15 +131,25 @@ public class AddClassAction extends ActionSupport{
 				 url=realpath;
 				
 				 classInfo.setUrl("Video/"+cString+suffix);
+				
+		           File target = new File(realpath+cString+suffix);
+		        
+		           if (target.exists()) {
+		               target.delete();
+		           }
+		           InputStream is = new FileInputStream(file);
+		           OutputStream os = new FileOutputStream(target);
+		           byte[] buffer = new byte[323840];
+		           int length = 0;
+		           while ((length = is.read(buffer)) > 0) {
+		           	  os.write(buffer, 0, length);
+		           }
+		           is.close();
+		           os.close();
+				 iClassInfoManage.addClassInfo(classInfo);
+				 return SUCCESS;
 			}
-if(wordConvertToHtmlTool.WordConvertToHtml(file, url,cString+suffix))
-{
-		iClassInfoManage.addClassInfo(classInfo);
-		return SUCCESS;
-}
-else{
-	return "fail";
-}
+
 	}
 
 }
